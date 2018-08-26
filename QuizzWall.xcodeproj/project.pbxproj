@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A5CD25EC18DCB43C8CC2650 /* Pods_QuizzWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */; };
 		AD1A768A21330409008EADD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD1A768921330408008EADD0 /* GoogleService-Info.plist */; };
+		AD54569A213316D00070890F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD545699213316CF0070890F /* Constants.swift */; };
 		ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DAE213300F600DE27C9 /* AppDelegate.swift */; };
 		ADD40DB1213300F700DE27C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DB0213300F700DE27C9 /* ViewController.swift */; };
 		ADD40DB4213300F700DE27C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD40DB2213300F700DE27C9 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.debug.xcconfig"; sourceTree = "<group>"; };
 		AD1A768921330408008EADD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AD545699213316CF0070890F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = /Users/Marko/development/QuizzWall/QuizzWall/Constants.swift; sourceTree = "<absolute>"; };
 		ADD40DAB213300F600DE27C9 /* QuizzWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD40DAE213300F600DE27C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD40DB0213300F700DE27C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD545698213316A70070890F /* supportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				ADD40DAE213300F600DE27C9 /* AppDelegate.swift */,
+				ADD40DB7213300F900DE27C9 /* LaunchScreen.storyboard */,
+				ADD40DB5213300F900DE27C9 /* Assets.xcassets */,
+			);
+			path = supportFiles;
+			sourceTree = "<group>";
+		};
 		ADD40DA2213300F600DE27C9 = {
 			isa = PBXGroup;
 			children = (
@@ -80,11 +92,10 @@
 		ADD40DAD213300F600DE27C9 /* QuizzWall */ = {
 			isa = PBXGroup;
 			children = (
-				ADD40DAE213300F600DE27C9 /* AppDelegate.swift */,
+				AD545699213316CF0070890F /* Constants.swift */,
+				AD545698213316A70070890F /* supportFiles */,
 				ADD40DB0213300F700DE27C9 /* ViewController.swift */,
 				ADD40DB2213300F700DE27C9 /* Main.storyboard */,
-				ADD40DB5213300F900DE27C9 /* Assets.xcassets */,
-				ADD40DB7213300F900DE27C9 /* LaunchScreen.storyboard */,
 				ADD40DBA213300F900DE27C9 /* Info.plist */,
 				AD1A768921330408008EADD0 /* GoogleService-Info.plist */,
 			);
@@ -186,11 +197,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -208,6 +221,7 @@
 			files = (
 				ADD40DB1213300F700DE27C9 /* ViewController.swift in Sources */,
 				ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */,
+				AD54569A213316D00070890F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

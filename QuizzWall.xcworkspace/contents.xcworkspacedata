@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Marko/development/QuizzWall/QuizzWall/Constants.swift">
+   </FileRef>
+   <FileRef
       location = "group:QuizzWall.xcodeproj">
    </FileRef>
    <FileRef

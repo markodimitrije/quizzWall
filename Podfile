@@ -8,5 +8,6 @@ target 'QuizzWall' do
   # Pods for QuizzWall
 
 pod 'Firebase/Core'
+pod 'Firebase/Storage'
 
 end

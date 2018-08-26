@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        getDataFromFirebaseStorage()
+
         
         return true
     }
@@ -46,3 +49,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+
+
+
+
+func getDataFromFirebaseStorage() {
+    let storage = Storage.storage(url: Constants.Urls.storageRoot)
+    let gsReference = storage.reference(withPath: Constants.Urls.questions + Constants.Urls.usa)
+    
+    gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
+        if let error = error {
+            // Uh-oh, an error occurred!
+            print("an error occurred")
+        } else {
+            // Data for "images/island.jpg" is returned
+            //let image = UIImage(data: data!)
+            print("imam data")
+            print("data")
+        }
+    }
+
+    
+}
