@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A5CD25EC18DCB43C8CC2650 /* Pods_QuizzWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */; };
+		AD1A768A21330409008EADD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD1A768921330408008EADD0 /* GoogleService-Info.plist */; };
 		ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DAE213300F600DE27C9 /* AppDelegate.swift */; };
 		ADD40DB1213300F700DE27C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DB0213300F700DE27C9 /* ViewController.swift */; };
 		ADD40DB4213300F700DE27C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD40DB2213300F700DE27C9 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.debug.xcconfig"; sourceTree = "<group>"; };
+		AD1A768921330408008EADD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ADD40DAB213300F600DE27C9 /* QuizzWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD40DAE213300F600DE27C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD40DB0213300F700DE27C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		ADD40DB5213300F900DE27C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADD40DB8213300F900DE27C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADD40DBA213300F900DE27C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.release.xcconfig"; sourceTree = "<group>"; };
+		E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5CD25EC18DCB43C8CC2650 /* Pods_QuizzWall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE4EA303D0BC457BBDA2D0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */,
+				AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8BCD6206E6593CC4DDA5802 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ADD40DA2213300F600DE27C9 = {
 			isa = PBXGroup;
 			children = (
 				ADD40DAD213300F600DE27C9 /* QuizzWall */,
 				ADD40DAC213300F600DE27C9 /* Products */,
+				6AE4EA303D0BC457BBDA2D0D /* Pods */,
+				A8BCD6206E6593CC4DDA5802 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				ADD40DB5213300F900DE27C9 /* Assets.xcassets */,
 				ADD40DB7213300F900DE27C9 /* LaunchScreen.storyboard */,
 				ADD40DBA213300F900DE27C9 /* Info.plist */,
+				AD1A768921330408008EADD0 /* GoogleService-Info.plist */,
 			);
 			path = QuizzWall;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ADD40DBD213300F900DE27C9 /* Build configuration list for PBXNativeTarget "QuizzWall" */;
 			buildPhases = (
+				6F397A69C3160636E6649051 /* [CP] Check Pods Manifest.lock */,
 				ADD40DA7213300F600DE27C9 /* Sources */,
 				ADD40DA8213300F600DE27C9 /* Frameworks */,
 				ADD40DA9213300F600DE27C9 /* Resources */,
+				F31D030C6C7B744454B350D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD40DB9213300F900DE27C9 /* LaunchScreen.storyboard in Resources */,
+				AD1A768A21330409008EADD0 /* GoogleService-Info.plist in Resources */,
 				ADD40DB6213300F900DE27C9 /* Assets.xcassets in Resources */,
 				ADD40DB4213300F700DE27C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F397A69C3160636E6649051 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuizzWall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F31D030C6C7B744454B350D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ADD40DA7213300F600DE27C9 /* Sources */ = {
@@ -278,6 +349,7 @@
 		};
 		ADD40DBE213300F900DE27C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +368,7 @@
 		};
 		ADD40DBF213300F900DE27C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
