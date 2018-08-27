@@ -45,7 +45,7 @@ struct FileManagerPersister {
     // API je takav da posaljes Data
     
     func save(_ data: Data, toFilename file: String, completionHandler: @escaping (_ success: Bool) -> () ) {
-        print("FileManagerPersister.text, implement me")
+        print("FileManagerPersister.data, implement me")
         
         // ako imas i ok podatke i lokaciju gde da save...
         guard let docDirUrl = FileManager.documentDirectoryUrl else {

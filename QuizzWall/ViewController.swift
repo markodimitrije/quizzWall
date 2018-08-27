@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var questionLbl: UILabel!
+    
+    @IBOutlet var answerBtns: [UIButton]!
     
     @IBAction func btnTapped(_ sender: UIButton) {
         loadQuestionsOnUI()
@@ -31,7 +33,23 @@ class ViewController: UIViewController {
     
     private func loadQuestionsOnUI() {
 
-        textView.text = mvvmFileSystem.getQuestionFromDrive(atIndex: 0, forLanguage: Language.usa) ?? "no question at the moment, try again later..."
+        // language - pitaj device koja je scheme ....
+        
+        guard let q = mvvmFileSystem.getQuestionFromDrive(atIndex: 0) else {
+            return
+        }
+        
+        questionLbl.text = q["question"] as? String
+        
+        let answers = q["answers"] as? [String: Any]
+        
+        let _ = answerBtns.map {
+            if let answer = answers?["\($0.tag)"] as? [String: Any],
+                let text = answer["text"] as? String {
+                $0.setTitle(text, for: .normal)
+            }
+        }
+        
     }
     
     
