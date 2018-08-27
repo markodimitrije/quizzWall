@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
-        getDataFromFirebaseStorage()
-
+        
+        checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
         
         return true
     }
@@ -36,39 +37,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        print("applicationWillEnterForeground is called")
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func checkVersionsAndDownloadQuestionsIfNeeded() {
+     
+        ServerRequest().getQuestionsVersionsFromFirebaseStorage(completionHandler: { (dict) in
+            
+            guard let questionVersions = dict as? [String: Int] else {return}
+            
+            print("questionVersions = \(questionVersions)")
+            
+            if let needsUpdate = QuestionVersionChecker().hasNewerVersion(webVersions: questionVersions), needsUpdate {
 
-}
+                print("okini zahtev da skines questions i posle ih save na storage...")
 
+                //ServerRequest().getQuestionsFromFirebaseStorage(forLanguage: Constants.Urls.Questions.Filenames.usa) // radi ali nije async...
+                
+                // u callback-u sacuvaj i versions i fajlove sa questions
+                
+                ServerRequest().getQuestionsFromFirebaseStorage(forLanguage: Constants.Urls.Questions.Filenames.usa, completionHandler: { (questions) in
+                    
+                    // ovde zovi filesistem persister, pa u njegovom handler-u (on success),
+                    // sacuvaj verisons dict
+                    
+                    // ovde treba FilePersister... svoj Codable/Decodable na file sistem...
+                    
+                    // za sada cu i njega u UserDefaults
+                    
+                    UserDefaultsPersister().saveDictToUserDefaults(questions, atKey: "questions")
+                    
+                    
+                    
+                    UserDefaultsPersister().saveToUserDefaults(questions, forKey: Language.usa.rawValue,  completionHandler: { (success) in
+                        
+                        UserDefaultsPersister().saveDictToUserDefaults(questionVersions, atKey: "versions")
+                        
+                    })
+                    
+                })
 
-
-
-
-
-func getDataFromFirebaseStorage() {
-    let storage = Storage.storage(url: Constants.Urls.storageRoot)
-    let gsReference = storage.reference(withPath: Constants.Urls.questions + Constants.Urls.usa)
-    
-    gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
-        if let error = error {
-            // Uh-oh, an error occurred!
-            print("an error occurred")
-        } else {
-            // Data for "images/island.jpg" is returned
-            //let image = UIImage(data: data!)
-            print("imam data")
-            print("data")
-        }
+            }
+            
+        })
+        
+        
+        
+        
+        
     }
-
+    
+    
     
 }

@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		2A5CD25EC18DCB43C8CC2650 /* Pods_QuizzWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */; };
 		AD1A768A21330409008EADD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD1A768921330408008EADD0 /* GoogleService-Info.plist */; };
-		AD54569A213316D00070890F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD545699213316CF0070890F /* Constants.swift */; };
+		AD54569C213321910070890F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54569B213321910070890F /* Constants.swift */; };
+		AD54569F213321DC0070890F /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54569E213321DC0070890F /* ServerRequest.swift */; };
+		AD5456A1213323130070890F /* Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5456A0213323130070890F /* Versions.swift */; };
+		AD5456A3213324240070890F /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5456A2213324240070890F /* Globals.swift */; };
+		AD5456A821334DDF0070890F /* questionVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5456A721334DDF0070890F /* questionVersions.swift */; };
+		AD86A4B82133E08200119A7B /* UserDefaultsPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4B72133E08200119A7B /* UserDefaultsPersister.swift */; };
+		AD86A4BB2133EA4D00119A7B /* MVVM_UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */; };
+		AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4BD213409C500119A7B /* FileManagerPersister.swift */; };
+		AD86A4C121340ED800119A7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4C021340ED800119A7B /* Extensions.swift */; };
 		ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DAE213300F600DE27C9 /* AppDelegate.swift */; };
 		ADD40DB1213300F700DE27C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD40DB0213300F700DE27C9 /* ViewController.swift */; };
 		ADD40DB4213300F700DE27C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD40DB2213300F700DE27C9 /* Main.storyboard */; };
@@ -20,7 +28,15 @@
 /* Begin PBXFileReference section */
 		9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.debug.xcconfig"; sourceTree = "<group>"; };
 		AD1A768921330408008EADD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AD545699213316CF0070890F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = /Users/Marko/development/QuizzWall/QuizzWall/Constants.swift; sourceTree = "<absolute>"; };
+		AD54569B213321910070890F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AD54569E213321DC0070890F /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
+		AD5456A0213323130070890F /* Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Versions.swift; sourceTree = "<group>"; };
+		AD5456A2213324240070890F /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		AD5456A721334DDF0070890F /* questionVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionVersions.swift; sourceTree = "<group>"; };
+		AD86A4B72133E08200119A7B /* UserDefaultsPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPersister.swift; sourceTree = "<group>"; };
+		AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_UserDefaults.swift; sourceTree = "<group>"; };
+		AD86A4BD213409C500119A7B /* FileManagerPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPersister.swift; sourceTree = "<group>"; };
+		AD86A4C021340ED800119A7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ADD40DAB213300F600DE27C9 /* QuizzWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD40DAE213300F600DE27C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD40DB0213300F700DE27C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +87,55 @@
 			path = supportFiles;
 			sourceTree = "<group>";
 		};
+		AD54569D213321C90070890F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AD54569E213321DC0070890F /* ServerRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AD5456A521334DC60070890F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD5456A621334DCC0070890F /* Storage */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD5456A621334DCC0070890F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				AD5456A721334DDF0070890F /* questionVersions.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		AD86A4B92133EA4300119A7B /* MV_VM */ = {
+			isa = PBXGroup;
+			children = (
+				AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */,
+			);
+			path = MV_VM;
+			sourceTree = "<group>";
+		};
+		AD86A4BC213409B100119A7B /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				AD86A4B72133E08200119A7B /* UserDefaultsPersister.swift */,
+				AD86A4BD213409C500119A7B /* FileManagerPersister.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		AD86A4BF21340ECE00119A7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD86A4C021340ED800119A7B /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ADD40DA2213300F600DE27C9 = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +157,14 @@
 		ADD40DAD213300F600DE27C9 /* QuizzWall */ = {
 			isa = PBXGroup;
 			children = (
-				AD545699213316CF0070890F /* Constants.swift */,
+				AD86A4BF21340ECE00119A7B /* Extensions */,
+				AD86A4BC213409B100119A7B /* Persistance */,
+				AD86A4B92133EA4300119A7B /* MV_VM */,
+				AD5456A521334DC60070890F /* Model */,
+				AD54569D213321C90070890F /* Networking */,
+				AD54569B213321910070890F /* Constants.swift */,
+				AD5456A2213324240070890F /* Globals.swift */,
+				AD5456A0213323130070890F /* Versions.swift */,
 				AD545698213316A70070890F /* supportFiles */,
 				ADD40DB0213300F700DE27C9 /* ViewController.swift */,
 				ADD40DB2213300F700DE27C9 /* Main.storyboard */,
@@ -219,9 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5456A821334DDF0070890F /* questionVersions.swift in Sources */,
 				ADD40DB1213300F700DE27C9 /* ViewController.swift in Sources */,
+				AD5456A1213323130070890F /* Versions.swift in Sources */,
+				AD86A4BB2133EA4D00119A7B /* MVVM_UserDefaults.swift in Sources */,
+				AD5456A3213324240070890F /* Globals.swift in Sources */,
 				ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */,
-				AD54569A213316D00070890F /* Constants.swift in Sources */,
+				AD54569F213321DC0070890F /* ServerRequest.swift in Sources */,
+				AD86A4B82133E08200119A7B /* UserDefaultsPersister.swift in Sources */,
+				AD54569C213321910070890F /* Constants.swift in Sources */,
+				AD86A4C121340ED800119A7B /* Extensions.swift in Sources */,
+				AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

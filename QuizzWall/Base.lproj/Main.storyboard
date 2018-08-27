@@ -19,23 +19,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaA-QH-p1X">
-                                <rect key="frame" x="148" y="318" width="79" height="30"/>
-                                <state key="normal" title="fire request"/>
+                                <rect key="frame" x="138" y="318" width="100" height="30"/>
+                                <state key="normal" title="load questions"/>
                                 <connections>
                                     <action selector="btnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sw2-xT-Auf"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mg7-nE-HgB">
+                                <rect key="frame" x="16" y="356" width="343" height="291"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mg7-nE-HgB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8py-6g-oog"/>
                             <constraint firstItem="XaA-QH-p1X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D9s-40-2Ce"/>
+                            <constraint firstItem="mg7-nE-HgB" firstAttribute="top" secondItem="XaA-QH-p1X" secondAttribute="bottom" constant="8" id="NIp-5T-1cR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mg7-nE-HgB" secondAttribute="bottom" constant="20" id="dZg-eQ-1ku"/>
                             <constraint firstItem="XaA-QH-p1X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ooB-6t-Mca"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mg7-nE-HgB" secondAttribute="trailing" constant="16" id="zvH-8q-Ous"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="mg7-nE-HgB" id="VPP-Pw-kTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>
