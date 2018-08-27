@@ -10,6 +10,13 @@ import Foundation
 
 struct Constants {
     
+    struct LocalFilenames {
+        struct Questions {
+            static let usa = "usaQuestions"
+            static let chi = "chiQuestions"
+        }
+    }
+    
     struct Urls {
         
         static let storageRoot = "gs://testquestionsapp.appspot.com" // ovo je bucket
@@ -62,4 +69,9 @@ enum Language: String {
     case spa = "spa"
     case ita = "ita"
     
+}
+
+var questionsLanguageFilenameInfo: [String: String] {
+    return ["usa" : "usaQuestions",
+            "chi" : "chiQuestions"]
 }

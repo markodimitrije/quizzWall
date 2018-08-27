@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     }
     
     let mvvmUserDefaults = MVVM_UserDefaults()
+    let mvvmFileSystem = MVVM_FileSystem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +30,11 @@ class ViewController: UIViewController {
     }
     
     private func loadQuestionsOnUI() {
-        
-        textView.text = getQuestion(atIndex: 0) ?? "no question at the moment, try again later..."
 
+        textView.text = mvvmFileSystem.getQuestionFromDrive(atIndex: 0, forLanguage: Language.usa) ?? "no question at the moment, try again later..."
     }
     
-    private func getQuestion(atIndex index: Int) -> String? {
-        
-        if let questions = UD.value(forKey: "questions") as? [String: Any] {
-            
-//            print("getQuestion.questions = \(questions)")
-            
-            guard let dict = questions["\(index)"] as? [String: Any],
-                let q = dict["question"] as? String else {
-                    return nil
-                }
-            
-            return q
-        }
-        
-        return nil
-    }
+    
     
 }
 

@@ -61,32 +61,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let needsUpdate = QuestionVersionChecker().hasNewerVersion(webVersions: questionVersions), needsUpdate {
 
                 print("okini zahtev da skines questions i posle ih save na storage...")
-
-                //ServerRequest().getQuestionsFromFirebaseStorage(forLanguage: Constants.Urls.Questions.Filenames.usa) // radi ali nije async...
                 
-                // u callback-u sacuvaj i versions i fajlove sa questions
-                
-                ServerRequest().getQuestionsFromFirebaseStorage(forLanguage: Constants.Urls.Questions.Filenames.usa, completionHandler: { (questions) in
+                ServerRequest().getQuestionsDataFromFirebaseStorage(forLanguage: Constants.Urls.Questions.Filenames.usa, completionHandler: { (data) in
                     
-                    // ovde zovi filesistem persister, pa u njegovom handler-u (on success),
-                    // sacuvaj verisons dict
+                    // ako imas i data i location to persist (on drive..)
+                    guard let data = data,
+                        let fileName = questionsLanguageFilenameInfo[Language.usa.rawValue] else {
+                        return
+                    }
                     
-                    // ovde treba FilePersister... svoj Codable/Decodable na file sistem...
-                    
-                    // za sada cu i njega u UserDefaults
-                    
-                    UserDefaultsPersister().saveDictToUserDefaults(questions, atKey: "questions")
-                    
-                    
-                    
-                    UserDefaultsPersister().saveToUserDefaults(questions, forKey: Language.usa.rawValue,  completionHandler: { (success) in
-                        
-                        UserDefaultsPersister().saveDictToUserDefaults(questionVersions, atKey: "versions")
-                        
+                    FileManagerPersister().save(data, toFilename: fileName, completionHandler: { (success) in
+                        if success {
+                            print("persist questions ok, now persist new versions")
+                            UserDefaultsPersister().saveDictToUserDefaults(questionVersions, atKey: "versions")
+                        }
                     })
                     
                 })
-
+ 
             }
             
         })

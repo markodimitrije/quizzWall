@@ -3,12 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsVersionsFromFirebaseStorage(completionHandler:):ServerRequest.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
       </ContextState>
       <ContextState
          contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
@@ -18,6 +13,33 @@
          <PersistentStrings>
             <PersistentString
                value = "webVersions == savedVersions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsVersionsFromFirebaseStorage(completionHandler:):ServerRequest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in AppDelegate.checkVersionsAndDownloadQuestionsIfNeeded():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "questions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FileManagerPersister.save(_:withFilename:completionHandler:):FileManagerPersister.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "saveUrl">
+            </PersistentString>
+            <PersistentString
+               value = "docDirUrl.appendingPathComponent(file).appendingPathExtension(&quot;txt&quot;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

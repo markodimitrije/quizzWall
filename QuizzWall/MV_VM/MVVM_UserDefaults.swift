@@ -16,4 +16,21 @@ struct MVVM_UserDefaults {
         return UD.value(forKey: "questions") as? [String : Any]
     }
     
+    func getQuestionFromUserDefaults(atIndex index: Int) -> String? {
+        
+        if let questions = UD.value(forKey: "questions") as? [String: Any] {
+            
+            //            print("getQuestion.questions = \(questions)")
+            
+            guard let dict = questions["\(index)"] as? [String: Any],
+                let q = dict["question"] as? String else {
+                    return nil
+            }
+            
+            return q
+        }
+        
+        return nil
+    }
+    
 }

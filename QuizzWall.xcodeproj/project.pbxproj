@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A5CD25EC18DCB43C8CC2650 /* Pods_QuizzWall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */; };
+		AD192D5C213438B10041921C /* Struct MVVM_FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD192D5B213438B10041921C /* Struct MVVM_FileSystem.swift */; };
 		AD1A768A21330409008EADD0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD1A768921330408008EADD0 /* GoogleService-Info.plist */; };
 		AD54569C213321910070890F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54569B213321910070890F /* Constants.swift */; };
 		AD54569F213321DC0070890F /* ServerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54569E213321DC0070890F /* ServerRequest.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		9C1AFA85751F72C83DBF76A2 /* Pods-QuizzWall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.debug.xcconfig"; sourceTree = "<group>"; };
+		AD192D5B213438B10041921C /* Struct MVVM_FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct MVVM_FileSystem.swift"; sourceTree = "<group>"; };
 		AD1A768921330408008EADD0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD54569B213321910070890F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD54569E213321DC0070890F /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */,
+				AD192D5B213438B10041921C /* Struct MVVM_FileSystem.swift */,
 			);
 			path = MV_VM;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				AD86A4B82133E08200119A7B /* UserDefaultsPersister.swift in Sources */,
 				AD54569C213321910070890F /* Constants.swift in Sources */,
 				AD86A4C121340ED800119A7B /* Extensions.swift in Sources */,
+				AD192D5C213438B10041921C /* Struct MVVM_FileSystem.swift in Sources */,
 				AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

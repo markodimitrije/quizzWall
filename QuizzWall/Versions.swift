@@ -18,8 +18,8 @@ struct QuestionVersionChecker {
             return true // ako nemas nista u UserDefaults, treba da se update
         }
         
-        return webVersions != savedVersions
-        
+        //return webVersions != savedVersions
+        return webVersions == savedVersions // hard-coded !
     }
     
 }

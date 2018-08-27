@@ -54,6 +54,33 @@ struct ServerRequest {
         
     }
     
+    func getQuestionsDataFromFirebaseStorage(forLanguage language: String, completionHandler: @escaping (_ dict: Data?) -> ()) {
+        
+        let storage = Storage.storage(url: path.storageRoot)
+        
+        let gsReference = storage.reference(withPath: path.Questions.folder + language)
+        
+        gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("an error occurred, error description = \(error.localizedDescription)")
+            } else if let data = data {
+                print("imam questions data, save to storage") // ... implement me
+                
+                guard let dict = self.getQuestionsData(fromData: data) else {return}
+                
+                print("questions = \(dict)")
+                
+                completionHandler(dict)
+                
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
     func getQuestionsVersionsFromFirebaseStorage(completionHandler: @escaping (_ versions: [String: Any]?) -> ()) {
         
         let storage = Storage.storage(url: Constants.Urls.storageRoot)
@@ -124,9 +151,20 @@ struct ServerRequest {
         return result
     }
     
-    
-    
-    
+    func getQuestionsData(fromData data: Data) -> Data? {
+        
+        guard let utf8 = String.init(data: data, encoding: String.Encoding.utf8) as NSString? else {return nil}
+        
+        let components = utf8.components(separatedBy: "fs24")
+        
+        guard let data = components.last as NSString? else {return nil}
+        
+        let myContent = data.substring(from: 5) // imam ovako nesto: ...f0\\fs24 \\cf2 ...usefulData
+        
+        let content = myContent.replacingOccurrences(of: "}}", with: "}").replacingOccurrences(of: "\\", with: "")
+        
+        return content.data(using: .utf8)
+    }
     
 }
 
