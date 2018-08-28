@@ -3,24 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
-      </ContextState>
-      <ContextState
-         contextName = "QuestionVersionChecker.hasNewerVersion(webVersions:):Versions.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "webVersions == savedVersions">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in ServerRequest.getQuestionsVersionsFromFirebaseStorage(completionHandler:):ServerRequest.swift">
          <PersistentStrings>
             <PersistentString
                value = "JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FileManagerPersister.save(_:withFilename:completionHandler:):FileManagerPersister.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "saveUrl">
+            </PersistentString>
+            <PersistentString
+               value = "docDirUrl.appendingPathComponent(file).appendingPathExtension(&quot;txt&quot;)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,13 +30,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FileManagerPersister.save(_:withFilename:completionHandler:):FileManagerPersister.swift">
+         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
          <PersistentStrings>
             <PersistentString
-               value = "saveUrl">
+               value = "path.Questions.folder">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "QuestionVersionChecker.hasNewerVersion(webVersions:):Versions.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "docDirUrl.appendingPathComponent(file).appendingPathExtension(&quot;txt&quot;)">
+               value = "webVersions == savedVersions">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

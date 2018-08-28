@@ -14,16 +14,12 @@ class ViewController: UIViewController {
     
     @IBOutlet var answerBtns: [UIButton]!
     
-    @IBAction func btnTapped(_ sender: UIButton) {
-        loadQuestionsOnUI()
-    }
-    
     let mvvmUserDefaults = MVVM_UserDefaults()
     let mvvmFileSystem = MVVM_FileSystem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadQuestionsOnUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,8 +41,9 @@ class ViewController: UIViewController {
         
         let _ = answerBtns.map {
             if let answer = answers?["\($0.tag)"] as? [String: Any],
+                let option = btnTagOptionInfo[$0.tag],
                 let text = answer["text"] as? String {
-                $0.setTitle(text, for: .normal)
+                $0.setTitle(option + ": " + text, for: .normal)
             }
         }
         
@@ -57,3 +54,8 @@ class ViewController: UIViewController {
 }
 
 
+extension ViewController {
+    var btnTagOptionInfo: [Int: String] { // i ovo moze localizable "A", "B", "V", "G"... chi, ind...
+        return [0: "A", 1: "B", 2: "C", 3: "D"]
+    }
+}

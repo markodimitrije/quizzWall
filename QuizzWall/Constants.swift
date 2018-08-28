@@ -12,8 +12,14 @@ struct Constants {
     
     struct LocalFilenames {
         struct Questions {
-            static let usa = "usaQuestions"
-            static let chi = "chiQuestions"
+            static let en = "enQuestions"
+            static let zh = "zhQuestions"
+            static let hi = "hiQuestions"
+            static let ru = "ruQuestions"
+            static let de = "deQuestions"
+            static let es = "esQuestions"
+            static let pt = "ptQuestions"
+            static let it = "itQuestions"
         }
     }
     
@@ -26,15 +32,15 @@ struct Constants {
             static let folder = "/questions"
             
             struct Filenames {
-                static let usa = "/usaQuestions.rtf"
-                static let chi = "/quizQuestions.rtf"
-                static let ind = "/quizQuestions.rtf"
-                static let ger = "/quizQuestions.rtf"
-                //static let france = "/quizQuestions.rtf"
-                static let ita = "/quizQuestions.rtf"
-                static let por = "/quizQuestions.rtf"
-                static let spa = "/quizQuestions.rtf"
-                static let rus = "/quizQuestions.rtf"
+                static let en = "/enQuestions.rtf"
+                static let zh = "/zhQuestions.rtf"
+                static let hi = "/hiQuestions.rtf"
+                static let ru = "/ruQuestions.rtf"
+                static let de = "/deQuestions.rtf"
+                static let pt = "/ptQuestions.rtf"
+                static let es = "/esQuestions.rtf"
+                static let it = "/itQuestions.rtf"
+                //static let france = "/fraQuestions.rtf"
             }
             
         }
@@ -60,18 +66,18 @@ struct Constants {
 
 enum Language: String {
     
-    case usa = "usa"
-    case chi = "chi"
-    case ind = "ind"
-    case rus = "rus"
-    case ger = "ger"
-    case por = "por"
-    case spa = "spa"
-    case ita = "ita"
+    case en = "en"
+    case zh = "zh"
+    case hi = "hi"
+    case ru = "ru"
+    case de = "de"
+    case pt = "pt"
+    case es = "es"
+    case it = "it"
     
 }
 
 var questionsLanguageFilenameInfo: [String: String] {
-    return ["usa" : "usaQuestions",
-            "chi" : "chiQuestions"]
+    return ["en" : "enQuestions",
+            "it" : "itQuestions"]
 }

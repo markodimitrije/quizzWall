@@ -16,7 +16,7 @@ struct MVVM_FileSystem {
 
         let docDirUrl = FileManager.documentDirectoryUrl
 
-        let language = Language.usa.rawValue // ispitaj koji je jezik na mob - implement me !
+        let language = PhoneLanguage().getPrefferedLanguage() ?? Language.en.rawValue
 
         guard let filename = questionsLanguageFilenameInfo[language],
             let readUrl = docDirUrl?.appendingPathComponent(filename),

@@ -35,7 +35,13 @@ struct ServerRequest {
         
         let storage = Storage.storage(url: path.storageRoot)
         
-        let gsReference = storage.reference(withPath: path.Questions.folder + language)
+        guard let filenameOnFirebase = language_LocalFilenameQuestions_Info[language] else {
+            print("getQuestionsDataFromFirebaseStorage.else.nemam local name za language"); return
+        }
+        
+        let gsReference = storage.reference(withPath: path.Questions.folder + filenameOnFirebase)
+        
+        //let gsReference = storage.reference(withPath: path.Questions.folder + language)
         
         gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
             if let error = error {
@@ -58,7 +64,11 @@ struct ServerRequest {
         
         let storage = Storage.storage(url: path.storageRoot)
         
-        let gsReference = storage.reference(withPath: path.Questions.folder + language)
+        guard let filenameOnFirebase = language_FirebaseFilenameQuestions_Info[language] else {
+            print("getQuestionsDataFromFirebaseStorage.else.nemam local name za language"); return
+        }
+        
+        let gsReference = storage.reference(withPath: path.Questions.folder + filenameOnFirebase)
         
         gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
             if let error = error {

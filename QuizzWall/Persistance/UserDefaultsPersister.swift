@@ -10,6 +10,13 @@ import Foundation
 
 struct UserDefaultsPersister {
     
+    func addSingleFlatDictToUserDefaults(_ dict: [String: Any], atKey key: String) {
+        guard let actualDict = UD.value(forKey: key) as? [String: Any] else {return}
+        guard let key = dict.keys.first, let val = dict.values.first else {return}
+        var newDict = actualDict
+        newDict[key] = val
+    }
+    
     func saveDictToUserDefaults(_ dict: [String: Any], atKey key: String) {
         UD.set(dict, forKey: key)
     }

@@ -9,6 +9,19 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>test language.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>ADD40DAA213300F600DE27C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
