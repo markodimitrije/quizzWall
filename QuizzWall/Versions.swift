@@ -29,6 +29,7 @@ struct QuestionVersionChecker {
             return true // ako nemas nista u UserDefaults, treba da se update
         }
         
+        print("imam istu verziju za jezik: \(language), \(webVersions[language] != savedVersions[language])")
         return webVersions[language] != savedVersions[language] // ako je value za taj jezik drugaciji
         
     }

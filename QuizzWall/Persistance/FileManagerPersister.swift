@@ -12,6 +12,15 @@ let fm = FileManager.default
 
 struct FileManagerPersister {
     
+    func copyResourceFromBundleToFileSystem(fileName: String, ext: String) {
+        
+        guard let readUrl = Bundle.main.url(forResource: fileName, withExtension: ext) else { return}
+        
+        guard let writeUrl = FileManager.documentDirectoryUrl?.appendingPathComponent(fileName).appendingPathExtension(ext) else { return}
+        
+        try? FileManager.default.copyItem(at: readUrl, to: writeUrl)
+    }
+    
     // API je takav da posaljes DICT
     
     func save(_ dict: [String: Any],

@@ -8,9 +8,6 @@
 
 import Foundation
 
-
-
-
 struct QuestionStructure: Codable {
     var questions: [String: Question]
 }
@@ -24,7 +21,6 @@ struct Answer: Codable {
     var text: String // "1944"  ....         // "1945"
     var correct: Bool // false  ....         // true
 }
-
 
 /* hocu da save ovo:
  {
@@ -44,24 +40,3 @@ struct Answer: Codable {
     "1": ....
  }
  */
-
-
-//struct QuestionStructure: Codable {
-//    var id: String // ovo je pitanje, npr 'Koje godine je zavrsen 2. svetski rat?'
-//    var question: Question // jedan Question
-//}
-//
-//struct Question: Codable {
-//    var text: String // ovo je pitanje, npr 'Koje godine je zavrsen 2. svetski rat?'
-//    var answers: [AnswerOptions] // ponudjeni odgovori
-//}
-//
-//struct AnswerOptions: Codable {
-//    var id: String
-//    var answer: Answer
-//}
-//
-//struct Answer: Codable {
-//    var text: String // "1944"  ....         // "1945"
-//    var correct: Bool // false  ....         // true
-//}

@@ -125,12 +125,78 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nvP-1L-Cn0" kind="relationship" relationship="rootViewController" id="g1j-5b-2S9"/>
+                        <segue destination="24U-D2-BjQ" kind="relationship" relationship="rootViewController" id="kq7-RU-DL0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvK-2y-psx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-695.20000000000005" y="126.38680659670166"/>
+        </scene>
+        <!--Crack Totem-->
+        <scene sceneID="hBE-Ox-c91">
+            <objects>
+                <viewController storyboardIdentifier="BrickWallVC" id="24U-D2-BjQ" customClass="BrickWallVC" customModule="QuizzWall" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="bLM-cZ-Tv3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gno-YX-qQP" userLabel="BW_BarView" customClass="BB_BricksBarView" customModule="QuizzWall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0hQ-Xs-0s7"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VKK-zM-0a8" userLabel="totemImgView">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VC6-Iq-yNK" userLabel="bricksWallView">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                                <color key="backgroundColor" red="0.39070053640000002" green="0.85126206609999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KK5-w7-41i" userLabel="gameOverView" customClass="BW_GameOver" customModule="QuizzWall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="VKK-zM-0a8" firstAttribute="top" secondItem="Gno-YX-qQP" secondAttribute="bottom" priority="750" id="0Za-IG-5aK"/>
+                            <constraint firstItem="KK5-w7-41i" firstAttribute="top" secondItem="gtn-FY-WwE" secondAttribute="top" id="6Z6-7s-9kW"/>
+                            <constraint firstItem="VKK-zM-0a8" firstAttribute="bottom" secondItem="gtn-FY-WwE" secondAttribute="bottom" id="7NZ-He-Geh"/>
+                            <constraint firstItem="Gno-YX-qQP" firstAttribute="trailing" secondItem="gtn-FY-WwE" secondAttribute="trailing" id="E11-wg-4yS"/>
+                            <constraint firstItem="VKK-zM-0a8" firstAttribute="trailing" secondItem="gtn-FY-WwE" secondAttribute="trailing" id="GP7-JT-zk8"/>
+                            <constraint firstItem="VC6-Iq-yNK" firstAttribute="leading" secondItem="gtn-FY-WwE" secondAttribute="leading" id="KgK-sl-EP6"/>
+                            <constraint firstItem="VC6-Iq-yNK" firstAttribute="top" secondItem="Gno-YX-qQP" secondAttribute="bottom" id="PQ9-yc-uky"/>
+                            <constraint firstItem="gtn-FY-WwE" firstAttribute="bottom" secondItem="VC6-Iq-yNK" secondAttribute="bottom" id="Pbn-PI-eXv"/>
+                            <constraint firstItem="Gno-YX-qQP" firstAttribute="leading" secondItem="gtn-FY-WwE" secondAttribute="leading" id="YVm-Y3-d0v"/>
+                            <constraint firstItem="gtn-FY-WwE" firstAttribute="trailing" secondItem="VC6-Iq-yNK" secondAttribute="trailing" id="baS-a1-tpS"/>
+                            <constraint firstItem="KK5-w7-41i" firstAttribute="bottom" secondItem="gtn-FY-WwE" secondAttribute="bottom" id="cgo-cj-z6V"/>
+                            <constraint firstItem="Gno-YX-qQP" firstAttribute="top" secondItem="gtn-FY-WwE" secondAttribute="top" priority="750" identifier="barInfoToSafeAreaCnstr" id="eHJ-wK-v45"/>
+                            <constraint firstItem="KK5-w7-41i" firstAttribute="trailing" secondItem="gtn-FY-WwE" secondAttribute="trailing" id="ecE-Uk-bvy"/>
+                            <constraint firstItem="KK5-w7-41i" firstAttribute="leading" secondItem="gtn-FY-WwE" secondAttribute="leading" id="hs8-A2-84O"/>
+                            <constraint firstAttribute="top" secondItem="Gno-YX-qQP" secondAttribute="top" identifier="hideInfoBarViewCnstr" id="ko7-e9-GhQ"/>
+                            <constraint firstItem="VKK-zM-0a8" firstAttribute="leading" secondItem="gtn-FY-WwE" secondAttribute="leading" id="noi-Aq-5fD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gtn-FY-WwE"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ko7-e9-GhQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Crack Totem" id="p28-iV-WQ1"/>
+                    <connections>
+                        <outlet property="barInfoToSafeAreaCnstr" destination="eHJ-wK-v45" id="WGH-aa-OGc"/>
+                        <outlet property="bricksWallView" destination="VC6-Iq-yNK" id="yLS-l3-puE"/>
+                        <outlet property="bwBarView" destination="Gno-YX-qQP" id="3pF-Wi-crd"/>
+                        <outlet property="bwGameOverView" destination="KK5-w7-41i" id="meu-FC-bW0"/>
+                        <outlet property="hideBarInfoViewCnstr" destination="ko7-e9-GhQ" id="oi1-F0-bA5"/>
+                        <outlet property="totemImgView" destination="VKK-zM-0a8" id="7ZZ-1E-I2J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVS-iN-dbi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="824"/>
         </scene>
     </scenes>
 </document>

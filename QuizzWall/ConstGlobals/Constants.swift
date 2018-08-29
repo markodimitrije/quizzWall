@@ -61,6 +61,12 @@ struct Constants {
         
     }
     
+}
+
+struct NC {
+    struct Name {
+        static let applicationDidEnterBackground = NSNotification.Name.init("applicationDidEnterBackground")
+    }
     
 }
 
@@ -77,7 +83,4 @@ enum Language: String {
     
 }
 
-var questionsLanguageFilenameInfo: [String: String] {
-    return ["en" : "enQuestions",
-            "it" : "itQuestions"]
-}
+

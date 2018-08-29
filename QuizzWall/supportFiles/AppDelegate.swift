@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let _ = PhoneLanguage().getPrefferedLanguage()
         
+        copyResourceFromBundleIfNecessary() // ne radi copy-overwrite nego samo copy ako nema file-a tamo
+        
         Networking().checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
         
         return true
@@ -43,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        nc.post(name: NC.Name.applicationDidEnterBackground, object: nil) // treba wallVC da save state
+        
     }
     
     
@@ -53,6 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    private func copyResourceFromBundleIfNecessary() {
+        
+        let fsp = FileManagerPersister()
+        
+        fsp.copyResourceFromBundleToFileSystem(fileName: "totemOriginal", ext: "json")
+        
     }
     
     

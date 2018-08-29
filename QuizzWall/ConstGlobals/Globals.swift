@@ -9,3 +9,9 @@
 import Foundation
 
 let UD = UserDefaults.standard
+let nc = NotificationCenter.default
+
+var questionsLanguageFilenameInfo: [String: String] {
+    return ["en" : "enQuestions",
+            "it" : "itQuestions"]
+}
