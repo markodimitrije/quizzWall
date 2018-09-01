@@ -12,6 +12,10 @@ let fm = FileManager.default
 
 struct FileManagerPersister {
     
+    func docDirPath(forFilename fileName: String, ext: String) -> URL? {
+         return FileManager.documentDirectoryUrl?.appendingPathComponent(fileName).appendingPathExtension(ext)
+    }
+    
     func copyResourceFromBundleToFileSystem(fileName: String, ext: String) {
         
         guard let readUrl = Bundle.main.url(forResource: fileName, withExtension: ext) else { return}
@@ -106,5 +110,36 @@ struct FileManagerPersister {
     }
     */
     
+    func readUser(fromFile file: String, ext: String) -> User? {
+        
+        guard let readUrl = self.docDirPath(forFilename: file, ext: ext) else {return nil}
+        
+        let decoder = JSONDecoder()
+        
+        guard let data = try? Data.init(contentsOf: readUrl),
+            let user = try? decoder.decode(User.self, from: data) else {return nil}
+        
+        //print("FileManagerPersister.readData.data = \(data)")
+        
+        print("FileManagerPersister.readData.user = \(user)")
+        
+        return user
+        
+    }
+    
+    func saveUser(user: User, toFile file: String, ext: String) { // trebao si completion handler !
+        
+        guard let url = self.docDirPath(forFilename: file, ext: ext) else {return }
+        
+        let encoder = JSONEncoder()
+        
+        guard let data = try? encoder.encode(user) else {return }
+        
+        print("FileManagerPersister.saveUser.data = \(data)")
+        
+        try? data.write(to: url)
+        
+    }
+
 
 }

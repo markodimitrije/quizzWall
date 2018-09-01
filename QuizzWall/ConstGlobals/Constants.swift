@@ -21,6 +21,12 @@ struct Constants {
             static let pt = "ptQuestions"
             static let it = "itQuestions"
         }
+        
+        static let userInfo = "userInfo"
+        static let wallInfo = "totemOriginal"
+        static let albums = "albums"
+        static let stickers = "stickers"
+        static let stickersInfo = "stickersInfo"
     }
     
     struct Urls {

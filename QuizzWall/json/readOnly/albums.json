@@ -1,0 +1,63 @@
+{
+    "albums":
+    [{
+     "aid": 0,
+     "name": "Naucnici"
+     },
+     {
+     "aid": 1,
+     "name": "Brodovi"
+     },
+     {
+     "aid": 2,
+     "name": "Africke zivotinje"
+     },
+     {
+     "aid": 3,
+     "name": "Sportovi"
+     },
+     {
+     "aid": 4,
+     "name": "Automobili"
+     },
+     {
+     "aid": 5,
+     "name": "Gradovi"
+     },
+     {
+     "aid": 6,
+     "name": "Slikari"
+     },
+     {
+     "aid": 7,
+     "name": "Kompozitori"
+     },
+     {
+     "aid": 8,
+     "name": "Planete"
+     },
+     {
+     "aid": 9,
+     "name": "Bendovi"
+     },
+     {
+     "aid": 10,
+     "name": "Otkrica"
+     },
+     {
+     "aid": 11,
+     "name": "Vladari"
+     },
+     {
+     "aid": 12,
+     "name": "Vojskovodje"
+     },
+     {
+     "aid": 13,
+     "name": "Pronalasci"
+     },
+     {
+     "aid": 14,
+     "name": "Vulkani"
+     }]
+}

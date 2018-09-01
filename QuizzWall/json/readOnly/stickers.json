@@ -1,0 +1,303 @@
+{ "stickers":
+    [{
+     "sid": 0,
+     "aid": 0,
+     "name": "Nikola Tesla"
+     },
+     {
+     "sid": 1,
+     "aid": 0,
+     "name": "Kopernik"
+     },
+     {
+     "sid": 2,
+     "aid": 0,
+     "name": "Ajnstajn"
+     },
+     {
+     "sid": 3,
+     "aid": 0,
+     "name": "Hajgens"
+     },
+     {
+     "sid": 4,
+     "aid": 1,
+     "name": "Titanik"
+     },
+     {
+     "sid": 5,
+     "aid": 1,
+     "name":"Terror"
+     },
+     {
+     "sid": 6,
+     "aid": 1,
+     "name": "Anatonij Gruzenko"
+     },
+     {
+     "sid": 7,
+     "aid": 1,
+     "name": "Bizmark"
+     },
+     {
+     "sid": 8,
+     "aid": 2,
+     "name": "Slon"
+     },
+     {
+     "sid": 9,
+     "aid": 2,
+     "name": "Krokodil"
+     },
+     {
+     "sid": 10,
+     "aid": 2,
+     "name": "Hippo"
+     },
+     {
+     "sid": 11,
+     "aid": 2,
+     "name": "Rino"
+     },
+     {
+     "sid": 12,
+     "aid": 3,
+     "name": "Fudbal"
+     },
+     {
+     "sid": 13,
+     "aid": 3,
+     "name": "Kosarka"
+     },
+     {
+     "sid": 14,
+     "aid": 3,
+     "name": "Vaterpolo"
+     },
+     {
+     "sid": 15,
+     "aid": 3,
+     "name": "Ragbi"
+     },
+     {
+     "sid": 16,
+     "aid": 4,
+     "name": "Porshe"
+     },
+     {
+     "sid": 17,
+     "aid": 4,
+     "name": "Audi"
+     },
+     {
+     "sid": 18,
+     "aid": 4,
+     "name": "Ford"
+     },
+     {
+     "sid": 19,
+     "aid": 4,
+     "name": "BMW"
+     },
+     {
+     "sid": 20,
+     "aid":5,
+     "name": "Stokholm"
+     },
+     {
+     "sid": 21,
+     "aid": 5,
+     "name": "Vienna"
+     },
+     {
+     "sid": 22,
+     "aid": 5,
+     "name": "Sanghai"
+     },
+     {
+     "sid": 23,
+     "aid": 5,
+     "name": "Tokio"
+     },
+     {
+     "sid": 20,
+     "aid":6,
+     "name": "Pol Gogen"
+     },
+     {
+     "sid": 21,
+     "aid": 6,
+     "name": "Klod Mone"
+     },
+     {
+     "sid": 22,
+     "aid": 6,
+     "name": "Rafael"
+     },
+     {
+     "sid": 23,
+     "aid": 6,
+     "name": "El Greco"
+     },
+     {
+     "sid": 24,
+     "aid":8,
+     "name": "Hendl"
+     },
+     {
+     "sid": 25,
+     "aid": 8,
+     "name": "Bach"
+     },
+     {
+     "sid": 26,
+     "aid": 8,
+     "name": "Mozart"
+     },
+     {
+     "sid": 27,
+     "aid": 8 ,
+     "name": "Betowen"
+     },
+     {
+     "sid": 28,
+     "aid":8,
+     "name": "Zemlja"
+     },
+     {
+     "sid": 29,
+     "aid": 8,
+     "name": "Mars"
+     },
+     {
+     "sid": 30,
+     "aid": 8,
+     "name": "Saturn"
+     },
+     {
+     "sid": 31,
+     "aid": 8,
+     "name": "Venera"
+     },
+     {
+     "sid": 32,
+     "aid": 9,
+     "name": "Beatles"
+     },
+     {
+     "sid": 33,
+     "aid": 9,
+     "name":"Cure"
+     },
+     {
+     "sid": 34,
+     "aid": 9,
+     "name": "Pet shop boys"
+     },
+     {
+     "sid": 35,
+     "aid": 9,
+     "name": "Rolling stones"
+     },
+     {
+     "sid": 36,
+     "aid": 10,
+     "name": "Amerika"
+     },
+     {
+     "sid": 37,
+     "aid": 10,
+     "name": "Indija"
+     },
+     {
+     "sid": 38,
+     "aid": 10,
+     "name": "Kina"
+     },
+     {
+     "sid": 39,
+     "aid": 10,
+     "name": "Australija"
+     },
+     {
+     "sid": 40,
+     "aid": 11,
+     "name": "Dzingis kan"
+     },
+     {
+     "sid": 41,
+     "aid": 11,
+     "name": "Aleksandar Makedonski"
+     },
+     {
+     "sid": 42,
+     "aid": 11,
+     "name": "Julije Cezar"
+     },
+     {
+     "sid": 43,
+     "aid": 11,
+     "name": "Dusan Silni"
+     },
+     {
+     "sid": 44,
+     "aid": 12,
+     "name": "Napoleon"
+     },
+     {
+     "sid": 45,
+     "aid": 12,
+     "name": "Zukov"
+     },
+     {
+     "sid": 46,
+     "aid": 12,
+     "name": "Jamamoto"
+     },
+     {
+     "sid": 47,
+     "aid": 12,
+     "name": "Guderian"
+     },
+     {
+     "sid": 48,
+     "aid": 13,
+     "name": "Radio"
+     },
+     {
+     "sid": 49,
+     "aid": 13,
+     "name": "Television"
+     },
+     {
+     "sid": 50,
+     "aid": 13,
+     "name": "Computer"
+     },
+     {
+     "sid": 51,
+     "aid": 13,
+     "name": "Penicilin"
+     },
+     {
+     "sid": 52,
+     "aid": 14,
+     "name": "Bora Bora"
+     },
+     {
+     "sid": 53,
+     "aid": 14,
+     "name": "Krakatau"
+     },
+     {
+     "sid": 54,
+     "aid": 14,
+     "name": "Vezuv"
+     },
+     {
+     "sid": 55,
+     "aid": 14,
+     "name": "Etna"
+     }]
+    
+}

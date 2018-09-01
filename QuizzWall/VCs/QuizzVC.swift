@@ -45,9 +45,7 @@ class QuizzVC: UIViewController {
 
         // language - pitaj device koja je scheme ....
         
-        guard let q = mvvmFileSystem.getQuestionFromDrive(atIndex: 0) else {
-            return
-        }
+        guard let q = mvvmFileSystem.getQuestionFromDrive(atIndex: 0) else { return }
         
         questionLbl.text = q["question"] as? String
         

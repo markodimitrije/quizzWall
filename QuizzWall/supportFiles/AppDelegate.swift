@@ -26,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Networking().checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
         
+        if user == nil {
+            if let newUser = User() {
+                let filename = Constants.LocalFilenames.userInfo
+                FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
+            }
+        }
+        
         return true
     }
     
@@ -64,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let fsp = FileManagerPersister()
         
-        fsp.copyResourceFromBundleToFileSystem(fileName: "totemOriginal", ext: "json")
+        fsp.copyResourceFromBundleToFileSystem(fileName: Constants.LocalFilenames.wallInfo, ext: "json")
         
     }
     

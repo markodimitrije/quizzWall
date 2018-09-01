@@ -15,3 +15,19 @@ var questionsLanguageFilenameInfo: [String: String] {
     return ["en" : "enQuestions",
             "it" : "itQuestions"]
 }
+
+//var user: User? // tebe treba samo jedan jedini put da pozove didFinishLaunching i da se init sa questions, gems, hammer, sids i sve ostalo....
+
+//var user: User? {
+//    get {
+//        
+//    }
+//    set {
+//        
+//    }
+//}
+
+var user: User? = {
+    let filename = Constants.LocalFilenames.userInfo
+    return FileManagerPersister().readUser(fromFile: filename, ext: "txt")
+}()
