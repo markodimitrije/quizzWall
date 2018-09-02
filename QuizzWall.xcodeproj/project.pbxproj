@@ -70,10 +70,17 @@
 		ADD40DB9213300F900DE27C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD40DB7213300F900DE27C9 /* LaunchScreen.storyboard */; };
 		ADF83ABF213B05540060059E /* AlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83ABE213B05540060059E /* AlbumsVC.swift */; };
 		ADF83AC3213B09CF0060059E /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AC2213B09CF0060059E /* AlbumCell.swift */; };
-		ADF83AC6213B117E0060059E /* Album_MV_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AC5213B117E0060059E /* Album_MV_VM.swift */; };
+		ADF83AC6213B117E0060059E /* Albums_MV_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AC5213B117E0060059E /* Albums_MV_VM.swift */; };
 		ADF83AC8213B13CD0060059E /* albumImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF83AC7213B13CD0060059E /* albumImages.xcassets */; };
 		ADF83ACB213B1D5C0060059E /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83ACA213B1D5C0060059E /* AlbumModel.swift */; };
 		ADF83ACD213B1D990060059E /* BundleAlbumDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83ACC213B1D990060059E /* BundleAlbumDataProvider.swift */; };
+		ADF83ACF213BF2C20060059E /* MissingStickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADF83ACE213BF2C20060059E /* MissingStickerView.xib */; };
+		ADF83AD1213BF2CF0060059E /* MissingStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD0213BF2CF0060059E /* MissingStickerView.swift */; };
+		ADF83AD3213C03380060059E /* ModelStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD2213C03380060059E /* ModelStoreData.swift */; };
+		ADF83AD5213C09B50060059E /* AlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD4213C09B50060059E /* AlbumVC.swift */; };
+		ADF83AD7213C149B0060059E /* Album_MV_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD6213C149B0060059E /* Album_MV_VM.swift */; };
+		ADF83AD9213C52F80060059E /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD8213C52F80060059E /* StickerCell.swift */; };
+		ADF83ADB213C5D270060059E /* stickerImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF83ADA213C5D270060059E /* stickerImages.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,10 +149,17 @@
 		ADD40DBA213300F900DE27C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADF83ABE213B05540060059E /* AlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsVC.swift; sourceTree = "<group>"; };
 		ADF83AC2213B09CF0060059E /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
-		ADF83AC5213B117E0060059E /* Album_MV_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album_MV_VM.swift; sourceTree = "<group>"; };
+		ADF83AC5213B117E0060059E /* Albums_MV_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums_MV_VM.swift; sourceTree = "<group>"; };
 		ADF83AC7213B13CD0060059E /* albumImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = albumImages.xcassets; sourceTree = "<group>"; };
 		ADF83ACA213B1D5C0060059E /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		ADF83ACC213B1D990060059E /* BundleAlbumDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleAlbumDataProvider.swift; sourceTree = "<group>"; };
+		ADF83ACE213BF2C20060059E /* MissingStickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MissingStickerView.xib; sourceTree = "<group>"; };
+		ADF83AD0213BF2CF0060059E /* MissingStickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingStickerView.swift; sourceTree = "<group>"; };
+		ADF83AD2213C03380060059E /* ModelStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelStoreData.swift; sourceTree = "<group>"; };
+		ADF83AD4213C09B50060059E /* AlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
+		ADF83AD6213C149B0060059E /* Album_MV_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album_MV_VM.swift; sourceTree = "<group>"; };
+		ADF83AD8213C52F80060059E /* StickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
+		ADF83ADA213C5D270060059E /* stickerImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stickerImages.xcassets; sourceTree = "<group>"; };
 		AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.release.xcconfig"; sourceTree = "<group>"; };
 		E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -558,6 +572,7 @@
 				ADF83AC1213B09B20060059E /* Views */,
 				ADF83ABD213B05340060059E /* VCs */,
 				ADF83AC7213B13CD0060059E /* albumImages.xcassets */,
+				ADF83ADA213C5D270060059E /* stickerImages.xcassets */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -566,6 +581,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF83ABE213B05540060059E /* AlbumsVC.swift */,
+				ADF83AD4213C09B50060059E /* AlbumVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -574,6 +590,9 @@
 			isa = PBXGroup;
 			children = (
 				ADF83AC2213B09CF0060059E /* AlbumCell.swift */,
+				ADF83AD8213C52F80060059E /* StickerCell.swift */,
+				ADF83ACE213BF2C20060059E /* MissingStickerView.xib */,
+				ADF83AD0213BF2CF0060059E /* MissingStickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -581,7 +600,8 @@
 		ADF83AC4213B11710060059E /* MV_VM */ = {
 			isa = PBXGroup;
 			children = (
-				ADF83AC5213B117E0060059E /* Album_MV_VM.swift */,
+				ADF83AC5213B117E0060059E /* Albums_MV_VM.swift */,
+				ADF83AD6213C149B0060059E /* Album_MV_VM.swift */,
 			);
 			path = MV_VM;
 			sourceTree = "<group>";
@@ -590,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF83ACA213B1D5C0060059E /* AlbumModel.swift */,
+				ADF83AD2213C03380060059E /* ModelStoreData.swift */,
 				ADF83ACC213B1D990060059E /* BundleAlbumDataProvider.swift */,
 			);
 			path = Model;
@@ -657,6 +678,8 @@
 			files = (
 				ADB9AD80213AEADB0051FD51 /* albums.json in Resources */,
 				AD5ADF4E2139412F00FAE42E /* BtnWithInlineImgImgLbl.xib in Resources */,
+				ADF83ADB213C5D270060059E /* stickerImages.xcassets in Resources */,
+				ADF83ACF213BF2C20060059E /* MissingStickerView.xib in Resources */,
 				AD1051192139265F002AAE83 /* Localizable.strings in Resources */,
 				ADB9AD7E213AEADB0051FD51 /* stickersInfo.json in Resources */,
 				ADF83AC8213B13CD0060059E /* albumImages.xcassets in Resources */,
@@ -731,13 +754,16 @@
 			files = (
 				AD5456A821334DDF0070890F /* questionVersions.swift in Sources */,
 				ADD368272136DA2A00C6E7DA /* BB_TNameScoreView.swift in Sources */,
+				ADF83AD3213C03380060059E /* ModelStoreData.swift in Sources */,
 				ADD368352136DA2A00C6E7DA /* CT_Protocols_3.swift in Sources */,
 				ADD40DB1213300F700DE27C9 /* QuizzVC.swift in Sources */,
 				ADD368322136DA2A00C6E7DA /* BrickWallVC.swift in Sources */,
 				ADD368292136DA2A00C6E7DA /* BB_HammerView.swift in Sources */,
 				ADB9AD73213954E30051FD51 /* InfoView.swift in Sources */,
 				ADD3681F2136DA2A00C6E7DA /* SoundProtocols.swift in Sources */,
+				ADF83AD1213BF2CF0060059E /* MissingStickerView.swift in Sources */,
 				AD5456A1213323130070890F /* Versions.swift in Sources */,
+				ADF83AD7213C149B0060059E /* Album_MV_VM.swift in Sources */,
 				AD86A4BB2133EA4D00119A7B /* MVVM_UserDefaults.swift in Sources */,
 				ADB9AD752139BEFB0051FD51 /* Model_User.swift in Sources */,
 				AD5456A3213324240070890F /* Globals.swift in Sources */,
@@ -745,6 +771,7 @@
 				ADD3681D2136DA2A00C6E7DA /* AG_Protocols_1.swift in Sources */,
 				ADD368252136DA2A00C6E7DA /* BB_BricksBarView.swift in Sources */,
 				ADD368342136DA2A00C6E7DA /* CT_Protocols_1.swift in Sources */,
+				ADF83AD5213C09B50060059E /* AlbumVC.swift in Sources */,
 				ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */,
 				ADF83AC3213B09CF0060059E /* AlbumCell.swift in Sources */,
 				AD192D652135379A0041921C /* Networking.swift in Sources */,
@@ -759,7 +786,7 @@
 				AD86A4B82133E08200119A7B /* UserDefaultsPersister.swift in Sources */,
 				AD54569C213321910070890F /* Constants.swift in Sources */,
 				ADD368212136DA2A00C6E7DA /* GlobalsTemp.swift in Sources */,
-				ADF83AC6213B117E0060059E /* Album_MV_VM.swift in Sources */,
+				ADF83AC6213B117E0060059E /* Albums_MV_VM.swift in Sources */,
 				ADF83ACD213B1D990060059E /* BundleAlbumDataProvider.swift in Sources */,
 				AD86A4C121340ED800119A7B /* Extensions.swift in Sources */,
 				ADF83ABF213B05540060059E /* AlbumsVC.swift in Sources */,
@@ -768,6 +795,7 @@
 				AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */,
 				AD192D6321352DB50041921C /* PhoneLanguage.swift in Sources */,
 				ADD368332136DA2A00C6E7DA /* CT_Protocols_2.swift in Sources */,
+				ADF83AD9213C52F80060059E /* StickerCell.swift in Sources */,
 				ADD3682F2136DA2A00C6E7DA /* CT_Constants.swift in Sources */,
 				ADD3681E2136DA2A00C6E7DA /* SoundManager.swift in Sources */,
 				ADD368232136DA2A00C6E7DA /* BB_BuyTotemView.swift in Sources */,

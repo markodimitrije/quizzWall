@@ -15,6 +15,12 @@ struct Albums: Codable {
 struct Album: Codable {
     var aid: Int
     var name: String
+    var sids: [Int] = []
+    init(aid: Int, name: String, sids: [Int] = [ ]) {
+        self.aid = aid
+        self.name = name
+        self.sids = sids
+    }
 }
 
 struct Stickers: Codable {

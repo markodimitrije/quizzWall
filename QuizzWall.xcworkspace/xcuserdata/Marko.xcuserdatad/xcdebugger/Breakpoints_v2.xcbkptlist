@@ -265,23 +265,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Albums/Model/BundleAlbumDataProvider.swift"
-            timestampString = "557574649.9303451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getAlbums()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Albums/Model/BundleAlbumDataProvider.swift"
-            timestampString = "557574649.930474"
+            timestampString = "557606876.365373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -297,7 +281,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Albums/Model/BundleAlbumDataProvider.swift"
-            timestampString = "557574649.930528"
+            timestampString = "557606876.365536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"

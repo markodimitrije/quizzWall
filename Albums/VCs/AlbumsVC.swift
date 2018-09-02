@@ -8,6 +8,8 @@
 
 import UIKit
 
+var selectedAlbumId: Int? // ovo je sranje, napravi bolje !
+
 class AlbumsVC: UIViewController {
 
     // tableView
@@ -23,7 +25,7 @@ class AlbumsVC: UIViewController {
     } // neko ce da ti set, odavde citas data; ili ih sam fetch...
     
     // MARK:- my MV_VMs
-    let albumMVVM = Album_MV_VM()
+    let albumMVVM = Albums_MV_VM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,12 @@ class AlbumsVC: UIViewController {
     private func updateUI() {
         tableView.reloadData()
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let identifier = segue.identifier, identifier == "segueShowAlbum" else {return}
+//        guard let destVC = segue.destination as? AlbumVC else { return }
+//        destVC.id = segue.
+//    }
 
 }
 
@@ -62,5 +70,16 @@ extension AlbumsVC: UITableViewDataSource, UITableViewDelegate {
         cell.set(image: image, txt: name, count: count)
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let albumVC = storyboard?.instantiateViewController(withIdentifier: "AlbumVC") as? AlbumVC else {return}
+        
+        albumVC.aid = indexPath.row
+        
+        navigationController?.pushViewController(albumVC, animated: true)
+        
+        //performSegue(withIdentifier: "segueShowAlbum", sender: self)
+        
     }
 }

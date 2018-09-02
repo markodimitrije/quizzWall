@@ -2,7 +2,7 @@
 //  Album_MV_VM.swift
 //  QuizzWall
 //
-//  Created by Marko Dimitrijevic on 01/09/2018.
+//  Created by Marko Dimitrijevic on 02/09/2018.
 //  Copyright © 2018 Marko Dimitrijevic. All rights reserved.
 //
 
@@ -10,36 +10,52 @@ import UIKit
 
 struct Album_MV_VM {
     
-    func getAlbums() -> [Album] {
-        // ti nabavi zovuci bundle
-        let albums = BundleAlbumDataProvider().getData(for: .albums) as? [Album]
-        return albums ?? [ ]
+    // MARK:- API
+    
+    func getMissingCardData(forAid aid: Int, indexPath: IndexPath, rect: CGRect) -> (sid: Int?, image: UIImage, name: String) {
+        
+        var image: UIImage?
+        var sid: Int?
+        var name: String?
+            
+        if let imageName = albumHolderInfo[aid],
+            let img = UIImage.init(named: imageName) {
+            image = img
+        }
+        
+        if let sids = getSids(forAid: aid) {
+            sid = sids[indexPath.item]
+        }
+        
+        if let stickerName = getStickerName(forSid: sid) {
+            name = stickerName
+        }
+        
+        return (sid, image: image ?? #imageLiteral(resourceName: "brain_1"), name: name ?? "unknown")
     }
     
-    func getAlbum(forAid aid: Int) -> Album? {
-        return Album(aid: aid, name: "implement me") // implement me
+    func getStickerImage(forSid sid: Int) -> UIImage? {
+        return UIImage.init(named: "stickers" + "\(sid)")
     }
     
-    func getAlbumRow(for album: Album) -> (image: UIImage?, txt: String?, count: Int?) {
-        let count = getCount(forAid: album.aid)
-        let image = getAlbumImage(forAid: album.aid)
-        let name = album.name
-        return (image, name, count)
+    private func getSids(forAid aid: Int) -> [Int]? {
+        
+        guard let albums = BundleAlbumDataProvider().getData(for: .albums) as? [Album] else {return nil}
+        
+        guard let album = albums.first(where: {$0.aid == aid}) else {return nil}
+        
+        return album.sids
     }
     
-    func getAlbumImageAndCount(forAid aid: Int) -> (image: UIImage?, count: Int?) {
-        let count = getCount(forAid: aid)
-        let image = getAlbumImage(forAid: aid)
-        return (image, count)
+    private func getStickerName(forSid sid: Int?) -> String? {
+        
+        guard let sid = sid else {return nil}
+        
+        guard let stickers = BundleAlbumDataProvider().getData(for: .stickers) as? [Sticker] else {return nil}
+        
+        guard let sticker = stickers.first(where: {$0.sid == sid}) else {return nil}
+        
+        return sticker.name
     }
     
-    // MARK:- Privates (zove ih API)
-    
-    private func getAlbumImage(forAid aid: Int) -> UIImage? {
-        return UIImage.init(named: "albumImage" + "\(aid)")
-    }
-    
-    private func getCount(forAid: Int) -> Int? {
-        return 24 // implement me, izracunaj za ovaj aid koliko ima stickers, koji su placed == true (tj usera pitaj....)
-    }
 }

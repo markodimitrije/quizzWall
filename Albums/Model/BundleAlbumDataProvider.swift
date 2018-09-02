@@ -40,14 +40,14 @@ struct BundleAlbumDataProvider {
     private func getStickers() -> [Sticker]? {
         guard let data = getDataFromBundle(for: .stickers) else {return nil}
         guard let result = try? decoder.decode(Stickers.self, from: data) else {return nil}
-        guard let stickers = result.stickers["stickers"] else {return nil}
+        let stickers = result.stickers
         return stickers
     }
     
     private func getStickersInfo() -> [StickerInfo]? {
         guard let data = getDataFromBundle(for: .stickersInfo) else {return nil}
         guard let result = try? decoder.decode(StickerInfos.self, from: data) else {return nil}
-        guard let infos = result.stickersInfo["stickersInfo"] else {return nil}
+        let infos = result.stickersInfo
         return infos
     }
     

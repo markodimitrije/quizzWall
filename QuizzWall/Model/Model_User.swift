@@ -14,7 +14,7 @@ struct User: Codable {
     var sids: [Int: Bool] // ovo su slicice u albumu
     var questions: [Int: Bool] // da li je odgovarao na pitanje ili nije
     
-    var sidsEarned = [Int]()
+    var sidsPlaced = [Int]()
     var sidsNew = [Int]()
     
     var hammer: Int // points
@@ -46,6 +46,10 @@ struct User: Codable {
         gems = 6
         points = 0
         level = 1
+    }
+    
+    func hasSticker(withSid sid: Int) -> Bool {
+        return sidsPlaced.contains(sid)
     }
     
 }

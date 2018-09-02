@@ -30,6 +30,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "path.Questions.folder">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BrickTapResponsing&lt;&gt;.displayNavCon(withStoryboardId:fromStoryboardName:):CT_Protocols_1.swift">
          <PersistentStrings>
             <PersistentString
@@ -37,14 +45,6 @@
             </PersistentString>
             <PersistentString
                value = "UIStoryboard.init(name: sbName, bundle: nil).instantiateViewController(withIdentifier: vcName)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "path.Questions.folder">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,6 +67,28 @@
          <PersistentStrings>
             <PersistentString
                value = "result.albums">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MissingStickerView.id.setter:MissingStickerView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "idLabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AlbumVC.collectionView(_:cellForItemAt:):AlbumVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.subviews.first">
+            </PersistentString>
+            <PersistentString
+               value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
+            </PersistentString>
+            <PersistentString
+               value = "cell.subviews.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

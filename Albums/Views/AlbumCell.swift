@@ -10,10 +10,13 @@ import UIKit
 
 class AlbumCell: UITableViewCell {
     
+    @IBInspectable
     @IBOutlet weak var imgView: UIImageView!
     
+    @IBInspectable
     @IBOutlet weak var albumNameLabel: UILabel!
     
+    @IBInspectable
     @IBOutlet weak var countBtn: UIButton!
     
     override func awakeFromNib() {
