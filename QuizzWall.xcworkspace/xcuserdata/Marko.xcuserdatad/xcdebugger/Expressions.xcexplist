@@ -30,14 +30,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "path.Questions.folder">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "BrickTapResponsing&lt;&gt;.displayNavCon(withStoryboardId:fromStoryboardName:):CT_Protocols_1.swift">
          <PersistentStrings>
             <PersistentString
@@ -45,6 +37,14 @@
             </PersistentString>
             <PersistentString
                value = "UIStoryboard.init(name: sbName, bundle: nil).instantiateViewController(withIdentifier: vcName)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "path.Questions.folder">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -61,6 +61,14 @@
       </ContextState>
       <ContextState
          contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BundleAlbumDataProvider.getAlbums():BundleAlbumDataProvider.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.albums">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
