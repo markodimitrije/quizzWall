@@ -81,6 +81,7 @@ struct Constants {
 struct NC {
     struct Name {
         static let applicationDidEnterBackground = NSNotification.Name.init("applicationDidEnterBackground")
+        static let questionsSavedOnDisk = NSNotification.Name.init("questionsSavedOnDisk")
     }
     
 }

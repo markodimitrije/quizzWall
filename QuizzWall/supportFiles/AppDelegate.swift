@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -24,14 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         copyResourceFromBundleIfNecessary() // ne radi copy-overwrite nego samo copy ako nema file-a tamo
         
-        Networking().checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(AppDelegate.questionsSavedOnDisk),
+                                               name: NC.Name.questionsSavedOnDisk,
+                                               object: nil)
         
-        if user == nil {
-            let newUser = User() // obrati paznju da ovaj konstruktor smes da zoves samo JEDAN JEDINI PUT !
-            let filename = Constants.LocalFilenames.userInfo
-            FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
-            user = newUser
-        }
+        Networking().checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
         
         return true
     }
@@ -68,6 +65,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         
         print("applicationWillTerminate")
+    }
+    
+    @objc func questionsSavedOnDisk() {
+        
+        print("notification for questionsSavedOnDisk received")
+        
+        if user == nil {
+            let newUser = User() // obrati paznju da ovaj konstruktor smes da zoves samo JEDAN JEDINI PUT !
+            let filename = Constants.LocalFilenames.userInfo
+            FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
+            user = newUser
+        }
+        
     }
     
     private func copyResourceFromBundleIfNecessary() {

@@ -34,3 +34,9 @@ extension UIViewController {
         
     }
 }
+
+extension Int {
+    static func random(limit: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(limit)))
+    }
+}

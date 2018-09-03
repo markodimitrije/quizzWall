@@ -53,6 +53,10 @@ struct Networking {
                             //UserDefaultsPersister().saveDictToUserDefaults(versions, atKey: "versions")
                             UserDefaultsPersister().addSingleFlatDictToUserDefaults(verByLanguage, atKey: "versions")
                             
+                            // okidas notif koju hvata AppDelegate da je vreme da init User-a (ovde realno save-ujes VERSIONS ali one su onCompletion od questions)
+                            
+                            NotificationCenter.default.post(name: NC.Name.questionsSavedOnDisk, object: nil)
+                            
                         }
                     })
                     

@@ -38,6 +38,7 @@ class QuizzVC: UIViewController {
     
     let mvvmUserDefaults = MVVM_UserDefaults()
     let mvvmFileSystem = MVVM_FileSystem()
+    let quizz = Quizz()
     
     var questionImage: UIImage? // ovo treba da load sa zvanjem firebase (imas 2 sec)
     
@@ -73,7 +74,8 @@ class QuizzVC: UIViewController {
         
         //hard-coded je 0 umesto random id koji nije u userovim answers 
         
-        guard let q = mvvmFileSystem.getQuestionFromDrive(atIndex: 0) else { return }
+        guard let randomId = quizz.getRandomQuestionId(),
+            let q = mvvmFileSystem.getQuestionFromDrive(atIndex: randomId) else { return }
         
         questionLbl.text = q["question"] as? String
         
@@ -87,11 +89,10 @@ class QuizzVC: UIViewController {
             }
         }
         
-        ServerRequest().getImagesFromFirebaseStorage(questionId: 0) { (image) in
+        ServerRequest().getImagesFromFirebaseStorage(questionId: randomId) { (image) in
             DispatchQueue.main.async { [weak self] in
                 self?.questionImage = image
             }
-            
         }
         
     }

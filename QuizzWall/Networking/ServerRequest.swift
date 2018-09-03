@@ -116,9 +116,9 @@ struct ServerRequest {
     
     // temp func
     
-    func getImagesFromFirebaseStorage(questionId: Int, completionHandler: @escaping (_ image: UIImage?) -> ()) {
+    func getImagesFromFirebaseStorage(questionId: String, completionHandler: @escaping (_ image: UIImage?) -> ()) {
         
-        let filename = path.Images.filenamePrefix + "\(questionId)"
+        let filename = path.Images.filenamePrefix + questionId
         
         let storage = Storage.storage(url: Constants.Urls.storageRoot)
         

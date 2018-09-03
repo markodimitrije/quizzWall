@@ -19,27 +19,26 @@ struct User: Codable {
     var points: Int // points
     var level: Int // racunska....
     
-    var questionsNew = Set<Int>() // ovde su inicijalno svi
-    var questionsSeen = Set<Int>() // ovaj ces puniti oduzimajuci iz prethodnog...
+    var questionsNew = Set<String>() // ovde su inicijalno svi
+    var questionsSeen = Set<String>() // ovaj ces puniti oduzimajuci iz prethodnog...
     
-    init() { // ako ga init-ujes bez params, setuj mu sva questions na false
+    init?() { // ako ga init-ujes bez params, setuj mu sva questions na false
         // zovi fajl iz filesys, prodji kroz sve questions, i za svaki id pridruzi mu False
         
-        //let phoneLanguage = PhoneLanguage().getPrefferedLanguage() ?? Language.en.rawValue
+        let phoneLanguage = PhoneLanguage().getPrefferedLanguage() ?? Language.en.rawValue
+    
         
-        /*
         guard let fileName = language_LocalFilenameQuestions_Info[phoneLanguage],
             let data = FileManagerPersister().readData(fromFilename: fileName),
             let questionStructure = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any],
             let dict = questionStructure else {return nil}
-        */
+ 
+    
+        let keys = Array(dict.keys)
+        print("keys = \(keys)")
         
-        //let keys = Array(dict.keys)
-        //print("keys = \(keys)")
-//        questions = keys.map({ (key) -> [Int: Bool] in
-//            return Int(key)! : false
-//        })
-        
+        questionsNew = Set(keys)
+            
         hammer = 100
         gems = 6
         points = 0
