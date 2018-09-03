@@ -81,6 +81,7 @@
 		ADF83AD7213C149B0060059E /* Album_MV_VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD6213C149B0060059E /* Album_MV_VM.swift */; };
 		ADF83AD9213C52F80060059E /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD8213C52F80060059E /* StickerCell.swift */; };
 		ADF83ADB213C5D270060059E /* stickerImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF83ADA213C5D270060059E /* stickerImages.xcassets */; };
+		ADF83ADE213D370A0060059E /* BW_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83ADD213D370A0060059E /* BW_Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +161,7 @@
 		ADF83AD6213C149B0060059E /* Album_MV_VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album_MV_VM.swift; sourceTree = "<group>"; };
 		ADF83AD8213C52F80060059E /* StickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
 		ADF83ADA213C5D270060059E /* stickerImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stickerImages.xcassets; sourceTree = "<group>"; };
+		ADF83ADD213D370A0060059E /* BW_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BW_Model.swift; sourceTree = "<group>"; };
 		AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.release.xcconfig"; sourceTree = "<group>"; };
 		E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -379,6 +381,7 @@
 		ADD367F22136DA2900C6E7DA /* BW_tryBrickWall */ = {
 			isa = PBXGroup;
 			children = (
+				ADF83ADC213D36F90060059E /* BW_Model */,
 				ADD367F32136DA2900C6E7DA /* BB_Views */,
 				ADD367FD2136DA2900C6E7DA /* CT_Globals */,
 				ADD367FF2136DA2900C6E7DA /* CT_Model */,
@@ -616,6 +619,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ADF83ADC213D36F90060059E /* BW_Model */ = {
+			isa = PBXGroup;
+			children = (
+				ADF83ADD213D370A0060059E /* BW_Model.swift */,
+			);
+			path = BW_Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -772,6 +783,7 @@
 				ADD368252136DA2A00C6E7DA /* BB_BricksBarView.swift in Sources */,
 				ADD368342136DA2A00C6E7DA /* CT_Protocols_1.swift in Sources */,
 				ADF83AD5213C09B50060059E /* AlbumVC.swift in Sources */,
+				ADF83ADE213D370A0060059E /* BW_Model.swift in Sources */,
 				ADD40DAF213300F600DE27C9 /* AppDelegate.swift in Sources */,
 				ADF83AC3213B09CF0060059E /* AlbumCell.swift in Sources */,
 				AD192D652135379A0041921C /* Networking.swift in Sources */,

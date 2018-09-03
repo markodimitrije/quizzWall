@@ -7,3 +7,8 @@
 */
 
 Strings.TimeLeft = "TIME LEFT";
+
+// BrickWall - infoBar
+
+Strings.CT.BricksBar.BuyFor.staticTxt = "CLAIM FOR";
+Strings.CT.BricksBar.useHammer = "USE HAMMER";
