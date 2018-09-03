@@ -34,7 +34,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztY-WZ-akf">
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztY-WZ-akf">
                             <rect key="frame" x="28.5" y="103.5" width="227" height="227"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ztY-WZ-akf" secondAttribute="height" multiplier="1:1" id="Ra4-6T-vRv"/>

@@ -27,9 +27,15 @@ class AlbumsVC: UIViewController {
     // MARK:- my MV_VMs
     let albumMVVM = Albums_MV_VM()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad() { super.viewDidLoad()
+        
+//        user?.sidsPlaced.append(0) // hard-coded
+//        user?.sidsPlaced.append(4) // hard-coded
+//        user?.sidsPlaced.append(13) // hard-coded
+        
         loadAlbums()
+        
+        
     }
     
     private func loadAlbums() { // ovde trazi svom MV_VM-u da ti dobaci ove data....
@@ -79,7 +85,6 @@ extension AlbumsVC: UITableViewDataSource, UITableViewDelegate {
         
         navigationController?.pushViewController(albumVC, animated: true)
         
-        //performSegue(withIdentifier: "segueShowAlbum", sender: self)
-        
     }
+
 }

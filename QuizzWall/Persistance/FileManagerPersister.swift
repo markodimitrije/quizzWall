@@ -127,7 +127,9 @@ struct FileManagerPersister {
         
     }
     
-    func saveUser(user: User, toFile file: String, ext: String) { // trebao si completion handler !
+    func saveUser(user: User?, toFile file: String, ext: String) { // trebao si completion handler !
+        
+        guard let user = user else {return }
         
         guard let url = self.docDirPath(forFilename: file, ext: ext) else {return }
         

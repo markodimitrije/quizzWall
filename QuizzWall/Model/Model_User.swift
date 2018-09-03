@@ -63,7 +63,7 @@ struct Game {
     static var earnForAdMobAsked = 3
 }
 
-enum QuestionLelel {
+enum QuestionLevel {
     case easy, medium, hard
 }
 

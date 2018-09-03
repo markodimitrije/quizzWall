@@ -3,10 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsVersionsFromFirebaseStorage(completionHandler:):ServerRequest.swift">
+         contextName = "QuestionVersionChecker.hasNewerVersion(webVersions:):Versions.swift">
          <PersistentStrings>
             <PersistentString
-               value = "JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)">
+               value = "webVersions == savedVersions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,20 +33,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in AppDelegate.checkVersionsAndDownloadQuestionsIfNeeded():AppDelegate.swift">
+         contextName = "MissingStickerView.id.setter:MissingStickerView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "questions">
+               value = "idLabel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+         contextName = "closure #1 in ServerRequest.getQuestionsVersionsFromFirebaseStorage(completionHandler:):ServerRequest.swift">
          <PersistentStrings>
             <PersistentString
-               value = "path.Questions.folder">
+               value = "JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
       </ContextState>
       <ContextState
          contextName = "BrickTapResponsing&lt;&gt;.displayNavCon(withStoryboardId:fromStoryboardName:):CT_Protocols_1.swift">
@@ -49,20 +63,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "QuestionVersionChecker.hasNewerVersion(webVersions:):Versions.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "webVersions == savedVersions">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
-      </ContextState>
-      <ContextState
-         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
-      </ContextState>
-      <ContextState
          contextName = "BundleAlbumDataProvider.getAlbums():BundleAlbumDataProvider.swift">
          <PersistentStrings>
             <PersistentString
@@ -71,24 +71,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MissingStickerView.id.setter:MissingStickerView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "idLabel">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "AlbumVC.collectionView(_:cellForItemAt:):AlbumVC.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "cell.subviews.count">
+            </PersistentString>
             <PersistentString
                value = "cell.subviews.first">
             </PersistentString>
             <PersistentString
                value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServerRequest.getQuestionsDataFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "cell.subviews.count">
+               value = "path.Questions.folder">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in AppDelegate.checkVersionsAndDownloadQuestionsIfNeeded():AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "questions">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
