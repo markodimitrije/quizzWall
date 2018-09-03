@@ -36,9 +36,7 @@ struct MVVM_FileSystem {
     
     func getQuestionFromDrive(atIndex index: Int) -> [String: Any]? {
         
-        guard let structure = questionStructure else {
-            return nil
-        } // mozes i neki backUp u bundle...
+        guard let structure = questionStructure else { return nil } // mozes i neki backUp u bundle...
         
         return structure["\(index)"] as? [String: Any]
         

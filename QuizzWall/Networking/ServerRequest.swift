@@ -33,6 +33,8 @@ struct ServerRequest {
     
     func getQuestionsFromFirebaseStorage(forLanguage language: String, completionHandler: @escaping (_ dict: [String: Any]) -> ()) {
         
+        
+        
         let storage = Storage.storage(url: path.storageRoot)
         
         guard let filenameOnFirebase = language_LocalFilenameQuestions_Info[language] else {
@@ -114,11 +116,13 @@ struct ServerRequest {
     
     // temp func
     
-    func getImagesFromFirebaseStorage(completionHandler: @escaping (_ image: UIImage?) -> ()) {
+    func getImagesFromFirebaseStorage(questionId: Int, completionHandler: @escaping (_ image: UIImage?) -> ()) {
+        
+        let filename = path.Images.filenamePrefix + "\(questionId)"
         
         let storage = Storage.storage(url: Constants.Urls.storageRoot)
         
-        let gsReference = storage.reference(withPath: path.Images.folder + path.Images.filename)
+        let gsReference = storage.reference(withPath: path.Images.folder + filename + "." + Constants.FileExtensions.jpg)
         
         gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
             if let error = error {

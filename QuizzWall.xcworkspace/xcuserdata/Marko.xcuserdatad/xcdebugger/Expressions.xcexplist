@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "QuizzVC.loadQuestionsOnUI():QuizzVC.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "questionLbl.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
       </ContextState>
       <ContextState
@@ -63,24 +71,27 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BundleAlbumDataProvider.getAlbums():BundleAlbumDataProvider.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "result.albums">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "MVVM_FileSystem.getQuestionFromDrive(atIndex:):MVVM_FileSystem.swift">
       </ContextState>
       <ContextState
          contextName = "AlbumVC.collectionView(_:cellForItemAt:):AlbumVC.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
+            </PersistentString>
             <PersistentString
                value = "cell.subviews.count">
             </PersistentString>
             <PersistentString
                value = "cell.subviews.first">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BundleAlbumDataProvider.getAlbums():BundleAlbumDataProvider.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
+               value = "result.albums">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

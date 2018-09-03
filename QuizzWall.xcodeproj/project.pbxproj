@@ -82,6 +82,9 @@
 		ADF83AD9213C52F80060059E /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AD8213C52F80060059E /* StickerCell.swift */; };
 		ADF83ADB213C5D270060059E /* stickerImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF83ADA213C5D270060059E /* stickerImages.xcassets */; };
 		ADF83ADE213D370A0060059E /* BW_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83ADD213D370A0060059E /* BW_Model.swift */; };
+		ADF83AE1213D52720060059E /* GlobalFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AE0213D52720060059E /* GlobalFuncs.swift */; };
+		ADF83AE4213D54F10060059E /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AE3213D54F10060059E /* LoadingAnimation.swift */; };
+		ADF83AE7213D68340060059E /* Protocols_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF83AE6213D68340060059E /* Protocols_1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +165,9 @@
 		ADF83AD8213C52F80060059E /* StickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
 		ADF83ADA213C5D270060059E /* stickerImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stickerImages.xcassets; sourceTree = "<group>"; };
 		ADF83ADD213D370A0060059E /* BW_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BW_Model.swift; sourceTree = "<group>"; };
+		ADF83AE0213D52720060059E /* GlobalFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFuncs.swift; sourceTree = "<group>"; };
+		ADF83AE3213D54F10060059E /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
+		ADF83AE6213D68340060059E /* Protocols_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols_1.swift; sourceTree = "<group>"; };
 		AE539EB0EF9A3D15FF349B86 /* Pods-QuizzWall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizzWall.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuizzWall/Pods-QuizzWall.release.xcconfig"; sourceTree = "<group>"; };
 		E97C9BCA455EEC688B4B7BDD /* Pods_QuizzWall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizzWall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -324,6 +330,7 @@
 			children = (
 				AD54569B213321910070890F /* Constants.swift */,
 				AD5456A2213324240070890F /* Globals.swift */,
+				ADF83AE0213D52720060059E /* GlobalFuncs.swift */,
 			);
 			path = ConstGlobals;
 			sourceTree = "<group>";
@@ -526,6 +533,7 @@
 		ADD40DA2213300F600DE27C9 = {
 			isa = PBXGroup;
 			children = (
+				ADF83AE2213D54DF0060059E /* StackOverflow */,
 				ADF83ABC213B052B0060059E /* Albums */,
 				ADD367E72136DA1200C6E7DA /* BrickWall */,
 				ADD40DAD213300F600DE27C9 /* QuizzWall */,
@@ -546,6 +554,7 @@
 		ADD40DAD213300F600DE27C9 /* QuizzWall */ = {
 			isa = PBXGroup;
 			children = (
+				ADF83AE5213D681E0060059E /* Protocols */,
 				ADB9AD79213AEAC70051FD51 /* json */,
 				ADB9AD762139CCA90051FD51 /* MyClasses */,
 				AD5ADF4A2139412000FAE42E /* View */,
@@ -625,6 +634,22 @@
 				ADF83ADD213D370A0060059E /* BW_Model.swift */,
 			);
 			path = BW_Model;
+			sourceTree = "<group>";
+		};
+		ADF83AE2213D54DF0060059E /* StackOverflow */ = {
+			isa = PBXGroup;
+			children = (
+				ADF83AE3213D54F10060059E /* LoadingAnimation.swift */,
+			);
+			path = StackOverflow;
+			sourceTree = "<group>";
+		};
+		ADF83AE5213D681E0060059E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ADF83AE6213D68340060059E /* Protocols_1.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -766,6 +791,8 @@
 				AD5456A821334DDF0070890F /* questionVersions.swift in Sources */,
 				ADD368272136DA2A00C6E7DA /* BB_TNameScoreView.swift in Sources */,
 				ADF83AD3213C03380060059E /* ModelStoreData.swift in Sources */,
+				ADF83AE7213D68340060059E /* Protocols_1.swift in Sources */,
+				ADF83AE4213D54F10060059E /* LoadingAnimation.swift in Sources */,
 				ADD368352136DA2A00C6E7DA /* CT_Protocols_3.swift in Sources */,
 				ADD40DB1213300F700DE27C9 /* QuizzVC.swift in Sources */,
 				ADD368322136DA2A00C6E7DA /* BrickWallVC.swift in Sources */,
@@ -791,6 +818,7 @@
 				AD192D5E21343FC40041921C /* Model.swift in Sources */,
 				ADD368302136DA2A00C6E7DA /* CT_Stopwatch.swift in Sources */,
 				AD54569F213321DC0070890F /* ServerRequest.swift in Sources */,
+				ADF83AE1213D52720060059E /* GlobalFuncs.swift in Sources */,
 				AD5ADF4D2139412F00FAE42E /* BtnWithInlineImgImgLbl.swift in Sources */,
 				ADD3682B2136DA2A00C6E7DA /* CT_Model_1.swift in Sources */,
 				ADD368382136DA2A00C6E7DA /* BW_GameOver.swift in Sources */,

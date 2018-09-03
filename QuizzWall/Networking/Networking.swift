@@ -6,7 +6,7 @@
 //  Copyright © 2018 Marko Dimitrijevic. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Networking {
     
@@ -63,5 +63,5 @@ struct Networking {
         })
         
     }
-    
+
 }

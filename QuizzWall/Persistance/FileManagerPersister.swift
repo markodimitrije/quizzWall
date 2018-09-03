@@ -137,7 +137,7 @@ struct FileManagerPersister {
         
         guard let data = try? encoder.encode(user) else {return }
         
-        print("FileManagerPersister.saveUser.data = \(data)")
+        print("FileManagerPersister.saveUser.data = \(data), user is saved")
         
         try? data.write(to: url)
         

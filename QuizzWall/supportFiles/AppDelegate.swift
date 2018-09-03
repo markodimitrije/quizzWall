@@ -27,10 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Networking().checkVersionsAndDownloadQuestionsIfNeeded() // ovo mora da se pozove na main-u. zasto ?
         
         if user == nil {
-            if let newUser = User() {
-                let filename = Constants.LocalFilenames.userInfo
-                FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
-            }
+            let newUser = User() // obrati paznju da ovaj konstruktor smes da zoves samo JEDAN JEDINI PUT !
+            let filename = Constants.LocalFilenames.userInfo
+            FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
+            user = newUser
         }
         
         return true

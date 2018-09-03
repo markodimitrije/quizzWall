@@ -10,6 +10,10 @@ import Foundation
 
 struct Constants {
     
+    struct Time {
+        static let loadingAnimForQuestion = 2.0
+    }
+    
     struct LocalFilenames {
         struct Questions {
             static let en = "enQuestions"
@@ -62,9 +66,14 @@ struct Constants {
             
             static let folder = "/images"
             
-            static let filename = "/1.png"
+            static let filenamePrefix = "/question_"
+            
         }
         
+    }
+    
+    struct FileExtensions {
+        static let jpg = "jpg"
     }
     
 }
