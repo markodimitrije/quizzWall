@@ -10,6 +10,7 @@ import UIKit
 
 protocol LoadingAnimationManaging {
     func displayLoadingAnimation()
+    func displayLoadingAnimation(duration: Double)
 }
 
 extension LoadingAnimationManaging where Self: UIViewController {
@@ -21,5 +22,12 @@ extension LoadingAnimationManaging where Self: UIViewController {
         loadingView.addSubview(spinnerView)
         loadingView.tag = 11
         self.view.addSubview(loadingView)
+    }
+    func displayLoadingAnimation(duration: Double) {
+        displayLoadingAnimation()
+        delay(duration) {
+            let loadingView = self.view.subviews.first(where: {$0.tag == 11})
+            loadingView?.removeFromSuperview()
+        }
     }
 }

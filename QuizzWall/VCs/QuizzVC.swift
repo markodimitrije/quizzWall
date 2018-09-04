@@ -63,12 +63,12 @@ class QuizzVC: UIViewController {
     override func viewDidLoad() { super.viewDidLoad()
         loadQuestionOnUI()
         updateAssistentUI()
-        self.displayLoadingAnimation()
+        displayLoadingAnimation(duration: Constants.LoadingQuestionAnimation.duration)
     }
     
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
         
-        removeLoadingViewAndFormatAnswerBtns()
+        
         
     }
     
@@ -87,9 +87,7 @@ class QuizzVC: UIViewController {
         }
         
         ServerRequest().getImagesFromFirebaseStorage(questionId: data.qID) { (image) in
-            DispatchQueue.main.async { [weak self] in
-                self?.questionImage = image
-            }
+            self.questionImage = image
         }
         
     }
@@ -158,12 +156,10 @@ class QuizzVC: UIViewController {
                             delay(Constants.LoadingQuestionAnimation.delay, closure: { [weak self] in
                                 self?.cleanUpAfterPreviousQuestion()
                                 self?.loadQuestionOnUI()
-                                self?.displayLoadingAnimation()
-                                self?.removeLoadingViewAndFormatAnswerBtns()
+                                self?.displayLoadingAnimation(duration: Constants.Time.loadingAnimForQuestion)
+                                self?.formatAnswerBtns()
                             })
-            
         }
-        
     }
 
     private func cleanUpAfterPreviousQuestion() {
@@ -181,10 +177,9 @@ class QuizzVC: UIViewController {
         }
     }
     
-    private func removeLoadingViewAndFormatAnswerBtns() {
+    private func formatAnswerBtns() {
         
         delay(Constants.Time.loadingAnimForQuestion) { [weak self] in
-            self?.view.subviews.first(where: {$0.tag == 11})?.removeFromSuperview()
             self?.imageView.image = self?.questionImage
             if let _ = self?.questionImage { // imas question image
                 self?.setAnswersBtns(usingLayout: .twoRows)
