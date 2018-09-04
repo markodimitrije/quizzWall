@@ -47,13 +47,15 @@ class QuizzVC: UIViewController {
     var questionImage: UIImage? {
         didSet {
             reloadImage(questionImage, intoImageView: imageView)
+            formatAnswerBtns(withDelay: 0)
         }
     } // ovo treba da load sa zvanjem firebase (imas 2 sec)
     var question: [String: Any]?
     
     override func viewDidLoad() { super.viewDidLoad()
+        
         loadQuestionOnUI()
-        //updateAssistentUI()
+        
         displayLoadingAnimation(duration: Constants.LoadingQuestionAnimation.duration)
     }
     
@@ -135,7 +137,6 @@ class QuizzVC: UIViewController {
                                 self?.cleanUpAfterPreviousQuestion()
                                 self?.loadQuestionOnUI()
                                 self?.displayLoadingAnimation(duration: Constants.Time.loadingAnimForQuestion)
-                                self?.formatAnswerBtns()
                             })
         }
     }
@@ -155,9 +156,9 @@ class QuizzVC: UIViewController {
         }
     }
     
-    private func formatAnswerBtns() {
+    private func formatAnswerBtns(withDelay amount: Double) {
         
-        delay(Constants.Time.loadingAnimForQuestion) { [weak self] in
+        delay(amount) { [weak self] in
             self?.imageView.image = self?.questionImage
             if let _ = self?.questionImage { // imas question image
                 self?.setAnswersBtns(usingLayout: .twoRows)

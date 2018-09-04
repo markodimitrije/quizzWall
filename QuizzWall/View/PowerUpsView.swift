@@ -8,14 +8,12 @@
 
 import UIKit
 
-@IBDesignable
 class PowerUpsView: UIView {
     
     var view: UIView!
     
-    @IBInspectable
     @IBOutlet weak var fiftyFiftyView: BtnWithInlineImgImgLbl! // 50_50
-    @IBInspectable
+
     @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl! // doubleChoise
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,8 +38,6 @@ class PowerUpsView: UIView {
         
         self.addSubview(view)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(PowerUpsView.userCreditsChanged(_:)), name: NC.Name.applicationDidEnterBackground, object: nil)
-        
     }
     
     @objc func userCreditsChanged(_ notification: Notification) {
@@ -49,9 +45,7 @@ class PowerUpsView: UIView {
         updatePowerUpsUI()
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: NC.Name.applicationDidEnterBackground, object: nil)
-    }
+    
     
     // MARK: -API
     

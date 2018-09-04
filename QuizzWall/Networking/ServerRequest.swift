@@ -127,6 +127,7 @@ struct ServerRequest {
         gsReference.getData(maxSize: 1024 * 1024 * 1024) { data, error in
             if let error = error {
                 print("an error occurred, error description = \(error.localizedDescription)")
+                completionHandler(nil)
             } else if let data = data {
                 
                 completionHandler(UIImage.init(data: data))

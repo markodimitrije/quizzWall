@@ -15,7 +15,11 @@ struct User: Codable {
     var sidsNew = [Int]()
     
     var hammer: Int // points
-    var gems: Int // points
+    var gems: Int {
+        didSet {
+            NotificationCenter.default.post(name: NC.Name.userCreditsChanged, object: nil)
+        }
+    } // points
     var points: Int // points
     var level: Int // racunska....
     
@@ -40,7 +44,7 @@ struct User: Codable {
         questionsNew = Set(keys)
             
         hammer = 100
-        gems = 6
+        gems = 2
         points = 0
         level = 1
     }
