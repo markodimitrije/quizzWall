@@ -117,22 +117,6 @@ class QuizzVC: UIViewController {
     
     // MARK: - layout operations
     
-    
-    
-//    private func setAnswersInOneColumn() {
-//        DispatchQueue.main.async { [weak self] in
-//            self?.upperStackView.axis = .vertical
-//            self?.lowerStackView.axis = .vertical
-//        }
-//    }
-//
-//    private func setAnswersInTwoColumns() {
-//        DispatchQueue.main.async { [weak self] in
-//            self?.upperStackView.axis = .horizontal
-//            self?.lowerStackView.axis = .horizontal
-//        }
-//    }
-    
     private func setAnswersBtns(usingLayout layout: AnswerBtnsLayout) {
         DispatchQueue.main.async { [weak self] in
             let axis: UILayoutConstraintAxis = (layout == AnswerBtnsLayout.twoRows) ? .horizontal : .vertical
