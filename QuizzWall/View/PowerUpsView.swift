@@ -1,0 +1,84 @@
+//
+//  PowerUpsView.swift
+//  QuizzWall
+//
+//  Created by Marko Dimitrijevic on 04/09/2018.
+//  Copyright © 2018 Marko Dimitrijevic. All rights reserved.
+//
+
+import UIKit
+
+@IBDesignable
+class PowerUpsView: UIView {
+    
+    var view: UIView!
+    
+    @IBInspectable
+    @IBOutlet weak var fiftyFiftyView: BtnWithInlineImgImgLbl! // 50_50
+    @IBInspectable
+    @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl! // doubleChoise
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadViewFromNib()
+    }
+    
+    // new code:
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updatePowerUpsUI()
+    }
+    
+    func loadViewFromNib() {
+        //        print("BtnBesideBtnView.loadViewFromNib at is CALLED")
+        let bundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "PowerUpsView", bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        view.frame = bounds
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.addSubview(view)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PowerUpsView.userCreditsChanged(_:)), name: NC.Name.applicationDidEnterBackground, object: nil)
+        
+    }
+    
+    @objc func userCreditsChanged(_ notification: Notification) {
+        print("userCreditsChanged, implement me, alpha i slicno....")
+        updatePowerUpsUI()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NC.Name.applicationDidEnterBackground, object: nil)
+    }
+    
+    // MARK: -API
+    
+    func updatePowerUpsUI() {
+        
+        DispatchQueue.main.async {
+            
+            self.fiftyFiftyView.set(leftImg: #imageLiteral(resourceName: "50_50"), rightImg: #imageLiteral(resourceName: "gem_1"), text: "\(QuizzGame.cost_50_50)")
+            self.doubleChoiceView.set(leftImg: #imageLiteral(resourceName: "double_choice"), rightImg: #imageLiteral(resourceName: "gem_1"), text: "\(QuizzGame.costDoubleChoise)")
+            
+            guard let user = user else {return}
+            
+            let condition: CGFloat = user.gems > 1 ? 1 : 0.4
+            
+            self.fiftyFiftyView?.alpha = condition
+            self.doubleChoiceView?.alpha = condition
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+

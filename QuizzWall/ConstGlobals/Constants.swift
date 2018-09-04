@@ -93,6 +93,7 @@ struct NC {
     struct Name {
         static let applicationDidEnterBackground = NSNotification.Name.init("applicationDidEnterBackground")
         static let questionsSavedOnDisk = NSNotification.Name.init("questionsSavedOnDisk")
+        static let userCreditsChanged = NSNotification.Name.init("userCreditsChanged")
     }
     
 }

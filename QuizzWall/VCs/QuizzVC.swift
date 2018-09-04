@@ -23,19 +23,10 @@ class QuizzVC: UIViewController {
     
     @IBOutlet var answerBtns: [UIButton]!
     
-    @IBOutlet weak var fiftyFiftyView: BtnWithInlineImgImgLbl!
-    
-    @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl!
+    @IBOutlet weak var powerUpsView: PowerUpsView!
     
     @IBAction func answerBtnTapped(_ sender: UIButton) {
         answerBtnIsTapped(sender)
-    }
-    
-    var powerUpBtns: [UIView] {
-        return [fiftyFiftyView, doubleChoiceView]
-    }
-    var answerAndPowerUpViews : [UIView] {
-        return answerBtns + powerUpBtns
     }
     
     // stackView references
@@ -62,7 +53,7 @@ class QuizzVC: UIViewController {
     
     override func viewDidLoad() { super.viewDidLoad()
         loadQuestionOnUI()
-        updateAssistentUI()
+        //updateAssistentUI()
         displayLoadingAnimation(duration: Constants.LoadingQuestionAnimation.duration)
     }
     
@@ -92,20 +83,7 @@ class QuizzVC: UIViewController {
         
     }
     
-    private func updateAssistentUI() {
-        DispatchQueue.main.async {
-            
-            self.fiftyFiftyView.set(leftImg: #imageLiteral(resourceName: "50_50"), rightImg: #imageLiteral(resourceName: "gem_1"), text: "\(QuizzGame.cost_50_50)")
-            self.doubleChoiceView.set(leftImg: #imageLiteral(resourceName: "double_choice"), rightImg: #imageLiteral(resourceName: "gem_1"), text: "\(QuizzGame.costDoubleChoise)")
-            
-            guard let user = user else {return}
-            
-            let condition: CGFloat = user.gems > 0 ? 1 : 0.4
-            
-            self.fiftyFiftyView.alpha = condition
-            self.doubleChoiceView.alpha = condition
-        }
-    }
+    
     
     private func updateCreditsUI() {
         DispatchQueue.main.async {
@@ -142,7 +120,7 @@ class QuizzVC: UIViewController {
     
     private func userAnswerIs(correct: Bool, sender: UIButton, data: (correct: UIButton, miss: [UIButton])) {
         
-        let _ = answerAndPowerUpViews.map {$0.isUserInteractionEnabled = false}
+        let _ = answerBtns.map {$0.isUserInteractionEnabled = false}
         
         sender.backgroundColor = correct ? .green : .red
 
@@ -163,7 +141,7 @@ class QuizzVC: UIViewController {
     }
 
     private func cleanUpAfterPreviousQuestion() {
-        let _ = answerAndPowerUpViews.map {
+        let _ = answerBtns.map {
             $0.isUserInteractionEnabled = true;
             $0.alpha = 1
             $0.backgroundColor = .lightGray

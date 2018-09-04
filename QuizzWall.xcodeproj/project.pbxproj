@@ -25,6 +25,8 @@
 		AD86A4BB2133EA4D00119A7B /* MVVM_UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */; };
 		AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4BD213409C500119A7B /* FileManagerPersister.swift */; };
 		AD86A4C121340ED800119A7B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD86A4C021340ED800119A7B /* Extensions.swift */; };
+		AD98F23F213F012900906C08 /* PowerUpsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD98F23E213F012900906C08 /* PowerUpsView.xib */; };
+		AD98F241213F013F00906C08 /* PowerUpsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98F240213F013F00906C08 /* PowerUpsView.swift */; };
 		ADB9AD71213954CE0051FD51 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9AD70213954CE0051FD51 /* InfoView.xib */; };
 		ADB9AD73213954E30051FD51 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9AD72213954E30051FD51 /* InfoView.swift */; };
 		ADB9AD752139BEFB0051FD51 /* Model_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9AD742139BEFB0051FD51 /* Model_User.swift */; };
@@ -108,6 +110,8 @@
 		AD86A4BA2133EA4D00119A7B /* MVVM_UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_UserDefaults.swift; sourceTree = "<group>"; };
 		AD86A4BD213409C500119A7B /* FileManagerPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerPersister.swift; sourceTree = "<group>"; };
 		AD86A4C021340ED800119A7B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD98F23E213F012900906C08 /* PowerUpsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PowerUpsView.xib; sourceTree = "<group>"; };
+		AD98F240213F013F00906C08 /* PowerUpsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerUpsView.swift; sourceTree = "<group>"; };
 		ADB9AD70213954CE0051FD51 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		ADB9AD72213954E30051FD51 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		ADB9AD742139BEFB0051FD51 /* Model_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_User.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				AD5ADF4C2139412E00FAE42E /* BtnWithInlineImgImgLbl.xib */,
 				ADB9AD72213954E30051FD51 /* InfoView.swift */,
 				ADB9AD70213954CE0051FD51 /* InfoView.xib */,
+				AD98F240213F013F00906C08 /* PowerUpsView.swift */,
+				AD98F23E213F012900906C08 /* PowerUpsView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				ADF83AC8213B13CD0060059E /* albumImages.xcassets in Resources */,
 				ADD40DB9213300F900DE27C9 /* LaunchScreen.storyboard in Resources */,
 				ADD368372136DA2A00C6E7DA /* BW_BrickView.xib in Resources */,
+				AD98F23F213F012900906C08 /* PowerUpsView.xib in Resources */,
 				ADD368392136DA2A00C6E7DA /* BW_GameOver.xib in Resources */,
 				ADD368242136DA2A00C6E7DA /* BB_TNameScoreView.xib in Resources */,
 				ADD368312136DA2A00C6E7DA /* Assets.xcassets in Resources */,
@@ -836,6 +843,7 @@
 				ADD368212136DA2A00C6E7DA /* GlobalsTemp.swift in Sources */,
 				ADF83AC6213B117E0060059E /* Albums_MV_VM.swift in Sources */,
 				ADF83ACD213B1D990060059E /* BundleAlbumDataProvider.swift in Sources */,
+				AD98F241213F013F00906C08 /* PowerUpsView.swift in Sources */,
 				AD86A4C121340ED800119A7B /* Extensions.swift in Sources */,
 				ADF83ABF213B05540060059E /* AlbumsVC.swift in Sources */,
 				ADD3681C2136DA2A00C6E7DA /* AG_Protocols_2.swift in Sources */,

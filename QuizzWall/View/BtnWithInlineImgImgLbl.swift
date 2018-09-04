@@ -31,9 +31,6 @@ class BtnWithInlineImgImgLbl: UIView {
     
     // + imas default implementaciju func-ja
     
-    var leftBtnTag: Int = 0
-    var rightBtnTag: Int = 0
-    
     var leftImg: UIImage? {
         get {
             return leftImgView?.image

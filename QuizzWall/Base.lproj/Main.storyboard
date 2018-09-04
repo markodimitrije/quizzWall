@@ -189,30 +189,11 @@
                                     <constraint firstItem="Bry-5S-uZZ" firstAttribute="width" secondItem="Bju-n1-gbN" secondAttribute="width" id="sw3-Pc-QtA"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fza-U4-3Jg" userLabel="holderView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fza-U4-3Jg" userLabel="powerUpsView" customClass="PowerUpsView" customModule="QuizzWall" customModuleProvider="target">
                                 <rect key="frame" x="16" y="560" width="343" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gJI-8c-KHL" userLabel="useAsistentStVw">
-                                        <rect key="frame" x="0.0" y="2" width="343" height="46"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnc-gY-lTi" customClass="BtnWithInlineImgImgLbl" customModule="QuizzWall" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="46"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95i-og-rbk" customClass="BtnWithInlineImgImgLbl" customModule="QuizzWall" customModuleProvider="target">
-                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="46"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="gJI-8c-KHL" firstAttribute="leading" secondItem="fza-U4-3Jg" secondAttribute="leading" id="Mhn-6C-97W"/>
-                                    <constraint firstAttribute="trailing" secondItem="gJI-8c-KHL" secondAttribute="trailing" id="aWL-n8-WmC"/>
                                     <constraint firstAttribute="height" constant="50" id="cSt-jj-hxe"/>
-                                    <constraint firstItem="gJI-8c-KHL" firstAttribute="top" secondItem="fza-U4-3Jg" secondAttribute="top" constant="2" id="jKr-dK-AmY"/>
-                                    <constraint firstAttribute="bottom" secondItem="gJI-8c-KHL" secondAttribute="bottom" constant="2" id="qIG-1V-Zh7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxu-oV-ixp" customClass="InfoView" customModule="QuizzWall" customModuleProvider="target">
@@ -254,11 +235,10 @@
                     <connections>
                         <outlet property="cnstrQuestionToAnswersView" destination="NEG-ih-0kK" id="e9q-94-9mS"/>
                         <outlet property="cnstrQuestionToImageView" destination="FnG-Cj-0vH" id="E0P-A5-f5O"/>
-                        <outlet property="doubleChoiceView" destination="95i-og-rbk" id="Vpx-DX-StU"/>
-                        <outlet property="fiftyFiftyView" destination="Rnc-gY-lTi" id="svf-mp-4bl"/>
                         <outlet property="imageView" destination="rYw-De-VLg" id="Sn6-EZ-Mju"/>
                         <outlet property="infoView" destination="Kxu-oV-ixp" id="F81-tw-8oq"/>
                         <outlet property="lowerStackView" destination="Bry-5S-uZZ" id="yte-XZ-A4E"/>
+                        <outlet property="powerUpsView" destination="fza-U4-3Jg" id="nag-S2-VTs"/>
                         <outlet property="questionLbl" destination="Jui-TJ-njf" id="NCd-dQ-cfZ"/>
                         <outlet property="upperStackView" destination="Bju-n1-gbN" id="Pz9-dU-3iq"/>
                         <outletCollection property="answerBtns" destination="LwF-tu-RjT" collectionClass="NSMutableArray" id="BdE-oK-vcp"/>
