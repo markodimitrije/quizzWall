@@ -131,7 +131,7 @@ struct ServerRequest {
                 
                 completionHandler(UIImage.init(data: data))
                 
-                print("imam imageData")
+                print("getImagesFromFirebaseStorage.imam imageData")
             }
         }
         

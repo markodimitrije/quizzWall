@@ -19,3 +19,7 @@ struct Quizz {
     }
 }
 
+enum AnswerBtnsLayout {
+    case twoRows
+    case oneColumn
+}

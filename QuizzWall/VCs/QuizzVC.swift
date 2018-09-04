@@ -27,6 +27,17 @@ class QuizzVC: UIViewController {
     
     @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl!
     
+    @IBAction func answerBtnTapped(_ sender: UIButton) {
+        answerBtnIsTapped(sender)
+    }
+    
+    var powerUpBtns: [UIView] {
+        return [fiftyFiftyView, doubleChoiceView]
+    }
+    var answerAndPowerUpViews : [UIView] {
+        return answerBtns + powerUpBtns
+    }
+    
     // stackView references
     
     @IBOutlet weak var upperStackView: UIStackView!
@@ -38,58 +49,44 @@ class QuizzVC: UIViewController {
     
     let mvvmUserDefaults = MVVM_UserDefaults()
     let mvvmFileSystem = MVVM_FileSystem()
+    var mvvmQuizz = MVVM_Quizz()
     let quizz = Quizz()
     
-    var questionImage: UIImage? // ovo treba da load sa zvanjem firebase (imas 2 sec)
+    
+    var questionImage: UIImage? {
+        didSet {
+            reloadImage(questionImage, intoImageView: imageView)
+        }
+    } // ovo treba da load sa zvanjem firebase (imas 2 sec)
+    var question: [String: Any]?
     
     override func viewDidLoad() { super.viewDidLoad()
-        loadQuestionsOnUI()
+        loadQuestionOnUI()
         updateAssistentUI()
         self.displayLoadingAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
         
-        delay(Constants.Time.loadingAnimForQuestion) { [weak self] in
-            self?.view.subviews.first(where: {$0.tag == 11})?.removeFromSuperview()
-            self?.imageView.image = self?.questionImage
-            if let _ = self?.questionImage { // imas question image
-                self?.setAnswersInTwoColumns()
-                self?.cnstrQuestionToAnswersView.isActive = false
-                self?.cnstrQuestionToImageView.isActive = true
-            } else {
-                self?.setAnswersInOneColumn()
-                self?.cnstrQuestionToImageView.isActive = false
-                self?.cnstrQuestionToAnswersView.isActive = true
-            }
-        }
+        removeLoadingViewAndFormatAnswerBtns()
         
     }
     
     // MARK: - configure UI with question, answers and assisstent
     
-    private func loadQuestionsOnUI() {
+    private func loadQuestionOnUI() {
 
         // language - pitaj device koja je scheme ....
         
-        //hard-coded je 0 umesto random id koji nije u userovim answers 
+        guard let data = mvvmQuizz.getQuestionData(answerBtns: answerBtns, btnTagOptionInfo: btnTagOptionInfo) else {return} // prikazi err...
         
-        guard let randomId = quizz.getRandomQuestionId(),
-            let q = mvvmFileSystem.getQuestionFromDrive(atIndex: randomId) else { return }
+        questionLbl.text = data.qtext
         
-        questionLbl.text = q["question"] as? String
-        
-        let answers = q["answers"] as? [String: Any]
-        
-        let _ = answerBtns.map {
-            if let answer = answers?["\($0.tag)"] as? [String: Any],
-                let option = btnTagOptionInfo[$0.tag],
-                let text = answer["text"] as? String {
-                $0.setTitle(option + ": " + text, for: .normal)
-            }
+        let _ = answerBtns.map { (btn) -> Void in
+            btn.setTitle(data.answers[btn.tag], for: .normal)
         }
         
-        ServerRequest().getImagesFromFirebaseStorage(questionId: randomId) { (image) in
+        ServerRequest().getImagesFromFirebaseStorage(questionId: data.qID) { (image) in
             DispatchQueue.main.async { [weak self] in
                 self?.questionImage = image
             }
@@ -121,20 +118,102 @@ class QuizzVC: UIViewController {
     // MARK: - layout operations
     
     
-    private func setAnswersInOneColumn() {
+    
+//    private func setAnswersInOneColumn() {
+//        DispatchQueue.main.async { [weak self] in
+//            self?.upperStackView.axis = .vertical
+//            self?.lowerStackView.axis = .vertical
+//        }
+//    }
+//
+//    private func setAnswersInTwoColumns() {
+//        DispatchQueue.main.async { [weak self] in
+//            self?.upperStackView.axis = .horizontal
+//            self?.lowerStackView.axis = .horizontal
+//        }
+//    }
+    
+    private func setAnswersBtns(usingLayout layout: AnswerBtnsLayout) {
         DispatchQueue.main.async { [weak self] in
-            self?.upperStackView.axis = .vertical
-            self?.lowerStackView.axis = .vertical
+            let axis: UILayoutConstraintAxis = (layout == AnswerBtnsLayout.twoRows) ? .horizontal : .vertical
+            self?.upperStackView.axis = axis
+            self?.lowerStackView.axis = axis
         }
     }
     
-    private func setAnswersInTwoColumns() {
-        DispatchQueue.main.async { [weak self] in
-            self?.upperStackView.axis = .horizontal
-            self?.lowerStackView.axis = .horizontal
+    // od MV_VM-a trazi ovo: ..... da li je odgovor tacan ili ne ...... daj mi btn za tacan odgovor ...... daj mi btns za netacan odgovor
+    
+    private func answerBtnIsTapped(_ sender: UIButton) {
+        
+        guard let question = mvvmQuizz.question, // ovo je actual question
+        let data = mvvmQuizz.analizeAnswer(question: question,
+                                           btnTagOptionInfo: btnTagOptionInfo,
+                                           btns: answerBtns,
+                                           btnTagSelected: sender.tag) else {return} // prikazi error za fail
+        
+        userAnswerIs(correct: data.correct.tag == sender.tag, sender: sender, data: data)
+        
+    }
+    
+    //make wrongs hidden nakon 1 sec sa fade anim ili translation...
+    // nakon 1 sec load novo question
+    
+    private func userAnswerIs(correct: Bool, sender: UIButton, data: (correct: UIButton, miss: [UIButton])) {
+        
+        let _ = answerAndPowerUpViews.map {$0.isUserInteractionEnabled = false}
+        
+        sender.backgroundColor = correct ? .green : .red
+
+        UIView.animate(withDuration: Constants.AnswerBtnsAnimation.fadingDuration,
+                       delay: Constants.AnswerBtnsAnimation.delay,
+                       options: .curveLinear,
+                       animations: {
+                            let _ = data.miss.map {$0.alpha = 0}
+                            data.correct.backgroundColor = .green
+                            }) { (success) in
+                            delay(Constants.LoadingQuestionAnimation.delay, closure: { [weak self] in
+                                self?.cleanUpAfterPreviousQuestion()
+                                self?.loadQuestionOnUI()
+                                self?.displayLoadingAnimation()
+                                self?.removeLoadingViewAndFormatAnswerBtns()
+                            })
+            
         }
+        
     }
 
+    private func cleanUpAfterPreviousQuestion() {
+        let _ = answerAndPowerUpViews.map {
+            $0.isUserInteractionEnabled = true;
+            $0.alpha = 1
+            $0.backgroundColor = .lightGray
+            questionImage = nil
+        }
+    }
+    
+    private func reloadImage(_ image: UIImage?, intoImageView imageView: UIImageView) {
+        DispatchQueue.main.async { [weak self] in
+            self?.imageView.image = image
+        }
+    }
+    
+    private func removeLoadingViewAndFormatAnswerBtns() {
+        
+        delay(Constants.Time.loadingAnimForQuestion) { [weak self] in
+            self?.view.subviews.first(where: {$0.tag == 11})?.removeFromSuperview()
+            self?.imageView.image = self?.questionImage
+            if let _ = self?.questionImage { // imas question image
+                self?.setAnswersBtns(usingLayout: .twoRows)
+                self?.cnstrQuestionToAnswersView.isActive = false
+                self?.cnstrQuestionToImageView.isActive = true
+            } else {
+                self?.setAnswersBtns(usingLayout: .oneColumn)
+                self?.cnstrQuestionToImageView.isActive = false
+                self?.cnstrQuestionToAnswersView.isActive = true
+            }
+        }
+        
+    }
     
 }
 
@@ -142,7 +221,7 @@ extension QuizzVC: LoadingAnimationManaging {}
 
 extension QuizzVC {
     var btnTagOptionInfo: [Int: String] { // i ovo moze localizable "A", "B", "V", "G"... chi, ind...
-        return [0: "A", 1: "B", 2: "C", 3: "D"]
+        return [0: "A", 1: "B", 2: "C", 3: "D", 4: "E", 5: "F", 6: "G", 7: "H"]
     }
 }
 

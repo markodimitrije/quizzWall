@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuizzWall/Networking/ServerRequest.swift"
-            timestampString = "557691435.513082"
+            timestampString = "557764558.7953759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -26,7 +26,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557685316.0576251"
+                  timestampString = "557754276.255213"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -41,7 +41,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557685316.061093"
+                  timestampString = "557754276.2587529"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -239,38 +239,6 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "getAlbums()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_1.swift"
-            timestampString = "557690725.6920871"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
-            landmarkName = "brickTappedAt(cellId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_1.swift"
-            timestampString = "557690725.6925499"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
-            landmarkName = "brickTappedAt(cellId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

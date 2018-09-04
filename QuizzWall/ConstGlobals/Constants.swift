@@ -10,6 +10,17 @@ import Foundation
 
 struct Constants {
     
+    struct LoadingQuestionAnimation {
+        static let delay = 1.0
+        static let duration = 1.5
+    }
+    
+    struct AnswerBtnsAnimation {
+        static let delay = 1.0
+        static let fadingDuration = 1.0
+    }
+    
+    
     struct Time {
         static let loadingAnimForQuestion = 2.0
     }

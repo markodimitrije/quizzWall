@@ -141,6 +141,9 @@
                                                 <state key="normal" title="A">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="answerBtnTapped:" destination="4SR-gx-mtu" eventType="touchUpInside" id="EVZ-Mk-W6W"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tv8-xD-Z0X" userLabel="1">
                                                 <rect key="frame" x="175.5" y="0.0" width="167.5" height="66"/>
@@ -148,6 +151,9 @@
                                                 <state key="normal" title="B">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="answerBtnTapped:" destination="4SR-gx-mtu" eventType="touchUpInside" id="Skp-zz-dDs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -160,6 +166,9 @@
                                                 <state key="normal" title="C">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="answerBtnTapped:" destination="4SR-gx-mtu" eventType="touchUpInside" id="UJf-Z4-aoy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-DT-RXc" userLabel="3">
                                                 <rect key="frame" x="175.5" y="0.0" width="167.5" height="66"/>
@@ -167,6 +176,9 @@
                                                 <state key="normal" title="D">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="answerBtnTapped:" destination="4SR-gx-mtu" eventType="touchUpInside" id="ICL-JO-5lK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
