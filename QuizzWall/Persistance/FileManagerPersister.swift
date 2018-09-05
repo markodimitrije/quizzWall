@@ -45,6 +45,7 @@ struct FileManagerPersister {
         
         do {
             let saveUrl = docDirUrl.appendingPathComponent(file).appendingPathExtension("txt")
+            print("FMP.save.dict write to file !!!")
             try data.write(to: saveUrl)
         }
         catch {
@@ -68,7 +69,7 @@ struct FileManagerPersister {
         
         do {
             let saveUrl = docDirUrl.appendingPathComponent(file)
-            print("saveUrl = \(saveUrl)")
+            print("FMP.save.data, toFilename, write to file !!!")
             try data.write(to: saveUrl, options: .atomic)
         }
         catch {

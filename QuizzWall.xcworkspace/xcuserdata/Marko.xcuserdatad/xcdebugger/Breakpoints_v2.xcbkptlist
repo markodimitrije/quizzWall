@@ -90,39 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_2.swift"
-            timestampString = "557664441.453542"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "writeToJsonInBundle(totem:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_2.swift"
-            timestampString = "557664441.453698"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "writeToJsonInBundle(totem:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_2.swift"
-            timestampString = "557664441.453777"
+            timestampString = "557853543.753299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_2.swift"
-            timestampString = "557664441.4538701"
+            timestampString = "557853543.7533751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_2.swift"
-            timestampString = "557664441.4539419"
+            timestampString = "557853543.753428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"

@@ -32,7 +32,7 @@ struct MVVM_Quizz {
         }
     }
     
-    mutating func getQuestionData(answerBtns: [UIButton], btnTagOptionInfo: [Int: String]) -> (qID: String, qtext: String, answers: [String])? {
+    mutating func getQuestionData(answerBtns: [UIButton], btnTagOptionInfo: [Int: String]) -> (qID: String, qtext: String, answers: [String], level: Int)? {
         
         guard let randomId = quizz.getRandomQuestionId(),
             let q = mvvmFileSystem.getQuestionFromDrive(atIndex: randomId) else { return nil}
@@ -40,6 +40,8 @@ struct MVVM_Quizz {
         guard let qText = q["question"] as? String else {return nil}
         
         question = q // sacuvaj u svom VAR, trebace ti da analize kasnije answer
+        
+        let level = 1 // hard-coded, treba mi file koji ima ovaj podatak !
         
         let answers = q["answers"] as? [String: Any]
         
@@ -52,7 +54,7 @@ struct MVVM_Quizz {
             return ""
         }
         
-        return (randomId, qText, titles)
+        return (randomId, qText, titles, level)
     }
     
 //    func analizeAnswer(question: [String: Any], btnTagOptionInfo: [Int: String], btns: [UIButton], btnTagSelected: Int) -> (correct: Int, miss: [Int])? {

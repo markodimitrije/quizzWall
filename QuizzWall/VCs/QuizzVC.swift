@@ -38,6 +38,8 @@ class QuizzVC: UIViewController {
     var mvvmQuizz = MVVM_Quizz()
     let quizz = Quizz()
     
+    var level: Int?
+    
     var answerBtnsManager: AnswerBtnsManager! // pointer na struct, ciji je arg var answerBtns: [UIButton]
     weak var infoViewManager: InfoViewManager! // pointer na class, ciji je arg weak var infoView: InfoView!
     
@@ -48,7 +50,7 @@ class QuizzVC: UIViewController {
         }
     } // ovo treba da load sa zvanjem firebase (imas 2 sec)
     
-    var question: [String: Any]?
+    //var question: [String: Any]?
     
     override func viewDidLoad() { super.viewDidLoad()
         
@@ -61,7 +63,8 @@ class QuizzVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        infoViewManager.userAnswered(correctly: false)
+        //infoViewManager.userAnswered(correctly: false)
+        userAnswered(correctly: false)
     }
     
     private func setMyManagerVars() {
@@ -85,13 +88,20 @@ class QuizzVC: UIViewController {
         
         questionLbl.text = data.qtext
         
+        level = data.level
+        
         answerBtnsManager.updateWith(answers: data.answers)
         
         ServerRequest().getImagesFromFirebaseStorage(questionId: data.qID) { [weak self] (image) in
             self?.questionImage = image
         }
         
-        infoViewManager = InfoViewManager(infoView: infoView, timeToAnswer: 20) // hard-coded (treba da je procitano iz pitanja koji je level pa na osnovu toga neki dict.... {level: counter})
+        infoViewManager = InfoViewManager(infoView: infoView, timeToAnswer: 5) { [weak self] in
+            
+            self?.clearPreviosAndLoadNewQuestion(after: 0)
+            
+            return ()
+        }
         
     }
     
@@ -120,7 +130,11 @@ class QuizzVC: UIViewController {
     
     private func userAnswerIs(correct: Bool, sender: UIButton, data: (correct: UIButton, miss: [UIButton])) {
         
-        infoViewManager.userAnswered(correctly: correct)
+        print("userAnswerIs called")
+        
+        //infoViewManager.userAnswered(correctly: correct)
+        
+        userAnswered(correctly: correct)
         
         let _ = answerBtns.map {$0.isUserInteractionEnabled = false}
         
@@ -133,12 +147,28 @@ class QuizzVC: UIViewController {
                             let _ = data.miss.map {$0.alpha = 0}
                             data.correct.backgroundColor = .green
                             }) { (success) in
-                            delay(Constants.LoadingQuestionAnimation.delay, closure: { [weak self] in
-                                self?.cleanUpAfterPreviousQuestion()
-                                self?.loadQuestionOnUI()
-                                self?.displayLoadingAnimation(duration: Constants.Time.loadingAnimForQuestion)
-                            })
+                                self.clearPreviosAndLoadNewQuestion(after: Constants.LoadingQuestionAnimation.delay)
         }
+    }
+    
+    private func userAnswered(correctly: Bool) {
+        
+        guard let level = level else {return}
+        
+        user?.questionAnswered(correctly: correctly, qLevel: questionLevelInfo[level])
+        
+        infoViewManager?.userAnswered(correctly: correctly)
+        
+    }
+    
+    // ovo je start process
+    
+    private func clearPreviosAndLoadNewQuestion(after: Double) {
+        delay(after, closure: { [weak self] in
+            self?.cleanUpAfterPreviousQuestion()
+            self?.loadQuestionOnUI()
+            self?.displayLoadingAnimation(duration: Constants.Time.loadingAnimForQuestion)
+        })
     }
 
     private func cleanUpAfterPreviousQuestion() {
@@ -170,6 +200,10 @@ extension QuizzVC {
     }
 }
 
+
+
+
+
 class RoundedBtn: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -177,10 +211,16 @@ class RoundedBtn: UIButton {
     }
 }
 
+
+
+
+
+
 class InfoViewManager {
     
     weak var infoView: InfoView?
     weak var timer: Timer?
+    var timeElapsedClosure: () -> ()?
     var limit: Int
     var counter: Int {
         didSet {
@@ -188,10 +228,12 @@ class InfoViewManager {
         }
     }
     
-    init(infoView: InfoView, timeToAnswer limit: Int) {
+    init(infoView: InfoView, timeToAnswer limit: Int, timeElapsedClosure: @escaping () -> ()?) {
         self.infoView = infoView
         self.limit = limit
         self.counter = limit
+        self.timeElapsedClosure = timeElapsedClosure
+        //timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
     }
     
@@ -199,7 +241,7 @@ class InfoViewManager {
     
     func userAnswered(correctly: Bool) {
         timer?.invalidate() // zaustavi timer
-        timer = nil
+//        timer = nil - nije neophodno, invalidate implicitno zove ovaj red...
         updateInfoView()
     }
     
@@ -212,14 +254,15 @@ class InfoViewManager {
     }
     
     @objc func count(timer: Timer) {
-        print("count is called")
+        //print("count is called")
         counter = max(0, counter - 1)
+        if counter == 0 {
+            userAnswered(correctly: false)
+            timeElapsedClosure()
+        }
     }
     
-    deinit {
-        print("InfoViewManager.deinit. is called")
-    }
-    
+    deinit { print("InfoViewManager.deinit. is called") }
 }
 
 

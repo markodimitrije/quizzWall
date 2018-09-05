@@ -49,22 +49,30 @@ struct User: Codable {
         level = 1
     }
     
+    // MARK:- API
+    
     func hasSticker(withSid sid: Int) -> Bool {
         return sidsPlaced.contains(sid)
     }
     
-}
-
-struct QuizzGame {
-    static var cost_50_50 = 1
-    static var costDoubleChoise = 1
-    static var timeToPrepare: TimeInterval = 2
-    static var timeToAnswer: TimeInterval = 15
-    static var earnForAdMobMust = 2
-    static var earnForAdMobAsked = 3
-}
-
-enum QuestionLevel {
-    case easy, medium, hard
+    mutating func questionAnswered(correctly: Bool, qLevel: QuestionLevel?) {
+        
+        updateHammerPoints(correctly: correctly, qLevel: qLevel)
+        
+    }
+    
+    // MARK:- Privates
+    
+    private mutating func updateHammerPoints(correctly: Bool, qLevel: QuestionLevel?) {
+        
+        guard let qLevel = qLevel,
+            let values = QuizzGame.questionLevelToPointsInfo[qLevel] else {return}
+        
+        let newPoints = correctly ? values.correct : values.wrong
+        
+        self.hammer += newPoints
+        
+    }
+    
 }
 
