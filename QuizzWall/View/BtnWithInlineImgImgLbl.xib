@@ -14,6 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BtnWithInlineImgImgLbl" customModule="QuizzWall" customModuleProvider="target">
             <connections>
+                <outlet property="btn" destination="u8h-z6-cqh" id="Hn0-W3-r5K"/>
                 <outlet property="label" destination="XRU-K7-4Zt" id="EhZ-ic-FBL"/>
                 <outlet property="leftImgView" destination="mgv-cG-LtN" id="u7Z-wX-YQt"/>
                 <outlet property="rightImgView" destination="AgP-06-AIu" id="1Lg-bl-3qJ"/>

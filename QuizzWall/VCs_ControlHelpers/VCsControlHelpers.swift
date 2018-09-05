@@ -53,7 +53,7 @@ struct AnswerBtnsManager {
         
     }
     
-    // MARK:- Prvates
+    // MARK:- Privates
     
     private func setAnswersBtns(usingLayout layout: AnswerBtnsLayout) {
         DispatchQueue.main.async {
@@ -65,3 +65,54 @@ struct AnswerBtnsManager {
     
 }
 
+
+
+
+class InfoViewManager {
+    
+    weak var infoView: InfoView?
+    weak var timer: Timer?
+    var timeElapsedClosure: () -> ()?
+    var limit: Int
+    var counter: Int {
+        didSet {
+            updateInfoView()
+        }
+    }
+    
+    init(infoView: InfoView, timeToAnswer limit: Int, timeElapsedClosure: @escaping () -> ()?) {
+        self.infoView = infoView
+        self.limit = limit
+        self.counter = limit
+        self.timeElapsedClosure = timeElapsedClosure
+        //timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
+    }
+    
+    // API
+    
+    func userAnswered(correctly: Bool) {
+        timer?.invalidate() // zaustavi timer
+        //        timer = nil - nije neophodno, invalidate implicitno zove ovaj red...
+        updateInfoView()
+    }
+    
+    func updateInfoView() {
+        
+        guard let user = user else {return}
+        
+        infoView?.set(gemsCount: user.gems, hammerCount: user.hammer, timeLeftText: "TIME LEFT:", counter: "\(counter)")
+        
+    }
+    
+    @objc func count(timer: Timer) {
+        //print("count is called")
+        counter = max(0, counter - 1)
+        if counter == 0 {
+            userAnswered(correctly: false)
+            timeElapsedClosure()
+        }
+    }
+    
+    deinit { print("InfoViewManager.deinit. is called") }
+}

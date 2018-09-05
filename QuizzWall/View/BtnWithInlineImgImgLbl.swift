@@ -11,14 +11,14 @@ import UIKit
 @IBDesignable
 class BtnWithInlineImgImgLbl: UIView {
     
-    var view: UIView!
-    
     @IBInspectable
     @IBOutlet weak var leftImgView: UIImageView!
     @IBInspectable
     @IBOutlet weak var rightImgView: UIImageView!
     @IBInspectable
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var btn: UIButton!
     
     @IBAction func btnIsTapped(_ sender: UIButton) {
         

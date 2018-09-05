@@ -10,11 +10,18 @@ import UIKit
 
 class PowerUpsView: UIView {
     
-    var view: UIView!
-    
-    @IBOutlet weak var fiftyFiftyView: BtnWithInlineImgImgLbl! // 50_50
+    @IBOutlet weak var fiftyFiftyView: BtnWithInlineImgImgLbl! {
+        didSet {
+            fiftyFiftyView.btn.tag = 0
+        }
+    } // 50_50
 
-    @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl! // doubleChoise
+    @IBOutlet weak var doubleChoiceView: BtnWithInlineImgImgLbl! {
+        didSet {
+            doubleChoiceView.btn.tag = 1
+        } // doubleChoise
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

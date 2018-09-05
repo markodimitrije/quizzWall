@@ -24,6 +24,9 @@ class QuizzVC: UIViewController {
         answerBtnIsTapped(sender)
     }
     
+    
+    
+    
     // stackView references
     
     @IBOutlet weak var upperStackView: UIStackView!
@@ -56,6 +59,8 @@ class QuizzVC: UIViewController {
         
         setMyManagerVars()
         
+        hookUpSelfAsDelegateToPowerUpBtns()
+        
         loadQuestionOnUI()
         
         displayLoadingAnimation(duration: Constants.LoadingQuestionAnimation.duration)
@@ -71,6 +76,11 @@ class QuizzVC: UIViewController {
         
         answerBtnsManager = AnswerBtnsManager.init(answerBtns: answerBtns, cnstrQuestionToAnswersView: cnstrQuestionToAnswersView, cnstrQuestionToImageView: cnstrQuestionToImageView, upperStackView: upperStackView, lowerStackView: lowerStackView)
         
+    }
+    
+    private func hookUpSelfAsDelegateToPowerUpBtns() {
+        powerUpsView.fiftyFiftyView.btmDelegate = self
+        powerUpsView.doubleChoiceView.btmDelegate = self
     }
 //    override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
 //
@@ -96,7 +106,7 @@ class QuizzVC: UIViewController {
             self?.questionImage = image
         }
         
-        infoViewManager = InfoViewManager(infoView: infoView, timeToAnswer: 5) { [weak self] in
+        infoViewManager = InfoViewManager(infoView: infoView, timeToAnswer: 60) { [weak self] in
             
             self?.clearPreviosAndLoadNewQuestion(after: 0)
             
@@ -186,6 +196,18 @@ class QuizzVC: UIViewController {
         }
     }
     
+    // private func handle power ups:
+    
+    private func fiftyFiftyTapped() {
+        print("QuizzVC.fiftyFiftyTapped ukloni 2 wrong answers")
+        guard let toRemoveBtns = mvvmQuizz.getMissBtnsToRemove(btns: answerBtns) else {return}
+        let _ = toRemoveBtns.map {$0.alpha = 0}
+    }
+    
+    private func doubleChoiceTapped() {
+        print("QuizzVC.doubleChoiceTapped uvecaj nagradu za hammerPoints")
+    }
+    
     deinit {
         print("QuizzVC.deinit is called")
     }
@@ -193,6 +215,16 @@ class QuizzVC: UIViewController {
 }
 
 extension QuizzVC: LoadingAnimationManaging {}
+
+extension QuizzVC: BtnTapManaging {
+    func btnTapped(sender: UIButton) {
+        switch sender.tag {
+        case 0: fiftyFiftyTapped()
+        case 1: doubleChoiceTapped()
+        default: break
+        }
+    }
+}
 
 extension QuizzVC {
     var btnTagOptionInfo: [Int: String] { // i ovo moze localizable "A", "B", "V", "G"... chi, ind...
@@ -209,60 +241,6 @@ class RoundedBtn: UIButton {
         super.init(coder: aDecoder)
         self.layer.cornerRadius = CGFloat.init(5)
     }
-}
-
-
-
-
-
-
-class InfoViewManager {
-    
-    weak var infoView: InfoView?
-    weak var timer: Timer?
-    var timeElapsedClosure: () -> ()?
-    var limit: Int
-    var counter: Int {
-        didSet {
-            updateInfoView()
-        }
-    }
-    
-    init(infoView: InfoView, timeToAnswer limit: Int, timeElapsedClosure: @escaping () -> ()?) {
-        self.infoView = infoView
-        self.limit = limit
-        self.counter = limit
-        self.timeElapsedClosure = timeElapsedClosure
-        //timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
-    }
-    
-    // API
-    
-    func userAnswered(correctly: Bool) {
-        timer?.invalidate() // zaustavi timer
-//        timer = nil - nije neophodno, invalidate implicitno zove ovaj red...
-        updateInfoView()
-    }
-    
-    func updateInfoView() {
-        
-        guard let user = user else {return}
-        
-        infoView?.set(gemsCount: user.gems, hammerCount: user.hammer, timeLeftText: "TIME LEFT:", counter: "\(counter)")
-        
-    }
-    
-    @objc func count(timer: Timer) {
-        //print("count is called")
-        counter = max(0, counter - 1)
-        if counter == 0 {
-            userAnswered(correctly: false)
-            timeElapsedClosure()
-        }
-    }
-    
-    deinit { print("InfoViewManager.deinit. is called") }
 }
 
 

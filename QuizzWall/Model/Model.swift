@@ -14,6 +14,7 @@ struct QuestionStructure: Codable {
 
 struct Question: Codable {
     var question: String // ovo je pitanje, npr 'Koje godine je zavrsen 2. svetski rat?'
+    var level: Int
     var answers: [String: Answer] // ponudjeni odgovori
 }
 
