@@ -34,6 +34,7 @@
 		ADB9AD7E213AEADB0051FD51 /* stickersInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = ADB9AD7B213AEADB0051FD51 /* stickersInfo.json */; };
 		ADB9AD7F213AEADB0051FD51 /* stickers.json in Resources */ = {isa = PBXBuildFile; fileRef = ADB9AD7C213AEADB0051FD51 /* stickers.json */; };
 		ADB9AD80213AEADB0051FD51 /* albums.json in Resources */ = {isa = PBXBuildFile; fileRef = ADB9AD7D213AEADB0051FD51 /* albums.json */; };
+		ADBD2AB9213FCC6A002D70B7 /* VCsControlHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD2AB8213FCC6A002D70B7 /* VCsControlHelpers.swift */; };
 		ADC9EF1C213DAA30009C763A /* Quizz.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9EF1B213DAA30009C763A /* Quizz.swift */; };
 		ADC9EF1E213E68A2009C763A /* MVVM_Quizz.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC9EF1D213E68A2009C763A /* MVVM_Quizz.swift */; };
 		ADD3681C2136DA2A00C6E7DA /* AG_Protocols_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD367E92136DA2900C6E7DA /* AG_Protocols_2.swift */; };
@@ -119,6 +120,7 @@
 		ADB9AD7B213AEADB0051FD51 /* stickersInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stickersInfo.json; sourceTree = "<group>"; };
 		ADB9AD7C213AEADB0051FD51 /* stickers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stickers.json; sourceTree = "<group>"; };
 		ADB9AD7D213AEADB0051FD51 /* albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = albums.json; sourceTree = "<group>"; };
+		ADBD2AB8213FCC6A002D70B7 /* VCsControlHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCsControlHelpers.swift; sourceTree = "<group>"; };
 		ADC9EF1B213DAA30009C763A /* Quizz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quizz.swift; sourceTree = "<group>"; };
 		ADC9EF1D213E68A2009C763A /* MVVM_Quizz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_Quizz.swift; sourceTree = "<group>"; };
 		ADD367E92136DA2900C6E7DA /* AG_Protocols_2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AG_Protocols_2.swift; sourceTree = "<group>"; };
@@ -327,6 +329,14 @@
 				ADB9AD7D213AEADB0051FD51 /* albums.json */,
 			);
 			path = readOnly;
+			sourceTree = "<group>";
+		};
+		ADBD2AB7213FCC3C002D70B7 /* VCs_ControlHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				ADBD2AB8213FCC6A002D70B7 /* VCsControlHelpers.swift */,
+			);
+			path = VCs_ControlHelpers;
 			sourceTree = "<group>";
 		};
 		ADD367E52136C85600C6E7DA /* VCs */ = {
@@ -566,6 +576,7 @@
 		ADD40DAD213300F600DE27C9 /* QuizzWall */ = {
 			isa = PBXGroup;
 			children = (
+				ADBD2AB7213FCC3C002D70B7 /* VCs_ControlHelpers */,
 				ADF83AE5213D681E0060059E /* Protocols */,
 				ADB9AD79213AEAC70051FD51 /* json */,
 				ADB9AD762139CCA90051FD51 /* MyClasses */,
@@ -849,6 +860,7 @@
 				ADD3681C2136DA2A00C6E7DA /* AG_Protocols_2.swift in Sources */,
 				AD192D5C213438B10041921C /* MVVM_FileSystem.swift in Sources */,
 				AD86A4BE213409C500119A7B /* FileManagerPersister.swift in Sources */,
+				ADBD2AB9213FCC6A002D70B7 /* VCsControlHelpers.swift in Sources */,
 				AD192D6321352DB50041921C /* PhoneLanguage.swift in Sources */,
 				ADD368332136DA2A00C6E7DA /* CT_Protocols_2.swift in Sources */,
 				ADF83AD9213C52F80060059E /* StickerCell.swift in Sources */,

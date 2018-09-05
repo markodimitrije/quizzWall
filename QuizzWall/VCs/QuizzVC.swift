@@ -10,12 +10,7 @@ import UIKit
 
 class QuizzVC: UIViewController {
     
-    @IBOutlet weak var infoView: InfoView! {
-        didSet {
-            guard let user = user else {return}
-            infoView.set(gemsCount: user.gems, hammerCount: user.hammer, timeLeftText: "TIME LEFT:", counter: "14")
-        }
-    }
+    @IBOutlet weak var infoView: InfoView!
     
     @IBOutlet weak var questionLbl: UILabel!
     
@@ -43,27 +38,42 @@ class QuizzVC: UIViewController {
     var mvvmQuizz = MVVM_Quizz()
     let quizz = Quizz()
     
+    var answerBtnsManager: AnswerBtnsManager! // pointer na struct, ciji je arg var answerBtns: [UIButton]
+    weak var infoViewManager: InfoViewManager! // pointer na class, ciji je arg weak var infoView: InfoView!
     
-    var questionImage: UIImage? {
+    weak var questionImage: UIImage? {
         didSet {
             reloadImage(questionImage, intoImageView: imageView)
-            formatAnswerBtns(withDelay: 0)
+            answerBtnsManager.formatAnswerBtns(withDelay: 0, questionImage: questionImage)
         }
     } // ovo treba da load sa zvanjem firebase (imas 2 sec)
+    
     var question: [String: Any]?
     
     override func viewDidLoad() { super.viewDidLoad()
+        
+        setMyManagerVars()
         
         loadQuestionOnUI()
         
         displayLoadingAnimation(duration: Constants.LoadingQuestionAnimation.duration)
     }
     
-    override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        infoViewManager.userAnswered(correctly: false)
+    }
+    
+    private func setMyManagerVars() {
         
-        
+        answerBtnsManager = AnswerBtnsManager.init(answerBtns: answerBtns, cnstrQuestionToAnswersView: cnstrQuestionToAnswersView, cnstrQuestionToImageView: cnstrQuestionToImageView, upperStackView: upperStackView, lowerStackView: lowerStackView)
         
     }
+//    override func viewDidAppear(_ animated: Bool) { super.viewDidAppear(animated)
+//
+//
+//
+//    }
     
     // MARK: - configure UI with question, answers and assisstent
     
@@ -75,31 +85,19 @@ class QuizzVC: UIViewController {
         
         questionLbl.text = data.qtext
         
-        let _ = answerBtns.map { (btn) -> Void in
-            btn.setTitle(data.answers[btn.tag], for: .normal)
+        answerBtnsManager.updateWith(answers: data.answers)
+        
+        ServerRequest().getImagesFromFirebaseStorage(questionId: data.qID) { [weak self] (image) in
+            self?.questionImage = image
         }
         
-        ServerRequest().getImagesFromFirebaseStorage(questionId: data.qID) { (image) in
-            self.questionImage = image
-        }
+        infoViewManager = InfoViewManager(infoView: infoView, timeToAnswer: 20) // hard-coded (treba da je procitano iz pitanja koji je level pa na osnovu toga neki dict.... {level: counter})
         
     }
-    
-    
     
     private func updateCreditsUI() {
         DispatchQueue.main.async {
             
-        }
-    }
-    
-    // MARK: - layout operations
-    
-    private func setAnswersBtns(usingLayout layout: AnswerBtnsLayout) {
-        DispatchQueue.main.async { [weak self] in
-            let axis: UILayoutConstraintAxis = (layout == AnswerBtnsLayout.twoRows) ? .horizontal : .vertical
-            self?.upperStackView.axis = axis
-            self?.lowerStackView.axis = axis
         }
     }
     
@@ -121,6 +119,8 @@ class QuizzVC: UIViewController {
     // nakon 1 sec load novo question
     
     private func userAnswerIs(correct: Bool, sender: UIButton, data: (correct: UIButton, miss: [UIButton])) {
+        
+        infoViewManager.userAnswered(correctly: correct)
         
         let _ = answerBtns.map {$0.isUserInteractionEnabled = false}
         
@@ -156,21 +156,8 @@ class QuizzVC: UIViewController {
         }
     }
     
-    private func formatAnswerBtns(withDelay amount: Double) {
-        
-        delay(amount) { [weak self] in
-            self?.imageView.image = self?.questionImage
-            if let _ = self?.questionImage { // imas question image
-                self?.setAnswersBtns(usingLayout: .twoRows)
-                self?.cnstrQuestionToAnswersView.isActive = false
-                self?.cnstrQuestionToImageView.isActive = true
-            } else {
-                self?.setAnswersBtns(usingLayout: .oneColumn)
-                self?.cnstrQuestionToImageView.isActive = false
-                self?.cnstrQuestionToAnswersView.isActive = true
-            }
-        }
-        
+    deinit {
+        print("QuizzVC.deinit is called")
     }
     
 }
@@ -189,5 +176,52 @@ class RoundedBtn: UIButton {
         self.layer.cornerRadius = CGFloat.init(5)
     }
 }
+
+class InfoViewManager {
+    
+    weak var infoView: InfoView?
+    weak var timer: Timer?
+    var limit: Int
+    var counter: Int {
+        didSet {
+            updateInfoView()
+        }
+    }
+    
+    init(infoView: InfoView, timeToAnswer limit: Int) {
+        self.infoView = infoView
+        self.limit = limit
+        self.counter = limit
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(InfoViewManager.count(timer:)), userInfo: nil, repeats: true)
+    }
+    
+    // API
+    
+    func userAnswered(correctly: Bool) {
+        timer?.invalidate() // zaustavi timer
+        timer = nil
+        updateInfoView()
+    }
+    
+    func updateInfoView() {
+        
+        guard let user = user else {return}
+        
+        infoView?.set(gemsCount: user.gems, hammerCount: user.hammer, timeLeftText: "TIME LEFT:", counter: "\(counter)")
+        
+    }
+    
+    @objc func count(timer: Timer) {
+        print("count is called")
+        counter = max(0, counter - 1)
+    }
+    
+    deinit {
+        print("InfoViewManager.deinit. is called")
+    }
+    
+}
+
+
 
 

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuizzWall/Networking/ServerRequest.swift"
-            timestampString = "557781913.847828"
+            timestampString = "557835150.311929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -26,7 +26,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557778811.145246"
+                  timestampString = "557831379.779567"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -41,7 +41,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557778811.157205"
+                  timestampString = "557831379.782644"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -239,22 +239,6 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "getAlbums()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Desktop/tryJustBrickWallVC clean/tryJustBrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_1.swift"
-            timestampString = "557690725.6928329"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "brickTappedAt(cellId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
