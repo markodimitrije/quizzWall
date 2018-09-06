@@ -97,7 +97,6 @@ struct MVVM_Quizz {
         guard let correctBtn = getCorrectBtn(question: question, btns: btns) else {return nil}
 
         let missBtns = btns.filter { $0 != correctBtn }
-        let missIndexes = missBtns.map {$0.tag}
         
         var randomMissBtns = missBtns
         

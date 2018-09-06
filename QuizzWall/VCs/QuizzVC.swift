@@ -113,6 +113,8 @@ class QuizzVC: UIViewController {
             return ()
         }
         
+        powerUpsView.updatePowerUpsUI(state: .powerUpLoading)
+        
     }
     
     private func updateCreditsUI() {
@@ -188,6 +190,7 @@ class QuizzVC: UIViewController {
             $0.backgroundColor = .lightGray
             questionImage = nil
         }
+        powerUpsView.isEnabled(true)
     }
     
     private func reloadImage(_ image: UIImage?, intoImageView imageView: UIImageView) {
@@ -199,13 +202,32 @@ class QuizzVC: UIViewController {
     // private func handle power ups:
     
     private func fiftyFiftyTapped() {
-        print("QuizzVC.fiftyFiftyTapped ukloni 2 wrong answers")
+        
         guard let toRemoveBtns = mvvmQuizz.getMissBtnsToRemove(btns: answerBtns) else {return}
         let _ = toRemoveBtns.map {$0.alpha = 0}
     }
     
     private func doubleChoiceTapped() {
         print("QuizzVC.doubleChoiceTapped uvecaj nagradu za hammerPoints")
+        
+    }
+    
+    private func powerUpOptionSelected(sender: UIButton) {
+        
+        let val = sender.tag == 0 ? QuizzGame.cost_50_50 : QuizzGame.costDoubleChoise
+        
+        guard user != nil else {return}
+        user!.gems -= val // kosta ga 1 gem
+        user!.gems = max(0, user!.gems)
+        
+        powerUpsView.updatePowerUpsUI(state: .userChosePowerUpBtn)
+        
+        switch sender.tag {
+        case 0: fiftyFiftyTapped()
+        case 1: doubleChoiceTapped()
+        default: break
+        }
+        
     }
     
     deinit {
@@ -218,11 +240,9 @@ extension QuizzVC: LoadingAnimationManaging {}
 
 extension QuizzVC: BtnTapManaging {
     func btnTapped(sender: UIButton) {
-        switch sender.tag {
-        case 0: fiftyFiftyTapped()
-        case 1: doubleChoiceTapped()
-        default: break
-        }
+        
+        powerUpOptionSelected(sender: sender)
+        
     }
 }
 

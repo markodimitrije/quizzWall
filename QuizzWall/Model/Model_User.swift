@@ -43,7 +43,7 @@ struct User: Codable {
         
         questionsNew = Set(keys)
             
-        hammer = 3000
+        hammer = 50
         gems = 2
         points = 0
         level = 1

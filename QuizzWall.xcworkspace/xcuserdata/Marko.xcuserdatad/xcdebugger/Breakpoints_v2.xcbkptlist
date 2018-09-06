@@ -26,7 +26,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557925183.353791"
+                  timestampString = "557933332.591428"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -41,7 +41,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557925183.356932"
+                  timestampString = "557933332.593504"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -217,12 +217,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BrickWall/BW_tryBrickWall/BB_Views/BB_XIB/BB_BricksBarView.swift"
-            timestampString = "557925264.187978"
+            timestampString = "557929447.996573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
             endingLineNumber = "63"
             landmarkName = "init(frame:totem:hammerActive:counterTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuizzWall/VCs/QuizzVC.swift"
+            timestampString = "557933932.584743"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "btnTapped(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

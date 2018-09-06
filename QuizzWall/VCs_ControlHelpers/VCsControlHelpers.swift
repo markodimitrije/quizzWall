@@ -71,10 +71,10 @@ struct AnswerBtnsManager {
 class InfoViewManager {
     
     weak var infoView: InfoView?
-    weak var timer: Timer?
-    var timeElapsedClosure: () -> ()?
-    var limit: Int
-    var counter: Int {
+    private weak var timer: Timer?
+    private var timeElapsedClosure: () -> ()?
+    private var limit: Int
+    private var counter: Int {
         didSet {
             updateInfoView()
         }
@@ -104,6 +104,8 @@ class InfoViewManager {
         infoView?.set(gemsCount: user.gems, hammerCount: user.hammer, timeLeftText: "TIME LEFT:", counter: "\(counter)")
         
     }
+    
+    
     
     @objc func count(timer: Timer) {
         //print("count is called")
