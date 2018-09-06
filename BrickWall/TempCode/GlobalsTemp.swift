@@ -26,8 +26,6 @@ let SCREEN_HEIGHT = UIScreen.main.bounds.height
 
 let email: String? = "marko_dimitrije@gmail.com"
 
-
-
 var soundMan = SoundManager()
 
 var appDel: AppDelegate! { return UIApplication.shared.delegate as! AppDelegate }

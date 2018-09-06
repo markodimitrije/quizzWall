@@ -26,7 +26,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557831379.779567"
+                  timestampString = "557922359.6921999"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -41,7 +41,7 @@
                   moduleName = "QuizzWall"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Marko/development/QuizzWall/QuizzWall/Networking/ServerRequest.swift"
-                  timestampString = "557831379.782644"
+                  timestampString = "557922359.694719"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"
@@ -207,6 +207,38 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "getAlbums()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrickWall/BW_tryBrickWall/BW_Protocols/CT_Protocols_1.swift"
+            timestampString = "557922692.958926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "brickTappedAt(cellId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BrickWall/BW_tryBrickWall/Model/BW_Model.swift"
+            timestampString = "557922359.655576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "userHasEnoughHammerPoints()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

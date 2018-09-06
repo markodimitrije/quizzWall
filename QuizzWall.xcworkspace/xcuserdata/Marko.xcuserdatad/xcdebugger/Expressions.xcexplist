@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "BrickTapResponsing&lt;&gt;.brickTappedAt(cellId:):CT_Protocols_1.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user.hammer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "QuestionVersionChecker.hasNewerVersion(webVersions:):Versions.swift">
          <PersistentStrings>
             <PersistentString
@@ -77,13 +85,13 @@
          contextName = "AlbumVC.collectionView(_:cellForItemAt:):AlbumVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "cell.subviews.first">
+            </PersistentString>
+            <PersistentString
                value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
             </PersistentString>
             <PersistentString
                value = "cell.subviews.count">
-            </PersistentString>
-            <PersistentString
-               value = "cell.subviews.first">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -381,13 +381,13 @@
 			isa = PBXGroup;
 			children = (
 				ADA3B82421412EA80074E28D /* BB_HammerView.xib */,
+				ADA3B82B21412EA80074E28D /* BB_HammerView.swift */,
+				ADA3B82821412EA80074E28D /* BB_BuyTotemView.xib */,
 				ADA3B82521412EA80074E28D /* BB_BuyTotemView.swift */,
 				ADA3B82621412EA80074E28D /* BB_TNameScoreView.xib */,
-				ADA3B82721412EA80074E28D /* BB_BricksBarView.swift */,
-				ADA3B82821412EA80074E28D /* BB_BuyTotemView.xib */,
 				ADA3B82921412EA80074E28D /* BB_TNameScoreView.swift */,
 				ADA3B82A21412EA80074E28D /* BB_BricksBarView.xib */,
-				ADA3B82B21412EA80074E28D /* BB_HammerView.swift */,
+				ADA3B82721412EA80074E28D /* BB_BricksBarView.swift */,
 			);
 			path = BB_XIB;
 			sourceTree = "<group>";

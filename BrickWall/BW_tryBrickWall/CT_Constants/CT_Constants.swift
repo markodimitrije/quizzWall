@@ -16,6 +16,7 @@ struct CT_Constants {
         struct BrickTap {
             static let regular: Int = 1
             static let hammerGain: Int = 10 // 500 //50
+            static let hammerGainForQuizz: Int = 100
 //        static let hammerGain: Int = 3000 // test za brzo rusenje zida..
         }
         struct CreditsWorthTaps {
@@ -65,6 +66,7 @@ struct CT_Constants {
 
 let CT_BRICK_TAP_VAL_GAIN = CT_Constants.Values.BrickTap.hammerGain
 let CT_BRICK_TAP_VAL_REG = CT_Constants.Values.BrickTap.regular
+let CT_BRICK_TAP_VAL_FOR_QUIZZ = CT_Constants.Values.BrickTap.hammerGainForQuizz
 
 let CT_GOLD_WORTH_TAPS = CT_Constants.Values.CreditsWorthTaps.gold
 let CT_SILVER_WORTH_TAPS = CT_Constants.Values.CreditsWorthTaps.silver

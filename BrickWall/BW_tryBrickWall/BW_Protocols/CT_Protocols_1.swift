@@ -355,6 +355,8 @@ extension BrickTapResponsing where Self: BrickWallVC {
 
     }
     
+    func getTapValue() -> Int { return CT_BRICK_TAP_VAL_FOR_QUIZZ } // 100 points
+    
     func brickTappedAt(cellId: Int?) {
         
         guard let shouldUpdateBrick = BW_Model.userHasEnoughHammerPoints() else { return }
@@ -364,13 +366,6 @@ extension BrickTapResponsing where Self: BrickWallVC {
             self.performSegue(withIdentifier: "segueShowQuizzVC", sender: nil)
         }
         
-        /*
-          if userHasHammerPoints -> radi kao i do sada...
-          else okini segue za quizzVC
-            */
-        
-        
-        
     }
     
     private func brickTappedAndUserHasHammerPoints(cellId: Int?) {
@@ -379,7 +374,7 @@ extension BrickTapResponsing where Self: BrickWallVC {
         
         guard let cellId = cellId else { return }
         
-        let value = getTapValue(hammerActive: isHammerActive())
+        let value = getTapValue()
         
         guard let cell = updateLocalModel(cellId: cellId, value: value) else { return }
         
