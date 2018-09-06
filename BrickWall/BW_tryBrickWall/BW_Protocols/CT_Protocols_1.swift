@@ -357,20 +357,31 @@ extension BrickTapResponsing where Self: BrickWallVC {
     
     func brickTappedAt(cellId: Int?) {
         
+        guard let shouldUpdateBrick = BW_Model.userHasEnoughHammerPoints() else { return }
+        if shouldUpdateBrick {
+            brickTappedAndUserHasHammerPoints(cellId: cellId)
+        } else {
+            self.performSegue(withIdentifier: "segueShowQuizzVC", sender: nil)
+        }
+        
+        /*
+          if userHasHammerPoints -> radi kao i do sada...
+          else okini segue za quizzVC
+            */
+        
+        
+        
+    }
+    
+    private func brickTappedAndUserHasHammerPoints(cellId: Int?) {
+        
         modelStateIsChanged()
         
-        guard let cellId = cellId else {
-//            print("BrickTapReporting.BrickWallVC.brickTappedAt.ERROR: NISAM DOBIO REF");
-            return
-        }
+        guard let cellId = cellId else { return }
         
         let value = getTapValue(hammerActive: isHammerActive())
         
-        // updateActualTotemData - update LOCAL VAR and get back SYNCED DATA
-        guard let cell = updateLocalModel(cellId: cellId, value: value) else {
-//            print("BrickTapReporting.BrickWallVC.brickTappedAt.ERROR: NEMAM UPDATED DATA")
-            return
-        }
+        guard let cell = updateLocalModel(cellId: cellId, value: value) else { return }
         
         let selectedView = self.bricksWallView.subviews.first(where: { (sv) -> Bool in
             guard let sv = sv as? BW_BrickView else { return false }
@@ -379,8 +390,8 @@ extension BrickTapResponsing where Self: BrickWallVC {
         
         guard let brickView = selectedView as? BW_BrickView else { return }
         
-//        print("cell.o = \(cell.o)")
-//        print("cell.p = \(cell.p)")
+        //        print("cell.o = \(cell.o)")
+        //        print("cell.p = \(cell.p)")
         
         brickView.isHidden = (cell.o >= cell.p) // logicno je == ali moze da koristi i hammer (.o by 5)
         

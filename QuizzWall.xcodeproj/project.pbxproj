@@ -66,6 +66,7 @@
 		ADA3B86E21412EA80074E28D /* BW_GameOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADA3B84D21412EA80074E28D /* BW_GameOver.xib */; };
 		ADA3B86F21412EA80074E28D /* BW_BrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA3B84E21412EA80074E28D /* BW_BrickView.swift */; };
 		ADA3B87021412EA80074E28D /* BB_Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA3B85021412EA80074E28D /* BB_Assets.xcassets */; };
+		ADA3B872214132520074E28D /* BW_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA3B871214132520074E28D /* BW_Model.swift */; };
 		ADB9AD71213954CE0051FD51 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADB9AD70213954CE0051FD51 /* InfoView.xib */; };
 		ADB9AD73213954E30051FD51 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9AD72213954E30051FD51 /* InfoView.swift */; };
 		ADB9AD752139BEFB0051FD51 /* Model_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB9AD742139BEFB0051FD51 /* Model_User.swift */; };
@@ -159,6 +160,7 @@
 		ADA3B84D21412EA80074E28D /* BW_GameOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BW_GameOver.xib; sourceTree = "<group>"; };
 		ADA3B84E21412EA80074E28D /* BW_BrickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BW_BrickView.swift; sourceTree = "<group>"; };
 		ADA3B85021412EA80074E28D /* BB_Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BB_Assets.xcassets; sourceTree = "<group>"; };
+		ADA3B871214132520074E28D /* BW_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BW_Model.swift; sourceTree = "<group>"; };
 		ADB9AD70213954CE0051FD51 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		ADB9AD72213954E30051FD51 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		ADB9AD742139BEFB0051FD51 /* Model_User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model_User.swift; sourceTree = "<group>"; };
@@ -352,7 +354,7 @@
 			children = (
 				ADA3B82221412EA80074E28D /* BB_Views */,
 				ADA3B82C21412EA80074E28D /* CT_Globals */,
-				ADA3B82E21412EA80074E28D /* CT_Model */,
+				ADA3B82E21412EA80074E28D /* Model */,
 				ADA3B83121412EA80074E28D /* BW_Assets */,
 				ADA3B83421412EA80074E28D /* CT_Main.storyboard */,
 				ADA3B83621412EA80074E28D /* CT_Constants */,
@@ -398,13 +400,14 @@
 			path = CT_Globals;
 			sourceTree = "<group>";
 		};
-		ADA3B82E21412EA80074E28D /* CT_Model */ = {
+		ADA3B82E21412EA80074E28D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				ADA3B82F21412EA80074E28D /* CT_Model_1.swift */,
 				ADA3B83021412EA80074E28D /* CT_Model.swift */,
+				ADA3B871214132520074E28D /* BW_Model.swift */,
 			);
-			path = CT_Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		ADA3B83121412EA80074E28D /* BW_Assets */ = {
@@ -844,6 +847,7 @@
 				ADA3B85921412EA80074E28D /* CT_Globals.swift in Sources */,
 				AD192D5E21343FC40041921C /* Model.swift in Sources */,
 				ADA3B85A21412EA80074E28D /* CT_Model_1.swift in Sources */,
+				ADA3B872214132520074E28D /* BW_Model.swift in Sources */,
 				ADC9EF1C213DAA30009C763A /* Quizz.swift in Sources */,
 				AD54569F213321DC0070890F /* ServerRequest.swift in Sources */,
 				ADF83AE1213D52720060059E /* GlobalFuncs.swift in Sources */,
