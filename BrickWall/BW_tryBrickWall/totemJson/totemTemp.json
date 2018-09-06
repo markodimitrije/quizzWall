@@ -1,0 +1,162 @@
+
+{
+    "sort": 16,
+    "sid": 17,
+    "numOfRows": 10,
+    "ver": 1,
+    "name": "Tottenham Hotspur",
+    "rows": [
+             {
+             "rowId": 0,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 1,
+                       "w": 30,
+                       "o": 0,
+                       "p": 14,
+                       "b": 1,
+                       "t": 2,
+                       "txt": " Charlton"
+                       }
+                       ]
+             },
+             {
+             "rowId": 1,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 6,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 2,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 2,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 7,
+                       "w": 25,
+                       "o": 0,
+                       "p": 20,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 3,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 10,
+                       "w": 35,
+                       "o": 0,
+                       "p": 23,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 4,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 13,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 5,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 16,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 6,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 20,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 7,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 25,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 2,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 8,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 26,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 1,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             },
+             {
+             "rowId": 9,
+             "numOfElements": 1,
+             "cells": [
+                       {
+                       "cId": 29,
+                       "w": 35,
+                       "o": 0,
+                       "p": 19,
+                       "b": 5,
+                       "t": 2,
+                       "txt": ""
+                       }
+                       ]
+             }
+             ],
+    "count4Cripto": -60000,
+    "claimed": false
+}

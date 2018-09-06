@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Farah.ttc">
+            <string>Farah</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BW_BrickView" customModule="tryReadJsonFromBundle" customModuleProvider="target">
+            <connections>
+                <outlet property="bImgView" destination="BF2-Z2-nHh" id="cBj-W9-WXW"/>
+                <outlet property="btn" destination="0OU-xr-5uW" id="Mff-0m-VH3"/>
+                <outlet property="iImgView" destination="Pb5-Wv-cRY" id="YMC-Iw-s2f"/>
+                <outlet property="tImgView" destination="0MD-b7-d4C" id="3om-RZ-KGc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0MD-b7-d4C" userLabel="textureImgView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BF2-Z2-nHh" userLabel="bordureImgView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-Wv-cRY" userLabel="crackImgView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OU-xr-5uW" userLabel="btn">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                    <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="28"/>
+                    <state key="normal" title="NAME">
+                        <color key="titleColor" red="1" green="0.94252819519999997" blue="0.88697015759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btnTapped:" destination="-1" eventType="touchUpInside" id="oTo-XK-9bd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.94252819519999997" blue="0.88697015759999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Pb5-Wv-cRY" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="3GE-Kh-0hV"/>
+                <constraint firstItem="0MD-b7-d4C" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="4lF-cR-kHB"/>
+                <constraint firstItem="Pb5-Wv-cRY" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="8tX-85-jo2"/>
+                <constraint firstItem="0MD-b7-d4C" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="JwN-0H-B70"/>
+                <constraint firstAttribute="trailing" secondItem="0OU-xr-5uW" secondAttribute="trailing" id="LFf-x4-nEH"/>
+                <constraint firstItem="BF2-Z2-nHh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Lps-MK-9gY"/>
+                <constraint firstItem="0MD-b7-d4C" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="O6f-h9-qTD"/>
+                <constraint firstItem="Pb5-Wv-cRY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Sej-PO-ULe"/>
+                <constraint firstItem="0MD-b7-d4C" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="WM7-S3-D1O"/>
+                <constraint firstItem="0OU-xr-5uW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fOW-gp-sIB"/>
+                <constraint firstItem="BF2-Z2-nHh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="ofc-GW-3AC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0OU-xr-5uW" secondAttribute="bottom" id="pQL-FM-Pij"/>
+                <constraint firstItem="0OU-xr-5uW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="t5k-F3-7va"/>
+                <constraint firstItem="Pb5-Wv-cRY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="v4O-6B-H0n"/>
+                <constraint firstItem="BF2-Z2-nHh" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="vpi-9a-vGU"/>
+                <constraint firstItem="BF2-Z2-nHh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zm8-1T-ZNt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-28" y="103"/>
+        </view>
+    </objects>
+</document>

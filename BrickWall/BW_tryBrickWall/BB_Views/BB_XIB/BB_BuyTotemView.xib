@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Brandon_reg.otf">
+            <string>BrandonGrotesque-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BB_BuyTotemView" customModule="StickersApp" customModuleProvider="target">
+            <connections>
+                <outlet property="elemBorderView" destination="IZr-rw-QSM" id="woa-n4-U4t"/>
+                <outlet property="imgView" destination="ioe-4E-uEJ" id="b3N-ee-d4e"/>
+                <outlet property="lbl" destination="J7D-fI-41L" id="dST-fY-KSv"/>
+                <outlet property="shadeView" destination="UXU-mb-uMr" id="bkt-Ac-c4a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pSy-PE-jWH">
+            <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZr-rw-QSM" userLabel="elementsView">
+                    <rect key="frame" x="0.0" y="12" width="137" height="26"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXU-mb-uMr" userLabel="shadeView">
+                            <rect key="frame" x="0.0" y="0.0" width="137" height="26"/>
+                            <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-3X-6f5">
+                            <rect key="frame" x="4" y="5.5" width="129" height="15"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ic6-5I-qtA" userLabel="imgHolderView">
+                                    <rect key="frame" x="0.0" y="0.0" width="15.5" height="15"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold_icon_coin" translatesAutoresizingMaskIntoConstraints="NO" id="ioe-4E-uEJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="15.5" height="15"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ioe-4E-uEJ" secondAttribute="height" multiplier="1:1" id="Sjs-qQ-15S"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="ioe-4E-uEJ" firstAttribute="height" secondItem="ic6-5I-qtA" secondAttribute="height" id="C4j-5e-Mkv"/>
+                                        <constraint firstItem="ioe-4E-uEJ" firstAttribute="centerY" secondItem="ic6-5I-qtA" secondAttribute="centerY" id="F1g-q9-DZa"/>
+                                        <constraint firstItem="ioe-4E-uEJ" firstAttribute="width" secondItem="ic6-5I-qtA" secondAttribute="width" id="Yf1-T5-2dL"/>
+                                        <constraint firstItem="ioe-4E-uEJ" firstAttribute="centerX" secondItem="ic6-5I-qtA" secondAttribute="centerX" id="YvL-Dz-xfQ"/>
+                                        <constraint firstAttribute="width" secondItem="ic6-5I-qtA" secondAttribute="height" multiplier="1:1" id="pck-If-rE0"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="buy for value" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-fI-41L">
+                                    <rect key="frame" x="23.5" y="0.0" width="105.5" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ic6-5I-qtA" firstAttribute="height" secondItem="J7D-fI-41L" secondAttribute="height" id="Jsi-dR-Bvs"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UXU-mb-uMr" firstAttribute="top" secondItem="IZr-rw-QSM" secondAttribute="top" id="0dT-B2-dmZ"/>
+                        <constraint firstAttribute="bottom" secondItem="UXU-mb-uMr" secondAttribute="bottom" id="Nvl-XW-jtR"/>
+                        <constraint firstItem="0JX-3X-6f5" firstAttribute="leading" secondItem="IZr-rw-QSM" secondAttribute="leading" constant="4" id="PVa-pu-JCH"/>
+                        <constraint firstItem="0JX-3X-6f5" firstAttribute="centerY" secondItem="IZr-rw-QSM" secondAttribute="centerY" id="SKh-Pq-78D"/>
+                        <constraint firstAttribute="trailing" secondItem="0JX-3X-6f5" secondAttribute="trailing" constant="4" id="dlh-9b-0L8"/>
+                        <constraint firstAttribute="trailing" secondItem="UXU-mb-uMr" secondAttribute="trailing" id="ock-en-dV2"/>
+                        <constraint firstItem="UXU-mb-uMr" firstAttribute="leading" secondItem="IZr-rw-QSM" secondAttribute="leading" id="ul3-ot-bog"/>
+                        <constraint firstItem="ic6-5I-qtA" firstAttribute="height" secondItem="UXU-mb-uMr" secondAttribute="height" multiplier="0.6" id="uyv-VY-cqo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPd-gK-hML" userLabel="btn">
+                    <rect key="frame" x="1" y="0.0" width="135" height="50"/>
+                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                    <connections>
+                        <action selector="btnIsTapped:" destination="-1" eventType="touchUpInside" id="A6Q-EF-Gxe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="IZr-rw-QSM" firstAttribute="top" secondItem="MFq-WK-8ng" secondAttribute="top" constant="12" id="ARz-ye-07w"/>
+                <constraint firstItem="PPd-gK-hML" firstAttribute="top" secondItem="MFq-WK-8ng" secondAttribute="top" id="I3w-ac-D8k"/>
+                <constraint firstItem="MFq-WK-8ng" firstAttribute="trailing" secondItem="PPd-gK-hML" secondAttribute="trailing" constant="1" id="I8Z-i1-rZZ"/>
+                <constraint firstItem="MFq-WK-8ng" firstAttribute="bottom" secondItem="IZr-rw-QSM" secondAttribute="bottom" constant="12" id="RCj-Ro-OWO"/>
+                <constraint firstItem="PPd-gK-hML" firstAttribute="leading" secondItem="MFq-WK-8ng" secondAttribute="leading" constant="1" id="S0t-ry-N1i"/>
+                <constraint firstItem="IZr-rw-QSM" firstAttribute="leading" secondItem="MFq-WK-8ng" secondAttribute="leading" id="X8t-Jb-K2G"/>
+                <constraint firstItem="MFq-WK-8ng" firstAttribute="trailing" secondItem="IZr-rw-QSM" secondAttribute="trailing" id="tkp-Uk-pkH"/>
+                <constraint firstItem="MFq-WK-8ng" firstAttribute="bottom" secondItem="PPd-gK-hML" secondAttribute="bottom" id="zzr-n3-ng9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="MFq-WK-8ng"/>
+            <point key="canvasLocation" x="-84.5" y="171"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gold_icon_coin" width="56" height="56"/>
+    </resources>
+</document>
