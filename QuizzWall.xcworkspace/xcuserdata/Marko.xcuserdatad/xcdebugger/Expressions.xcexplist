@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "BrickTapResponsing&lt;&gt;.brickTappedAt(cellId:):CT_Protocols_1.swift">
+         contextName = "closure #1 in closure #1 in closure #1 in AppDelegate.checkVersionsAndDownloadQuestionsIfNeeded():AppDelegate.swift">
          <PersistentStrings>
             <PersistentString
-               value = "user.hammer">
+               value = "questions">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,6 +28,17 @@
       </ContextState>
       <ContextState
          contextName = "closure #1 in ServerRequest.getQuestionsFromFirebaseStorage(forLanguage:completionHandler:):ServerRequest.swift">
+      </ContextState>
+      <ContextState
+         contextName = "BrickTapResponsing&lt;&gt;.brickTappedAndUserHasHammerPoints(cellId:):CT_Protocols_1.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "user">
+            </PersistentString>
+            <PersistentString
+               value = "user!.points">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "AppDelegate.application(_:didFinishLaunchingWithOptions:):AppDelegate.swift">
@@ -65,7 +76,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
+         contextName = "MVVM_FileSystem.getQuestionFromDrive(atIndex:):MVVM_FileSystem.swift">
       </ContextState>
       <ContextState
          contextName = "BrickTapResponsing&lt;&gt;.displayNavCon(withStoryboardId:fromStoryboardName:):CT_Protocols_1.swift">
@@ -79,19 +90,19 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MVVM_FileSystem.getQuestionFromDrive(atIndex:):MVVM_FileSystem.swift">
+         contextName = "ServerRequest.getDictData(fromData:):ServerRequest.swift">
       </ContextState>
       <ContextState
          contextName = "AlbumVC.collectionView(_:cellForItemAt:):AlbumVC.swift">
          <PersistentStrings>
             <PersistentString
+               value = "cell.subviews.count">
+            </PersistentString>
+            <PersistentString
                value = "cell.subviews.first">
             </PersistentString>
             <PersistentString
                value = "cell.subviews.first(where: {$0.tag == 0}) as? MissingStickerView">
-            </PersistentString>
-            <PersistentString
-               value = "cell.subviews.count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -112,10 +123,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in AppDelegate.checkVersionsAndDownloadQuestionsIfNeeded():AppDelegate.swift">
+         contextName = "BrickTapResponsing&lt;&gt;.brickTappedAt(cellId:):CT_Protocols_1.swift">
          <PersistentStrings>
             <PersistentString
-               value = "questions">
+               value = "user.hammer">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

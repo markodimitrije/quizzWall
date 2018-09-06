@@ -6,14 +6,14 @@
 //  Copyright © 2018 Marko Dimitrijevic. All rights reserved.
 //
 
-import Foundation
-
-struct BW_Model {
-    
-    static var hammerPointsToInfluenceBrick = 100
-    
-    static func userHasEnoughHammerPoints() -> Bool? {
-        guard let user = user else {return nil}
-        return user.hammer > hammerPointsToInfluenceBrick
-    }
-}
+//import Foundation
+//
+//struct BW_Model {
+//    
+//    static var hammerPointsToInfluenceBrick = 100
+//    
+//    static func userHasEnoughHammerPoints() -> Bool? {
+//        guard let user = user else {return nil}
+//        return user.hammer > hammerPointsToInfluenceBrick
+//    }
+//}

@@ -337,15 +337,15 @@ extension BrickTapResponsing where Self: BrickWallVC {
         
     }
     
-    func getCounterText() -> String {
-        
-        let txt = tm.getCounterValue() ?? ""
-        return txt
+    func getHammerPoints() -> String { // hard-coded odnosno rename !
+        guard let hammerPoints = user?.hammer else {return ""}
+        return "\(hammerPoints)"
     }
     
     func isHammerActive() -> Bool {
         
-        return tm.isUserUsingHammer() // OK
+        //return tm.isUserUsingHammer() // OK
+        return true
         
     }
     
@@ -359,7 +359,7 @@ extension BrickTapResponsing where Self: BrickWallVC {
     
     func brickTappedAt(cellId: Int?) {
         
-        guard let shouldUpdateBrick = BW_Model.userHasEnoughHammerPoints() else { return }
+        guard let shouldUpdateBrick = isHammerAvailable() else { return }
         if shouldUpdateBrick {
             brickTappedAndUserHasHammerPoints(cellId: cellId)
         } else {
@@ -406,6 +406,12 @@ extension BrickTapResponsing where Self: BrickWallVC {
         
         checkForSoundOnBrickTapped(cell: cell,
                                    crackImgUpdated: crackImgWillBeUpdated)
+        
+        guard user != nil else {return}
+        
+        user!.hammer -= value
+        
+        bwBarView.updateBricksBarView(points: "\(user!.hammer)")
         
     }
     

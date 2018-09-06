@@ -28,46 +28,6 @@ extension BrickBarManaging {
 
 
 
-protocol TriangleShapedShadowDroping {
-    func dropDiagShadow(inView v: UIView, insetValuePercent value: CGFloat, shadowColor: UIColor)
-}
-
-extension TriangleShapedShadowDroping {
-    func dropDiagShadow(inView v: UIView, insetValuePercent value: CGFloat = 10.0, shadowColor: UIColor = .black) {
-        
-        let path = getLowerTrianglePathWithInsetFor(rect: v.bounds, insetValuePercent: value)
-        let pathLayer = CAShapeLayer()
-        
-        pathLayer.path = path.cgPath
-        pathLayer.strokeColor = shadowColor.cgColor
-        pathLayer.lineWidth = 0
-        pathLayer.fillColor = shadowColor.cgColor
-        
-        v.layer.addSublayer(pathLayer)
-
-    }
-    
-    private func getLowerTrianglePathWithInsetFor(rect: CGRect, insetValuePercent value: CGFloat = 10) -> UIBezierPath {
-        
-        let p = UIBezierPath.init()
-        
-        let in_w = rect.width * value / 100
-        let in_h = rect.height * value / 100
-        
-        let topRightPt = CGPoint.init(x: rect.maxX, y: rect.minY + in_h)
-        let lowLeftPt = CGPoint.init(x: rect.minX + in_w, y: rect.maxY)
-        let lowRightPt = CGPoint.init(x: rect.maxX, y: rect.maxY)
-        p.move(to: topRightPt)
-        p.addLine(to: lowLeftPt)
-        p.addLine(to: lowRightPt)
-        p.close()
-        
-        return p
-        
-    }
-}
-
-
 
 //protocol BtnTapManaging: class { PAZI !! koristis na CR_OFF_Protocols_1.swift - mesas projects !
 //    func btnTapped(sender: UIButton)
@@ -94,13 +54,8 @@ extension BuyTotemAndHammerBtnTapManaging where Self: BrickWallVC {
     
     func isHammerAvailable() -> Bool? {
         
-        if let claimedAt = ud.value(forKey: CT_UD_KEY_USER_CLAIMED_HAMMER_AT) as? Date { // ako imas
-            return tm.now.timeIntervalSince(claimedAt) > tm.timeToWaitAndUseHammer
-        }
-        
-        guard let counter = tm.getTimerValue() else { return nil }
-        
-        return (counter == -1) || (counter < 0)// ako je neg value, hammer je available
+        guard let user = user else {return nil}
+        return user.hammer > CT_BRICK_TAP_VAL_FOR_QUIZZ
         
     }
     
@@ -110,23 +65,9 @@ extension BuyTotemAndHammerBtnTapManaging where Self: BrickWallVC {
             
         case 0: userTappedBuyTotemBtn() // znam sa storyboard-a da je ovo buyTotemBtn
             
-        case 1: userTappedHammerBtn() // znam sa storyboard-a da je ovo hammerBtn
-            
         case 20: userTappedGameOverView()
             
         default: break
-        }
-        
-    }
-    
-    func userTappedHammerBtn() {
-        
-        guard let isHammerAvailable = isHammerAvailable() else { return }
-        
-        if isHammerAvailable {
-            
-            tm.userSuccessfullyClaimedHammer()
-            
         }
         
     }

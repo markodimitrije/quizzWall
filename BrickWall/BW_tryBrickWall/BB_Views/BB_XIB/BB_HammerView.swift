@@ -106,6 +106,10 @@ class BB_HammerView: UIView {
     
     // MARK:- API
     
+    func updateView(text: String?) {
+        self.txt = text ?? ""
+    }
+    
     func updateView(imgFirst: UIImage?, imgSecond: UIImage?, text: String?, lblTxtColor: UIColor = .white) {
         self.imgFirst = imgFirst
         self.imgSecond = imgSecond

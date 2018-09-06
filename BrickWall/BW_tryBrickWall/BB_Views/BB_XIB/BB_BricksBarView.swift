@@ -94,8 +94,11 @@ class BB_BricksBarView: UIView {
     
     // MARK:- API
     
+    func updateBricksBarView(points: String) {
+        hammerView.updateView(text: points)
+    }
 
-    func updateBricksBarView(totem: CrackTotemSticker, coinType: CoinType?, hammerActive: Bool, counterTime: String) {
+    func updateBricksBarView(totem: CrackTotemSticker, coinType: CoinType?, hammerActive: Bool, hammerPoints: String) {
     
         let coinType = delegate?.getCoinTypeForBuyingTotem()
         
@@ -111,7 +114,7 @@ class BB_BricksBarView: UIView {
         // update 3. view
         
         
-        let hvComponents: (UIImage?, UIImage?, String?) = getHammerViewComponents(totem: totem, hammerActive: hammerActive, counter: counterTime)
+        let hvComponents: (UIImage?, UIImage?, String?) = getHammerViewComponents(totem: totem, hammerActive: hammerActive, hammerPoints: hammerPoints)
         
         hammerView.updateView(imgFirst: hvComponents.0, imgSecond: hvComponents.1, text: hvComponents.2)
     }
@@ -170,7 +173,7 @@ class BB_BricksBarView: UIView {
         
         let imgFirst: UIImage? = hammerActive ? #imageLiteral(resourceName: "hammer_ON") : #imageLiteral(resourceName: "hammer_OFF")
         
-        let imgSecond: UIImage? = hammerActive ? #imageLiteral(resourceName: "stopwatch") : nil
+        let imgSecond: UIImage? = nil // modified (na quizzWall ne zelim timer...)
         
         let v = BB_HammerView.init(frame: f, imgFirst: imgFirst, imgSecond: imgSecond, text: counter)
         
@@ -208,13 +211,13 @@ class BB_BricksBarView: UIView {
     
     
     // counter treba da je u seconds, pa da ga ti format u zeljeni string....
-    private func getHammerViewComponents(totem: CrackTotemSticker, hammerActive: Bool, counter: String?) -> (UIImage?, UIImage?, String?) {
+    private func getHammerViewComponents(totem: CrackTotemSticker, hammerActive: Bool, hammerPoints: String?) -> (UIImage?, UIImage?, String?) {
         
         let imgFirst: UIImage? = hammerActive ? #imageLiteral(resourceName: "hammer_ON") : #imageLiteral(resourceName: "hammer_OFF")
         
         let imgSecond: UIImage? = hammerActive ? nil : #imageLiteral(resourceName: "stopwatch")
         
-        return (imgFirst, imgSecond, counter)
+        return (imgFirst, imgSecond, hammerPoints)
         
     }
     
@@ -238,6 +241,3 @@ class BB_BricksBarView: UIView {
     
     
 }
-
-
-extension BB_BricksBarView: TriangleShapedShadowDroping {} // protocols_2

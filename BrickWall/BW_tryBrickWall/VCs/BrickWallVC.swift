@@ -12,14 +12,12 @@ import QuartzCore
 //class BrickWallVC: GameController {
 class BrickWallVC: UIViewController {
 
-    var _totem: CrackTotemSticker? {
-        didSet {
-            guard let totem = _totem else { return }
-        }
-    }
-    
-    var timer: Timer?
-    let tm = BW_TimerManager()
+    var _totem: CrackTotemSticker?
+//    {
+//        didSet {
+//            guard let totem = _totem else { return }
+//        }
+//    }
     
     weak var delegate: TotemStateUpdating?
     
@@ -45,8 +43,6 @@ class BrickWallVC: UIViewController {
         
         attachDelegates()
         
-        tm.recreateState(timer: &timer) // ovo ce da napuni VALUE odakle citas
-        
         userEnterTheGame()
         
     }
@@ -56,20 +52,6 @@ class BrickWallVC: UIViewController {
         super.viewWillDisappear(animated)
         
         self.userQuitGame() // ima iz ex. BrickWallVC: CrackTotemSaveStateManaging {} // protocols_2
-    }
-    
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        
-        super.viewDidDisappear(animated)
-        
-        tm.saveState()
-        
-        timer?.invalidate(); timer = nil
-        
-        //game = nil ,off now
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,8 +71,6 @@ class BrickWallVC: UIViewController {
         bricksWallView.backgroundColor = .clear // na SB sam set na neku drugu jer se video transitioning
         
         hookUpDelegateToBarComponents()
-        
-        tm.viewDidAppear()
         
     }
     
@@ -125,8 +105,6 @@ class BrickWallVC: UIViewController {
     }
     
     private func attachDelegates() {
-        
-        tm.delegate = self
         
         bwGameOverView.delegate = self
         
@@ -164,13 +142,6 @@ class BrickWallVC: UIViewController {
     
     private func loadBricksBarView(totem: CrackTotemSticker?) {
         
-        func dropShadows() {
-            
-            self.dropDiagShadow(inView: bwBarView.buyTotemView.shadeView, insetValuePercent: 10, shadowColor: CT_GRAY_43)
-            
-            self.dropDiagShadow(inView: bwBarView.hammerView.shadeView, insetValuePercent: 10, shadowColor: CT_GRAY_43)
-        }
-        
         guard let totem = totem else { return }
         
         guard totem.getScore() > 0 else { // ako je zavrsio ovaj totem ( == 0 )
@@ -181,24 +152,10 @@ class BrickWallVC: UIViewController {
         
         let hammerActive = isHammerActive()
         
-        let counterText = getCounterText()
+        let hammerPoints = getHammerPoints()
         
-        bwBarView?.updateBricksBarView(totem: totem, coinType: .gold, hammerActive: hammerActive, counterTime: counterText)
+        bwBarView?.updateBricksBarView(totem: totem, coinType: .gold, hammerActive: hammerActive, hammerPoints: hammerPoints)
         
-         dropShadows() // postavi shadows na buyTotemView i hammerView - - HC TEMP OFF
-        
-    }
-    
-    @objc func updateClock() {
-        
-        guard let val = tm.getCounterValue() else {
-            //print("error reading from TimeManager");
-            return }
-            
-//        print("updateClock.val = \(val)")
-        
-        updateUI(countVal: val, hammerIsActive: isHammerActive(), hammerIsAvailable: isHammerAvailable() ?? false) // HC !
-    
     }
     
     private func updateUI(countVal: String, hammerIsActive: Bool, hammerIsAvailable: Bool) {
@@ -276,8 +233,6 @@ extension BrickWallVC: SingleBrickPresenting {} // mora da zna da prikaze ciglu
 
 extension BrickWallVC: BrickTapResponsing {} // i da reaguje na Tap koji mu cigla javi
 
-extension BrickWallVC: TriangleShapedShadowDroping {} // protocols_2
-
 extension BrickWallVC: BuyTotemAndHammerBtnTapManaging {
     
     func btnTapped(sender: UIButton) {
@@ -295,10 +250,6 @@ extension BrickWallVC: BuyTotemAndHammerBtnTapManaging {
 //                    print("BrickWallVC.BuyTotemAndHammerBtnTapManaging.btnTapped(success == false")
                 }
             }
-            
-        } else if sender.tag == 1 {
-            
-            userTappedHammerBtn()
             
         }
         
