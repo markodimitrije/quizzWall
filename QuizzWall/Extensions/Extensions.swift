@@ -40,3 +40,9 @@ extension Int {
         return Int(arc4random_uniform(UInt32(limit)))
     }
 }
+
+extension Array where Element : Hashable {
+    var unique: [Element] {
+        return Array(Set(self))
+    }
+}
