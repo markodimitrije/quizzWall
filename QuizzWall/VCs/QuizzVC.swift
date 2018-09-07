@@ -12,6 +12,8 @@ class QuizzVC: UIViewController {
     
     @IBOutlet weak var infoView: InfoView!
     
+    @IBOutlet weak var questionLevelView: QuestionOptionViewManager!
+    
     @IBOutlet weak var questionLbl: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -113,7 +115,9 @@ class QuizzVC: UIViewController {
             return ()
         }
         
-        powerUpsView.updatePowerUpsUI(state: .powerUpLoading)
+        powerUpsView?.updatePowerUpsUI(state: .powerUpLoading)
+        
+        questionLevelView?.update(questionLevel: data.level)
         
     }
     

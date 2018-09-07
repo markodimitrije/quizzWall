@@ -30,6 +30,13 @@ enum QuestionLevel: Int {
     case hard = 2
 }
 
+enum QuestionResult {
+    case miss
+    case guess
+}
+
+
+
 struct QuestionPointsInfo {
     var correct: Int
     var wrong: Int

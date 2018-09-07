@@ -110,7 +110,7 @@
         <scene sceneID="Ra4-V1-2hc">
             <objects>
                 <viewController storyboardIdentifier="QuizzVC" id="4SR-gx-mtu" customClass="QuizzVC" customModule="QuizzWall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ekQ-hO-o01" customClass="QuizzInfoView" customModule="QuizzWall" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="ekQ-hO-o01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -203,15 +203,24 @@
                                     <constraint firstAttribute="height" constant="60" id="HSm-ui-qJo"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-lC-0Yc" customClass="QuestionOptionViewManager" customModule="QuizzWall" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="124" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="FSe-co-OyU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="VkN-Lq-Wcq" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" constant="16" id="25B-Wc-43P"/>
+                            <constraint firstItem="xZL-lC-0Yc" firstAttribute="top" secondItem="Kxu-oV-ixp" secondAttribute="bottom" id="3ao-w6-rLT"/>
                             <constraint firstItem="Kxu-oV-ixp" firstAttribute="top" secondItem="LeS-HJ-icV" secondAttribute="top" id="E1Z-Ye-BGx"/>
                             <constraint firstItem="rYw-De-VLg" firstAttribute="top" secondItem="Jui-TJ-njf" secondAttribute="bottom" constant="16" id="FnG-Cj-0vH"/>
                             <constraint firstItem="fza-U4-3Jg" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" constant="16" id="L0K-kN-94Q"/>
                             <constraint firstItem="Kxu-oV-ixp" firstAttribute="trailing" secondItem="LeS-HJ-icV" secondAttribute="trailing" id="LbM-YQ-PQb"/>
                             <constraint firstItem="VkN-Lq-Wcq" firstAttribute="top" secondItem="Jui-TJ-njf" secondAttribute="bottom" constant="8" symbolic="YES" id="NEG-ih-0kK"/>
+                            <constraint firstItem="xZL-lC-0Yc" firstAttribute="trailing" secondItem="LeS-HJ-icV" secondAttribute="trailing" id="OzU-Xu-IMf"/>
                             <constraint firstItem="Kxu-oV-ixp" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" id="RaC-wL-yfX"/>
                             <constraint firstItem="Jui-TJ-njf" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" constant="16" id="Rgo-Oc-ECQ"/>
                             <constraint firstItem="LeS-HJ-icV" firstAttribute="trailing" secondItem="rYw-De-VLg" secondAttribute="trailing" constant="16" id="ZKS-00-fmd"/>
@@ -221,6 +230,7 @@
                             <constraint firstItem="rYw-De-VLg" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" constant="16" id="bKH-Il-EZf"/>
                             <constraint firstItem="LeS-HJ-icV" firstAttribute="trailing" secondItem="Jui-TJ-njf" secondAttribute="trailing" constant="16" id="lvU-3F-Xvc"/>
                             <constraint firstItem="LeS-HJ-icV" firstAttribute="trailing" secondItem="VkN-Lq-Wcq" secondAttribute="trailing" constant="16" id="mgZ-0x-kDI"/>
+                            <constraint firstItem="xZL-lC-0Yc" firstAttribute="leading" secondItem="LeS-HJ-icV" secondAttribute="leading" id="n2R-y1-kfE"/>
                             <constraint firstItem="fza-U4-3Jg" firstAttribute="top" secondItem="VkN-Lq-Wcq" secondAttribute="bottom" constant="8" id="qNs-g4-PFC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LeS-HJ-icV"/>
@@ -240,6 +250,7 @@
                         <outlet property="lowerStackView" destination="Bry-5S-uZZ" id="yte-XZ-A4E"/>
                         <outlet property="powerUpsView" destination="fza-U4-3Jg" id="nag-S2-VTs"/>
                         <outlet property="questionLbl" destination="Jui-TJ-njf" id="NCd-dQ-cfZ"/>
+                        <outlet property="questionLevelView" destination="xZL-lC-0Yc" id="Yih-YJ-QK6"/>
                         <outlet property="upperStackView" destination="Bju-n1-gbN" id="Pz9-dU-3iq"/>
                         <outletCollection property="answerBtns" destination="LwF-tu-RjT" collectionClass="NSMutableArray" id="BdE-oK-vcp"/>
                         <outletCollection property="answerBtns" destination="tv8-xD-Z0X" collectionClass="NSMutableArray" id="eLl-4C-dI6"/>
@@ -249,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TVm-4b-fqI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="1016"/>
+            <point key="canvasLocation" x="3325.5999999999999" y="1015.1424287856073"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UHU-jg-39y">

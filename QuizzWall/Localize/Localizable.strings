@@ -12,3 +12,6 @@ Strings.TimeLeft = "TIME LEFT";
 
 Strings.CT.BricksBar.BuyFor.staticTxt = "CLAIM FOR";
 Strings.CT.BricksBar.useHammer = "USE HAMMER";
+
+Strings.Quizz.QuestionResult.miss = "MISS";
+Strings.Quizz.QuestionResult.guess = "GUESS";

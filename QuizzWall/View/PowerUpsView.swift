@@ -45,7 +45,7 @@ class PowerUpsView: UIView, EnableViewManaging {
         
         self.addSubview(view)
         
-    }
+    } 
     
     @objc func userCreditsChanged(_ notification: Notification) {
         print("userCreditsChanged, implement me, alpha i slicno....")
