@@ -76,6 +76,14 @@ class QuestionOptionView: LblLblBtnView {
         leftTxt = (result == .guess) ? "GUESS" : "MISS"
         
     }
+    func multiplyPoints(by factor: Int) {
+        guard let text = rightTxt,
+            let points = Int(text) else {
+                print("QuestionOptionView.multiplyPoints.error: ne prikazujem String ?!?")
+                return
+        }
+        rightTxt = "\(factor * points)"
+    }
     
 }
 

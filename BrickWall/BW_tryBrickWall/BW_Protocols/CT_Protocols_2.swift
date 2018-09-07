@@ -54,7 +54,9 @@ extension BuyTotemAndHammerBtnTapManaging where Self: BrickWallVC {
     
     func isHammerAvailable() -> Bool? {
         
-        guard let user = user else {return nil}
+        guard let user = user else {
+            return nil
+        }
         return user.hammer > CT_BRICK_TAP_VAL_FOR_QUIZZ
         
     }

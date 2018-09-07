@@ -53,15 +53,15 @@ struct Constants {
             static let folder = "/questions"
             
             struct Filenames {
-                static let en = "/enQuestions.rtf"
-                static let zh = "/zhQuestions.rtf"
-                static let hi = "/hiQuestions.rtf"
-                static let ru = "/ruQuestions.rtf"
-                static let de = "/deQuestions.rtf"
-                static let pt = "/ptQuestions.rtf"
-                static let es = "/esQuestions.rtf"
-                static let it = "/itQuestions.rtf"
-                //static let france = "/fraQuestions.rtf"
+                static let en = "/enQuestions.txt"
+                static let zh = "/zhQuestions.txt"
+                static let hi = "/hiQuestions.txt"
+                static let ru = "/ruQuestions.txt"
+                static let de = "/deQuestions.txt"
+                static let pt = "/ptQuestions.txt"
+                static let es = "/esQuestions.txt"
+                static let it = "/itQuestions.txt"
+                //static let france = "/fraQuestions.txt"
             }
             
         }
@@ -70,7 +70,7 @@ struct Constants {
             
             static let folder = "/versions"
             
-            static let filename = "/questionVersions.rtf"
+            static let filename = "/questionVersions.txt"
         }
         
         struct Images {

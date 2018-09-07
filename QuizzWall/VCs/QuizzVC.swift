@@ -213,7 +213,7 @@ class QuizzVC: UIViewController {
     
     private func doubleChoiceTapped() {
         print("QuizzVC.doubleChoiceTapped uvecaj nagradu za hammerPoints")
-        
+        questionLevelView.userChoseDoubleChoise()
     }
     
     private func powerUpOptionSelected(sender: UIButton) {
@@ -235,7 +235,7 @@ class QuizzVC: UIViewController {
     }
     
     deinit {
-        print("QuizzVC.deinit is called")
+//        print("QuizzVC.deinit is called")
     }
     
 }
@@ -267,6 +267,13 @@ class RoundedBtn: UIButton {
     }
 }
 
+class MultilineRoundedBtn: RoundedBtn {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.titleLabel?.numberOfLines = 0
+        self.titleLabel?.textAlignment = .center
+    }
+}
 
 
 

@@ -35,7 +35,9 @@ struct User: Codable {
         guard let fileName = language_LocalFilenameQuestions_Info[phoneLanguage],
             let data = FileManagerPersister().readData(fromFilename: fileName),
             let questionStructure = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any],
-            let dict = questionStructure else {return nil}
+            let dict = questionStructure else {
+                return nil
+        }
  
     
         let keys = Array(dict.keys)
@@ -44,7 +46,7 @@ struct User: Codable {
         questionsNew = Set(keys)
             
         hammer = 50
-        gems = 2
+        gems = 5
         points = 0
         level = 1
     }

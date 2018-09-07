@@ -56,5 +56,10 @@ class QuestionOptionViewManager: QuestionLevelView {
         
     }
     
+    func userChoseDoubleChoise() {
+        leftView.multiplyPoints(by: 2)
+        rightView.multiplyPoints(by: 2)
+    }
+    
     
 }

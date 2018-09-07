@@ -116,5 +116,7 @@ class InfoViewManager {
         }
     }
     
-    deinit { print("InfoViewManager.deinit. is called") }
+    deinit {
+//        print("InfoViewManager.deinit. is called")
+    }
 }

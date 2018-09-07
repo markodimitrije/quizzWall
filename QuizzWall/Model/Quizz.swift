@@ -15,6 +15,7 @@ struct Quizz {
         let ids = user.questionsNew
         //let random = Int.random(limit: 1000000)
         let random = Int.random(limit: ids.count)
+        //let random = 4 // hard-coded
         return "\(random)"
     }
 }

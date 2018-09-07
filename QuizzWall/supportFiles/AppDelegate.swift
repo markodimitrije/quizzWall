@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if user == nil {
             let newUser = User() // obrati paznju da ovaj konstruktor smes da zoves samo JEDAN JEDINI PUT !
+            //print("newUser = \(newUser). ")
             let filename = Constants.LocalFilenames.userInfo
             FileManagerPersister().saveUser(user: newUser, toFile: filename, ext: "txt")
             user = newUser

@@ -13,7 +13,7 @@ import Foundation
 struct PhoneLanguage {
     
     func getPrefferedLanguage() -> String? {
-        print("NSLocale.current.languageCode = \(String(describing: NSLocale.current.languageCode))")
+//        print("NSLocale.current.languageCode = \(String(describing: NSLocale.current.languageCode))")
         return NSLocale.current.languageCode
     }
     

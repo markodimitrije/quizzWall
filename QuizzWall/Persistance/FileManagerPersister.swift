@@ -118,7 +118,9 @@ struct FileManagerPersister {
         let decoder = JSONDecoder()
         
         guard let data = try? Data.init(contentsOf: readUrl),
-            let user = try? decoder.decode(User.self, from: data) else {return nil}
+            let user = try? decoder.decode(User.self, from: data) else {
+                return nil
+        }
         
         //print("FileManagerPersister.readData.data = \(data)")
         
@@ -130,7 +132,9 @@ struct FileManagerPersister {
     
     func saveUser(user: User?, toFile file: String, ext: String) { // trebao si completion handler !
         
-        guard let user = user else {return }
+        print("saveUser(user... hocu da save user-a !")
+        
+        guard user != nil else {return }
         
         guard let url = self.docDirPath(forFilename: file, ext: ext) else {return }
         

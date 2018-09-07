@@ -224,7 +224,7 @@ class SoundManager: NSObject {
                 audioPlayer.prepareToPlay()
                 audioPlayer.play()
             } catch let error as NSError {
-                print(error.localizedDescription)
+                print("playKnownSound = \(error.localizedDescription)")
             }
         }
         
@@ -255,7 +255,7 @@ class SoundManager: NSObject {
                 bgMusicPlayer.prepareToPlay()
                 bgMusicPlayer.play()
             } catch let error as NSError {
-                print(error.localizedDescription)
+                print("playBgMusic.catch = \(error.localizedDescription)")
             }
             
         }
